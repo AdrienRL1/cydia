@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AppDrop</title>
+<style>
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #222;
+    background: #f4f4f7;
+    line-height: 1.5;
+    font-size: 15px;
+    -webkit-text-size-adjust: 100%;
+  }
+  .wrap { padding: 14px 14px 28px 14px; max-width: 720px; margin: 0 auto; }
+
+  .hero {
+    background: #fff;
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    box-shadow: 0 1px 2px rgba(0,0,0,.06);
+  }
+  .hero img { width: 84px; height: 84px; flex-shrink: 0; }
+  .hero h1 { margin: 0 0 4px 0; font-size: 22px; font-weight: 700; color: #111; }
+  .hero p { margin: 0; color: #555; font-size: 13.5px; }
+
+  .pill {
+    display: inline-block;
+    background: #137dd6;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    margin-top: 6px;
+    font-weight: 600;
+  }
+
+  h2 {
+    font-size: 16px;
+    margin: 22px 0 8px 0;
+    color: #111;
+  }
+
+  .card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 14px 16px;
+    box-shadow: 0 1px 2px rgba(0,0,0,.05);
+  }
+
+  ul { margin: 8px 0 0 0; padding-left: 20px; }
+  li { margin: 3px 0; }
+  code {
+    background: #eef0f4;
+    padding: 1px 5px;
+    border-radius: 3px;
+    font-family: Menlo, Courier, monospace;
+    font-size: 12.5px;
+  }
+  b { color: #111; }
+
+  .shots img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    margin: 10px 0;
+    box-shadow: 0 1px 4px rgba(0,0,0,.12);
+  }
+  .caption {
+    text-align: center;
+    color: #666;
+    font-size: 12px;
+    margin: -4px 0 12px 0;
+  }
+
+  .meta {
+    margin-top: 16px;
+    color: #777;
+    font-size: 12px;
+  }
+  a { color: #137dd6; text-decoration: none; }
+
+  .tip-card {
+    background: linear-gradient(135deg, #fff8e6 0%, #ffefc6 100%);
+    border: 1px solid #f5d68a;
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin-top: 14px;
+    text-align: center;
+  }
+  .tip-card a {
+    display: inline-block;
+    background: #0070ba;
+    color: #fff;
+    font-weight: 700;
+    padding: 8px 18px;
+    border-radius: 999px;
+    margin-top: 6px;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  .tip-card p { margin: 0 0 4px 0; font-size: 14px; }
+
+  .changelog {
+    background: #eef7ff;
+    border-left: 4px solid #137dd6;
+    border-radius: 6px;
+    padding: 12px 14px;
+    margin-top: 16px;
+  }
+  .changelog h3 {
+    margin: 0 0 8px 0;
+    font-size: 15px;
+    color: #0a3266;
+  }
+  .changelog .ver {
+    display: inline-block;
+    background: #137dd6;
+    color: #fff;
+    padding: 1px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 700;
+    margin-left: 6px;
+    vertical-align: 1px;
+  }
+  .changelog ul { margin: 4px 0 0 0; padding-left: 18px; }
+  .changelog li { margin: 2px 0; font-size: 13.5px; }
+  .changelog .older {
+    font-size: 12px;
+    color: #555;
+    margin-top: 8px;
+    padding-top: 6px;
+    border-top: 1px dashed #b5d1ed;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="hero">
+  <img src="screenshots/appdrop-icon.png" alt="AppDrop icon">
+  <div>
+    <h1>AppDrop</h1>
+    <p>Browse 157,000 archived iOS apps from 2008–2014 and install them on your jailbroken device, with built-in AI search.</p>
+    <span class="pill">iOS 5 – 10 · armv7</span>
+  </div>
+</div>
+
+<div class="changelog">
+  <h3>What's new <span class="ver">v1.5</span></h3>
+  <ul>
+    <li><b>iOS 5 support restored</b> — iPad 1, iPhone 3GS, iPod touch 3 and other devices stuck at iOS 5.1.1 can now run AppDrop</li>
+    <li><b>Cydia-only distribution</b> — no more manual <code>.ipa</code> transfer via SSH / iFunbox / iFile</li>
+    <li><b>In-app updater redirects to Cydia</b> — one tap on the Updates row opens this page</li>
+    <li><b>IPA Installer Console as a hard dependency</b> — installed automatically by Cydia, no more in-app onboarding alert</li>
+    <li><b>AppSync Unified OR-clause</b> — works with both <code>net.angelxwind.appsyncunified</code> and <code>com.linusyang.appsync</code></li>
+    <li><b>New app icon</b> — fresh glass + glow download glyph, iOS 6 rounded corners</li>
+    <li><b>Multi-version source</b> — install any previous release via Cydia's Modify → Versions</li>
+    <li><b>Tested on</b> iPad 1 (iOS 5.1.1), iPad 4 (iOS 6.1.3), iPhone 5 (iOS 6.1.4), iPad mini 2 (iOS 10.3.3)</li>
+  </ul>
+  <div class="older">
+    Full changelog: <a href="https://github.com/AdrienRL1/AppDrop/releases">github.com/AdrienRL1/AppDrop/releases</a>
+  </div>
+</div>
+
+<h2>What it does</h2>
+<div class="card">
+AppDrop bundles the entire <b>IPA Archive</b> catalog (≈ 157k vintage iOS apps) right in the binary, so the catalog is instant and works offline. Search by title, browse by year, or describe what you want in plain language and the built-in AI finds it for you. Tap install — the app delegates to <b>IPA Installer Console</b> (already required by this package) and your jailbreak does the rest.
+</div>
+
+<h2>Highlights</h2>
+<div class="card">
+<ul>
+  <li><b>157k vintage app catalog</b> — bundled, instant, offline</li>
+  <li><b>Grounded AI search</b> — describe an app in any language, the LLM picks from the real catalog (never invents)</li>
+  <li><b>Device-aware AI</b> — knows your iPad/iPhone model + iOS version, gives compatibility advice tailored to you</li>
+  <li><b>7 languages</b> — EN · FR · ES · DE · PT‑BR · JA · ZH‑Hans, auto-detected</li>
+  <li><b>Multi-select install</b> — queue dozens of apps in one batch with live progress + cancel</li>
+  <li><b>Parallel chunked downloads</b> — speed configurable in Settings</li>
+  <li><b>iPad grid layout</b> — density slider, filters button, swipe-friendly UI</li>
+  <li><b>Skeuomorphic iOS 6 look</b> — fits naturally into a jailbroken device, all iOS versions</li>
+  <li><b>No backend, no account, no tracking</b> — talks directly to archive.org and pollinations.ai</li>
+</ul>
+</div>
+
+<h2>Screenshots</h2>
+<div class="shots">
+  <img src="screenshots/screenshot-11.png" alt="Catalog grid on iPad">
+  <div class="caption">Catalog grid on iPad — multi-select &amp; install in one tap</div>
+
+  <img src="screenshots/screenshot-12.png" alt="AI chat finding racing games">
+  <div class="caption">AI chat: describe an app and it finds the real ones</div>
+
+  <img src="screenshots/screenshot-13.png" alt="Search tab finding Real Racing">
+  <div class="caption">Search tab — instant title lookup over the 157k catalog</div>
+
+  <img src="screenshots/screenshot-14.png" alt="Filters screen">
+  <div class="caption">Filters — narrow by year, device class, iOS version</div>
+</div>
+
+<h2>Requirements</h2>
+<div class="card">
+<ul>
+  <li>A jailbroken device on <b>iOS 5 → iOS 10</b> (armv7 / 32-bit)</li>
+  <li><b>AppSync Unified</b> — needed to install unsigned IPAs (auto-installed as a dependency)</li>
+  <li><b>IPA Installer Console</b> by autopear (or <code>appinst</code>) — the actual install tool (auto-installed as a dependency)</li>
+  <li>A working internet connection for downloads and the optional AI features</li>
+</ul>
+</div>
+
+<div class="tip-card">
+  <p><b>Enjoying AppDrop?</b> Free + ad-free forever.</p>
+  <p>If it saved you the trouble of manual sideloading, a small tip helps me keep maintaining the catalog 💙</p>
+  <a href="https://paypal.me/adrienrl1">💖 Tip on PayPal</a>
+</div>
+
+<p class="meta">
+  Source: <a href="https://github.com/AdrienRL1/AppDrop">github.com/AdrienRL1/AppDrop</a> ·
+  Source URL: <code>https://adrienrl1.github.io/cydia/</code>
+</p>
+
+</div>
+</body>
+</html>
