@@ -155,16 +155,17 @@
 </div>
 
 <div class="changelog">
-  <h3>What's new <span class="ver">v1.5</span></h3>
+  <h3>What's new <span class="ver">v2.0</span></h3>
   <ul>
-    <li><b>iOS 5 support restored</b> — iPad 1, iPhone 3GS, iPod touch 3 and other devices stuck at iOS 5.1.1 can now run AppDrop</li>
-    <li><b>Cydia-only distribution</b> — no more manual <code>.ipa</code> transfer via SSH / iFunbox / iFile</li>
-    <li><b>In-app updater redirects to Cydia</b> — one tap on the Updates row opens this page</li>
-    <li><b>IPA Installer Console as a hard dependency</b> — installed automatically by Cydia, no more in-app onboarding alert</li>
-    <li><b>AppSync Unified OR-clause</b> — works with both <code>net.angelxwind.appsyncunified</code> and <code>com.linusyang.appsync</code></li>
-    <li><b>New app icon</b> — fresh glass + glow download glyph, iOS 6 rounded corners</li>
-    <li><b>Multi-version source</b> — install any previous release via Cydia's Modify → Versions</li>
-    <li><b>Tested on</b> iPad 1 (iOS 5.1.1), iPad 4 (iOS 6.1.3), iPhone 5 (iOS 6.1.4), iPad mini 2 (iOS 10.3.3)</li>
+    <li><b>Browse by category</b> — a brand-new home screen with category cards, plus "All apps" and "Works today"</li>
+    <li><b>"Works today"</b> — a curated list of apps confirmed still running on old iOS, with one-tap install + update detection</li>
+    <li><b>Self-updating catalog</b> — downloaded and auto-refreshed, so new apps appear without reinstalling the app</li>
+    <li><b>In-app feedback</b> — report a bug or idea (with screenshots) straight from the app</li>
+    <li><b>Device-aware</b> — a compatibility verdict per app, and auto-picks the newest version your device can actually run</li>
+    <li><b>8th language: Turkish</b> (translation by Yusubera) + localized app descriptions in all 8 languages</li>
+    <li><b>DNS-over-HTTPS</b> — installs keep working even where the ISP blocks archive.org at the DNS level</li>
+    <li><b>Smoother &amp; configurable</b> — fluid scrolling, a "downloading · waiting" counter, and a max-simultaneous-downloads setting</li>
+    <li><b>Tested on</b> iPad 1 (iOS 5.1.1), iPhone 5 (iOS 6.1.4), iPad 4 (iOS 6.1.3)</li>
   </ul>
   <div class="older">
     Full changelog: <a href="https://github.com/AdrienRL1/AppDrop/releases">github.com/AdrienRL1/AppDrop/releases</a>
@@ -173,19 +174,20 @@
 
 <h2>What it does</h2>
 <div class="card">
-AppDrop bundles the entire <b>IPA Archive</b> catalog (≈ 157k vintage iOS apps) right in the binary, so the catalog is instant and works offline. Search by title, browse by year, or describe what you want in plain language and the built-in AI finds it for you. Tap install — the app delegates to <b>IPA Installer Console</b> (already required by this package) and your jailbreak does the rest.
+AppDrop opens onto the <b>IPA Archive</b> catalog (≈ 157k vintage iOS apps), browsable <b>by category</b>. The catalog is downloaded on first launch and keeps itself up to date. Search by title, describe what you want in plain language and the built-in AI finds it, or pick from the <b>"Works today"</b> revival list. Tap install — the app delegates to <b>IPA Installer Console</b> (already required by this package) and your jailbreak does the rest.
 </div>
 
 <h2>Highlights</h2>
 <div class="card">
 <ul>
-  <li><b>157k vintage app catalog</b> — bundled, instant, offline</li>
+  <li><b>157k vintage app catalog</b> — browse by category; downloaded once then self-updating</li>
+  <li><b>"Works today"</b> — curated revival list of apps still running on legacy iOS, with update detection</li>
   <li><b>Grounded AI search</b> — describe an app in any language, the LLM picks from the real catalog (never invents)</li>
-  <li><b>Device-aware AI</b> — knows your iPad/iPhone model + iOS version, gives compatibility advice tailored to you</li>
-  <li><b>7 languages</b> — EN · FR · ES · DE · PT‑BR · JA · ZH‑Hans, auto-detected</li>
-  <li><b>Multi-select install</b> — queue dozens of apps in one batch with live progress + cancel</li>
-  <li><b>Parallel chunked downloads</b> — speed configurable in Settings</li>
-  <li><b>iPad grid layout</b> — density slider, filters button, swipe-friendly UI</li>
+  <li><b>Device-aware</b> — compatibility verdict per app, auto-picks the newest version your device can run</li>
+  <li><b>8 languages</b> — EN · FR · ES · DE · PT‑BR · JA · ZH‑Hans · TR, auto-detected, with localized app descriptions</li>
+  <li><b>In-app feedback</b> — bug reports + screenshots, straight to the project</li>
+  <li><b>Multi-select install</b> — batch installs, a downloads counter, configurable max simultaneous downloads, cancel anytime</li>
+  <li><b>DNS-over-HTTPS</b> — keeps installs working on DNS-blocked networks</li>
   <li><b>Skeuomorphic iOS 6 look</b> — fits naturally into a jailbroken device, all iOS versions</li>
   <li><b>No backend, no account, no tracking</b> — talks directly to archive.org and pollinations.ai</li>
 </ul>
@@ -193,8 +195,8 @@ AppDrop bundles the entire <b>IPA Archive</b> catalog (≈ 157k vintage iOS apps
 
 <h2>Screenshots</h2>
 <div class="shots">
-  <img src="screenshots/screenshot-11.png" alt="Catalog grid on iPad">
-  <div class="caption">Catalog grid on iPad — multi-select &amp; install in one tap</div>
+  <img src="screenshots/screenshot-home.png" alt="Categories home on iPad">
+  <div class="caption">Home — browse 30,000+ vintage apps by category</div>
 
   <img src="screenshots/screenshot-12.png" alt="AI chat finding racing games">
   <div class="caption">AI chat: describe an app and it finds the real ones</div>
@@ -204,6 +206,9 @@ AppDrop bundles the entire <b>IPA Archive</b> catalog (≈ 157k vintage iOS apps
 
   <img src="screenshots/screenshot-14.png" alt="Filters screen">
   <div class="caption">Filters — narrow by year, device class, iOS version</div>
+
+  <img src="screenshots/screenshot-15.png" alt="In-app feedback form">
+  <div class="caption">In-app feedback — report a bug or idea with screenshots</div>
 </div>
 
 <h2>Requirements</h2>
