@@ -10,27 +10,37 @@
          background: #f2f2f7; color: #111; }
   @media (prefers-color-scheme: dark) { body { background: #14161a; color: #e8e8ea; }
     .card { background: #20242b !important; border-color: #333 !important; }
-    input { background: #2a2f37 !important; color: #e8e8ea !important; border-color: #3a4049 !important; } }
-  header { background: #2b6cb0; color: #fff; padding: 14px 16px; position: sticky; top: 0; }
+    input, textarea, select { background: #2a2f37 !important; color: #e8e8ea !important; border-color: #3a4049 !important; } }
+  header { background: #2b6cb0; color: #fff; padding: 14px 16px; position: sticky; top: 0; z-index: 5; }
   header h1 { margin: 0; font-size: 18px; }
   .wrap { max-width: 820px; margin: 0 auto; padding: 16px; }
   .bar { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-bottom: 14px; }
-  input { padding: 9px 10px; border: 1px solid #ccd; border-radius: 8px; font-size: 15px; flex: 1; min-width: 180px; }
+  input, textarea, select { padding: 9px 10px; border: 1px solid #ccd; border-radius: 8px; font-size: 15px; }
+  .bar input { flex: 1; min-width: 180px; }
   button { padding: 9px 14px; border: 0; border-radius: 8px; font-size: 15px; cursor: pointer; }
   .btn-load { background: #2b6cb0; color: #fff; }
   .btn-ok   { background: #1f9d55; color: #fff; }
   .btn-no   { background: #c53030; color: #fff; }
+  .btn-save { background: #4a5568; color: #fff; }
   .card { background: #fff; border: 1px solid #e2e2ea; border-radius: 12px; padding: 14px; margin-bottom: 14px; }
   .tag { display: inline-block; font-size: 12px; font-weight: 700; padding: 2px 8px; border-radius: 999px; }
   .tag-mods { background: #e9d8fd; color: #553c9a; }
   .tag-rev  { background: #c6f6d5; color: #22543d; }
+  .tag-cat  { background: #bee3f8; color: #2a4365; }
   .name { font-size: 17px; font-weight: 700; margin: 6px 0; }
-  .meta { font-size: 13px; color: #667; margin: 2px 0; }
+  .meta { font-size: 13px; color: #778; margin: 2px 0; }
   .desc { font-size: 14px; margin: 8px 0; white-space: pre-wrap; }
-  .actions { display: flex; gap: 8px; margin-top: 10px; }
+  .actions { display: flex; gap: 8px; margin-top: 12px; flex-wrap: wrap; }
   a.ipa { font-size: 13px; word-break: break-all; }
   .empty, .err { padding: 20px; text-align: center; color: #667; }
   .err { color: #c53030; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 8px 0; }
+  .grid .full { grid-column: 1 / -1; }
+  .grid label { font-size: 12px; color: #889; display: block; margin-bottom: 2px; }
+  .grid input, .grid textarea, .grid select { width: 100%; box-sizing: border-box; }
+  .ico { width: 48px; height: 48px; border-radius: 10px; vertical-align: middle; margin-right: 8px;
+         border: 1px solid #ddd; object-fit: cover; }
+  .hint { font-size: 12px; color: #889; }
 </style>
 </head>
 <body>
@@ -39,10 +49,27 @@
   <div class="bar">
     <input id="url" placeholder="URL du Worker" />
     <input id="token" type="password" placeholder="Clé d'admin (ADMIN_TOKEN)" />
-    <button class="btn-load" onclick="load()">Charger les uploads en attente</button>
+    <button class="btn-load" onclick="load()">Charger</button>
   </div>
+  <div class="hint">Les .ipa approuvés sont envoyés sur archive.org par le Worker (si les clés IA_ACCESS/IA_SECRET y sont configurées), sinon ils restent sur GitHub.</div>
   <div id="list"><div class="empty">Entre la clé d'admin puis « Charger ».</div></div>
 </div>
+
+<datalist id="cats">
+  <option>Games</option><option>Entertainment</option><option>Utilities</option><option>Productivity</option>
+  <option>Social Networking</option><option>Music</option><option>Photo &amp; Video</option><option>Travel</option>
+  <option>Lifestyle</option><option>Health &amp; Fitness</option><option>Education</option><option>Finance</option>
+  <option>News</option><option>Sports</option><option>Navigation</option><option>Reference</option>
+  <option>Business</option><option>Weather</option><option>Books</option><option>Medical</option>
+  <option>Food &amp; Drink</option><option>Catalogs</option><option>Newsstand</option>
+</datalist>
+<datalist id="subs">
+  <option>Action</option><option>Adventure</option><option>Arcade</option><option>Board</option><option>Card</option>
+  <option>Casino</option><option>Dice</option><option>Educational</option><option>Family</option><option>Kids</option>
+  <option>Music</option><option>Puzzle</option><option>Racing</option><option>Role Playing</option>
+  <option>Simulation</option><option>Sports</option><option>Strategy</option><option>Trivia</option><option>Word</option>
+</datalist>
+
 <script>
   var DEFAULT_URL = "https://appdrop-feedback.adrienruestlorquet.workers.dev";
   var urlEl = document.getElementById("url"), tokEl = document.getElementById("token"), listEl = document.getElementById("list");
@@ -71,11 +98,8 @@
     h.style.fontWeight = "700"; h.style.fontSize = "15px"; h.style.margin = "18px 0 6px";
     h.textContent = txt; return h;
   }
-  function emptyLine(txt) {
-    var d = document.createElement("div"); d.className = "empty"; d.textContent = txt; return d;
-  }
+  function emptyLine(txt) { var d = document.createElement("div"); d.className = "empty"; d.textContent = txt; return d; }
 
-  // Renders BOTH the upload queue and the category proposals (#156).
   function renderAll(uploads, cats) {
     listEl.innerHTML = "";
     listEl.appendChild(sectionTitle("Uploads d'apps (" + uploads.length + ")"));
@@ -87,26 +111,60 @@
     else cats.forEach(function (e) { listEl.appendChild(categoryCard(e)); });
   }
 
+  function fieldRow(label, fname, value, full, list) {
+    return '<div class="' + (full ? "full" : "") + '"><label>' + esc(label) + '</label>' +
+      '<input data-f="' + fname + '" value="' + esc(value) + '"' + (list ? ' list="' + list + '"' : '') + ' /></div>';
+  }
+
+  // A pending upload: fully editable, with a type dropdown (mods/revival/catalog) and category fields.
   function uploadCard(e) {
-    var rev = e.target === "revival";
+    var t = e.target === "revival" ? "rev" : (e.target === "catalog" ? "cat" : "mods");
+    var tagTxt = e.target === "revival" ? "Fonctionne aujourd'hui" : (e.target === "catalog" ? "App du catalogue" : "Apps modifiées");
+    var iconImg = e.icon ? '<img class="ico" src="' + esc(e.icon) + '" alt="">' : "";
     var card = document.createElement("div"); card.className = "card";
     card.innerHTML =
-      '<span class="tag ' + (rev ? "tag-rev" : "tag-mods") + '">' + (rev ? "Fonctionne aujourd\'hui" : "Apps modifiées") + '</span>' +
-      '<div class="name">' + esc(e.name) + (e.version ? ' <span class="meta">v' + esc(e.version) + '</span>' : '') + '</div>' +
-      (e.mod ? '<div class="meta"><b>Modif :</b> ' + esc(e.mod) + '</div>' : '') +
-      '<div class="meta">bid : ' + esc(e.bid || "—") + ' · iOS min : ' + esc(e.min_ios || "—") +
-        ' · ' + Math.round((e.size || 0) / 1048576 * 10) / 10 + ' Mo · crédit : ' + esc(e.credit || "—") + '</div>' +
-      '<div class="desc">' + esc(e.description || "(pas de description)") + '</div>' +
-      '<div class="meta">de : ' + esc(e.device || "?") + ' · ' + esc(e.lang || "?") + '</div>' +
+      '<span class="tag tag-' + t + '">' + esc(tagTxt) + '</span>' +
+      '<div class="name">' + iconImg + esc(e.name) + '</div>' +
+      '<div class="grid">' +
+        '<div><label>Type</label><select data-f="target">' +
+          '<option value="catalog"' + (e.target === "catalog" ? " selected" : "") + '>Catalogue (app normale)</option>' +
+          '<option value="revival"' + (e.target === "revival" ? " selected" : "") + '>Fonctionne aujourd\'hui</option>' +
+          '<option value="mods"'    + (e.target === "mods"    ? " selected" : "") + '>App modifiée</option>' +
+        '</select></div>' +
+        '<div><label>Version</label><input data-f="version" value="' + esc(e.version || "") + '" /></div>' +
+        fieldRow("Nom", "name", e.name || "", false) +
+        fieldRow("iOS min", "min_ios", e.min_ios || "", false) +
+        fieldRow("Bundle id", "bid", e.bid || "", false) +
+        fieldRow("Crédit", "credit", e.credit || "", false) +
+        fieldRow("Catégorie", "category", e.category || "", false, "cats") +
+        fieldRow("Section (Jeux)", "subgenre", e.subgenre || "", false, "subs") +
+        fieldRow("Modif (app modifiée)", "mod", e.mod || "", true) +
+        '<div class="full"><label>Description</label><textarea data-f="description" rows="3">' + esc(e.description || "") + '</textarea></div>' +
+      '</div>' +
+      '<div class="meta">' + Math.round((e.size || 0) / 1048576 * 10) / 10 + ' Mo · de : ' + esc(e.device || "?") + ' · ' + esc(e.lang || "?") + (e.decrypted ? ' · ✅ déchiffrée' : '') + '</div>' +
       '<div class="meta">⬇ <a class="ipa" href="' + esc(e.ipa_url) + '" target="_blank" rel="noopener">' + esc(e.ipa_url) + '</a></div>' +
       '<div class="actions"></div>';
     var actions = card.querySelector(".actions");
+    var save = document.createElement("button"); save.className = "btn-save"; save.textContent = "💾 Enregistrer";
+    save.onclick = function () { updateEntry(e.id, gather(card), save, "Enregistrement…"); };
     var ok = document.createElement("button"); ok.className = "btn-ok"; ok.textContent = "✓ Approuver";
-    ok.onclick = function () { act("/approve", e.id, ok, "Publication…"); };
+    ok.onclick = function () {
+      ok.disabled = true; ok.textContent = "Enregistrement…";
+      // Save current edits first (best-effort — an un-updated Worker has no /update), then publish.
+      postJSON("/update", { id: e.id, fields: gather(card) })
+        .catch(function () { return null; })
+        .then(function () { ok.textContent = "Publication…"; act("/approve", e.id, ok, "Publication…"); });
+    };
     var no = document.createElement("button"); no.className = "btn-no"; no.textContent = "✕ Rejeter";
     no.onclick = function () { if (confirm("Rejeter et supprimer « " + e.name + " » ?")) act("/reject", e.id, no, "Suppression…"); };
-    actions.appendChild(ok); actions.appendChild(no);
+    actions.appendChild(save); actions.appendChild(ok); actions.appendChild(no);
     return card;
+  }
+
+  function gather(card) {
+    var f = {};
+    card.querySelectorAll("[data-f]").forEach(function (el) { f[el.getAttribute("data-f")] = el.value; });
+    return f;
   }
 
   // #156: a proposed category/subgenre correction → /category-approve or /category-reject.
@@ -115,7 +173,7 @@
     var prop = (e.category || "—") + (e.subgenre ? " › " + e.subgenre : "");
     var card = document.createElement("div"); card.className = "card";
     card.innerHTML =
-      '<span class="tag tag-rev">Catégorie</span>' +
+      '<span class="tag tag-cat">Catégorie</span>' +
       '<div class="name">' + esc(e.name || e.bid || "?") + '</div>' +
       '<div class="meta">bid : ' + esc(e.bid || "—") + '</div>' +
       '<div class="meta">Actuelle : ' + esc(cur) + '</div>' +
@@ -131,17 +189,28 @@
     return card;
   }
 
+  function postJSON(pathname, body) {
+    return fetch(base() + pathname, { method: "POST",
+      headers: { "Content-Type": "application/json", "X-Admin-Token": tokEl.value },
+      body: JSON.stringify(body) })
+      .then(function (r) { return r.json().then(function (j) { return { ok: r.ok, j: j }; }); });
+  }
+
+  function updateEntry(id, fields, btn, busy) {
+    btn.disabled = true; var prev = btn.textContent; btn.textContent = busy;
+    postJSON("/update", { id: id, fields: fields }).then(function (res) {
+      btn.disabled = false; btn.textContent = prev;
+      if (!res.ok) { alert("Erreur : " + (res.j.error || "")); return; }
+      btn.textContent = "✓ Enregistré"; setTimeout(function () { btn.textContent = prev; }, 1500);
+    }).catch(function (e) { alert("Échec réseau : " + e); btn.disabled = false; btn.textContent = prev; });
+  }
+
   function act(pathname, id, btn, busy) {
     btn.disabled = true; var prev = btn.textContent; btn.textContent = busy;
-    fetch(base() + pathname, { method: "POST",
-      headers: { "Content-Type": "application/json", "X-Admin-Token": tokEl.value },
-      body: JSON.stringify({ id: id }) })
-      .then(function (r) { return r.json().then(function (j) { return { ok: r.ok, j: j }; }); })
-      .then(function (res) {
-        if (!res.ok) { alert("Erreur : " + (res.j.error || "")); btn.disabled = false; btn.textContent = prev; return; }
-        load();   // refresh the list
-      })
-      .catch(function (e) { alert("Échec réseau : " + e); btn.disabled = false; btn.textContent = prev; });
+    postJSON(pathname, { id: id }).then(function (res) {
+      if (!res.ok) { alert("Erreur : " + (res.j.error || "")); btn.disabled = false; btn.textContent = prev; return; }
+      load();   // refresh the list
+    }).catch(function (e) { alert("Échec réseau : " + e); btn.disabled = false; btn.textContent = prev; });
   }
 </script>
 </body>
