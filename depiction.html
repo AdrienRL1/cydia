@@ -149,22 +149,22 @@
   <img src="screenshots/appdrop-icon.png" alt="AppDrop icon">
   <div>
     <h1>AppDrop</h1>
-    <p>Browse 43,000+ vintage iOS apps (2008–2014) — every archived version included — and install them on your jailbroken device, with built-in AI search.</p>
+    <p>Browse 43,000+ vintage iOS apps (2008–2014) — every archived version included — and install them on your jailbroken device.</p>
     <span class="pill">iOS 5 – 10 · armv7</span>
   </div>
 </div>
 
 <div class="changelog">
-  <h3>What's new <span class="ver">v2.0</span></h3>
+  <h3>What's new <span class="ver">v3.0</span></h3>
   <ul>
-    <li><b>Browse by category</b> — a brand-new home screen with category cards, plus "All apps" and "Works today"</li>
-    <li><b>"Works today"</b> — apps confirmed to still run on old iOS, with one-tap install + update detection. Just one app for now; the section is there to grow as more get added</li>
-    <li><b>Self-updating catalog</b> — downloaded and auto-refreshed, so new apps appear without reinstalling the app</li>
-    <li><b>In-app feedback</b> — report a bug or idea (with screenshots) straight from the app</li>
-    <li><b>Device-aware</b> — a compatibility verdict per app, and auto-picks the newest version your device can actually run</li>
-    <li><b>8th language: Turkish</b> (translation by Yusubera) + localized app descriptions in all 8 languages</li>
-    <li><b>DNS-over-HTTPS</b> — installs keep working even where the ISP blocks archive.org at the DNS level</li>
-    <li><b>Smoother &amp; configurable</b> — fluid scrolling, a "downloading · waiting" counter, and a max-simultaneous-downloads setting</li>
+    <li><b>17 themes + full dark mode</b> — recolour the whole app instantly (8 light, 9 dark), no restart</li>
+    <li><b>Your own layout</b> — list or icon-grid on iPhone <i>and</i> iPad, set with a native iOS-6 wheel; drag &amp; resize the home tiles widget-style</li>
+    <li><b>Favorites, folders &amp; "download later"</b> — star apps, sort them into named collections, queue downloads for later</li>
+    <li><b>Modded apps</b> — a brand-new section for patched / unlocked builds, growing over time</li>
+    <li><b>Share an app</b> — contribute an app you have the right to share, through a moderated upload</li>
+    <li><b>FairPlay-aware</b> — detects DRM-encrypted builds <i>before</i> downloading and steers you to a clean version</li>
+    <li><b>Pause &amp; resume downloads</b>, screen-stays-awake while installing, and HTTP-proxy support</li>
+    <li>Dozens of fixes + fuller 8-language localization. <b>The previous AI search was removed</b> (its free, no-key LLM became unreliable)</li>
     <li><b>Tested on</b> iPad 1 (iOS 5.1.1), iPhone 5 (iOS 6.1.4), iPad 4 (iOS 6.1.3)</li>
   </ul>
   <div class="older">
@@ -174,41 +174,41 @@
 
 <h2>What it does</h2>
 <div class="card">
-AppDrop opens onto the <b>IPA Archive</b> catalog (43,000+ vintage iOS apps, with every version archived), browsable <b>by category</b>. The catalog is downloaded on first launch and keeps itself up to date. Search by title, describe what you want in plain language and the built-in AI finds it, or pick from the <b>"Works today"</b> revival list. Tap install — the app delegates to <b>IPA Installer Console</b> (already required by this package) and your jailbreak does the rest.
+AppDrop opens onto the <b>IPA Archive</b> catalog (43,000+ vintage iOS apps, with every version archived), browsable <b>by category</b>. The catalog is downloaded on first launch and keeps itself up to date. Search by title, browse categories, pick from the <b>"Works today"</b> revival list or the new <b>Modded apps</b> section, and save favourites into your own folders. Tap install — the app delegates to <b>IPA Installer Console</b> (already required by this package) and your jailbreak does the rest.
 </div>
 
 <h2>Highlights</h2>
 <div class="card">
 <ul>
   <li><b>43,000+ vintage apps</b> — browse by category; downloaded once then self-updating (≈157k IPA files counting every version)</li>
-  <li><b>"Works today"</b> — apps still running on legacy iOS, with update detection (one app for now, more to come)</li>
-  <li><b>Grounded AI search</b> — describe an app in any language, the LLM picks from the real catalog (never invents)</li>
-  <li><b>Device-aware</b> — compatibility verdict per app, auto-picks the newest version your device can run</li>
+  <li><b>17 themes + full dark mode</b> — retint the whole app live, no restart</li>
+  <li><b>List or grid, your way</b> — on iPhone and iPad via a native iOS-6 wheel; widget-style reorder/resize on the home</li>
+  <li><b>Favorites, folders &amp; download-later</b> — organise apps your way</li>
+  <li><b>"Works today" + Modded apps</b> — apps that still run today, plus a new section for patched builds</li>
+  <li><b>Share an app</b> — moderated upload of apps you have the right to share</li>
+  <li><b>Device-aware + FairPlay-aware</b> — a compatibility verdict per app, and DRM-encrypted builds caught before download</li>
   <li><b>8 languages</b> — EN · FR · ES · DE · PT‑BR · JA · ZH‑Hans · TR, auto-detected, with localized app descriptions</li>
-  <li><b>In-app feedback</b> — bug reports + screenshots, straight to the project</li>
-  <li><b>Multi-select install</b> — batch installs, a downloads counter, configurable max simultaneous downloads, cancel anytime</li>
-  <li><b>DNS-over-HTTPS</b> — keeps installs working on DNS-blocked networks</li>
-  <li><b>Skeuomorphic iOS 6 look</b> — fits naturally into a jailbroken device, all iOS versions</li>
-  <li><b>No backend, no account, no tracking</b> — talks directly to archive.org and pollinations.ai</li>
+  <li><b>Pause/resume installs</b> — multi-select batch installs, a downloads counter, DNS-over-HTTPS + HTTP-proxy</li>
+  <li><b>Skeuomorphic iOS 6 look</b> · <b>no backend, no account, no tracking</b> — talks directly to archive.org</li>
 </ul>
 </div>
 
 <h2>Screenshots</h2>
 <div class="shots">
-  <img src="screenshots/screenshot-home.png" alt="Categories home on iPad">
-  <div class="caption">Home — browse 30,000+ vintage apps by category</div>
+  <img src="screenshots/v3-home.png" alt="Categories home on iPad">
+  <div class="caption">Home — browse 43,000+ vintage apps by category, your way</div>
 
-  <img src="screenshots/screenshot-12.png" alt="AI chat finding racing games">
-  <div class="caption">AI chat: describe an app and it finds the real ones</div>
+  <img src="screenshots/v3-themes.png" alt="Theme picker">
+  <div class="caption">17 themes + full dark mode, applied live across the app</div>
 
-  <img src="screenshots/screenshot-13.png" alt="Search tab finding Real Racing">
-  <div class="caption">Search tab — instant title lookup over the whole catalog</div>
+  <img src="screenshots/v3-detail.png" alt="App detail screen">
+  <div class="caption">App detail — compatibility verdict, every archived version, install</div>
 
-  <img src="screenshots/screenshot-14.png" alt="Filters screen">
-  <div class="caption">Filters — narrow by year, device class, iOS version</div>
+  <img src="screenshots/v3-works-today.png" alt="Works Today list">
+  <div class="caption">"Works today" — apps that still run on old iOS</div>
 
-  <img src="screenshots/screenshot-15.png" alt="In-app feedback form">
-  <div class="caption">In-app feedback — report a bug or idea with screenshots</div>
+  <img src="screenshots/v3-filters.png" alt="Filters screen">
+  <div class="caption">Filters — narrow by iOS version, device class, sort</div>
 </div>
 
 <h2>Requirements</h2>
@@ -217,7 +217,7 @@ AppDrop opens onto the <b>IPA Archive</b> catalog (43,000+ vintage iOS apps, wit
   <li>A jailbroken device on <b>iOS 5 → iOS 10</b> (armv7 / 32-bit)</li>
   <li><b>AppSync Unified</b> — needed to install unsigned IPAs (auto-installed as a dependency)</li>
   <li><b>IPA Installer Console</b> by autopear (or <code>appinst</code>) — the actual install tool (auto-installed as a dependency)</li>
-  <li>A working internet connection for downloads and the optional AI features</li>
+  <li>A working internet connection for downloads</li>
 </ul>
 </div>
 
