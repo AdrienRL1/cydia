@@ -1,5 +1,5 @@
 {
-  "version": 3,
+  "version": 4,
   "_comment": "Apps qui fonctionnent aujourd'hui sur vieux iOS. RÈGLES (voir mémoire) : (a) créditer le créateur dans 'notes' ; (b) 'link' DOIT s'ouvrir sur le vieux Safari (iOS 5/6) — donc un site simple (ex. bag-xml.com) qui contient le lien vers le bon repo Cydia, JAMAIS github.com (illisible sur old iOS). Types : (1) ipa non vide = install DIRECT in-app (tap) ; le .ipa peut être un fichier GitHub direct (téléchargé par l'app, pas par Safari). (2) ipa vide + link = entrée EXTERNE : bouton « Ouvrir la page du projet ». bid = bundle id d'origine (icône depuis le catalogue). size = octets. NON GARANTI : projets communautaires. Curé à la main + suggestions via Feedback.",
   "apps": [
     {
@@ -51,6 +51,19 @@
       "ipa": "",
       "link": "https://bag-xml.com/projects/chatgpt",
       "notes": "Créé par bag-xml. Client ChatGPT pour iOS 5+ : conversations, analyse et génération d'images. Tweak Cydia : ouvre la page bag-xml qui pointe vers le repo Cydia."
+    },
+    {
+      "name": "Retrogram",
+      "bid": "",
+      "min_ios": "5.0",
+      "version": "4.1.4",
+      "status": "active",
+      "login_works": "",
+      "needs_server": false,
+      "size": 12110808,
+      "ipa": "https://adrienrl1.github.io/cydia/uploads/retrogram-1780584212369.ipa",
+      "link": "",
+      "notes": "Par Bag.xml.vinepref.plist Creds By Sfproj. Retrogram (v4.1.4) is an app that brings a fully working, classic Instagram experience back to iOS 5 and iOS 6. By rerouting the dead network API requests of the vintage client base to a dedicated custom backend (hosted at sfproj's server architecture), this release bypasses modern SSL errors and dead official servers. It completely restores core features like loading feeds, viewing profiles, and registering accounts natively on vintage Apple hardware while preserving the original, skeuomorphic pre-2014 user interface."
     }
   ]
 }
