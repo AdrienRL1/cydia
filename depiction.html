@@ -227,6 +227,17 @@ AppDrop opens onto the <b>IPA Archive</b> catalog (43,000+ vintage iOS apps, wit
 </ul>
 </div>
 
+<h2>Oldest devices (mainly iOS 5)</h2>
+<div class="card">
+If Cydia refuses this HTTPS source (<i>"could not be verified"</i> / TLS error), your device is missing the modern <b>Let's Encrypt root certificate (ISRG Root X1)</b> that <code>github.io</code> chains to. Install it once, then the source works:
+<ul>
+  <li>On the device, open <code>http://repo.invoxiplaygames.uk/certificates/</code> in Safari — use <b>http</b>, <i>not</i> https (the device can't yet verify the very certificate it's about to install).</li>
+  <li>Tap <b>ISRG Root X1 CA (Let's Encrypt)</b> and install it (<b>Settings → General → Profiles</b> if it doesn't open on its own).</li>
+  <li>Return to Cydia and add <code>https://adrienrl1.github.io/cydia/</code> again — it now validates.</li>
+</ul>
+<span style="color:#777;font-size:12.5px">iOS 6 and newer already trust this root (tested on iOS 6.1.3 / 6.1.4), so this is only needed on the earliest devices. Certificate page courtesy of <a href="https://repo.invoxiplaygames.uk/">InvoxiPlayGames</a>.</span>
+</div>
+
 <div class="tip-card">
   <p><b>Enjoying AppDrop?</b> Free + ad-free forever.</p>
   <p>If it saved you the trouble of manual sideloading, a small tip helps me keep maintaining the catalog 💙</p>
