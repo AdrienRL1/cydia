@@ -61,35 +61,74 @@
       .then(function (r) { return r.json().then(function (j) { return { ok: r.ok, j: j }; }); })
       .then(function (res) {
         if (!res.ok) { listEl.innerHTML = '<div class="err">Erreur : ' + esc(res.j.error || "") + ' (clé d\'admin correcte ?)</div>'; return; }
-        render(res.j.pending || []);
+        renderAll(res.j.pending || [], res.j.categories || []);
       })
       .catch(function (e) { listEl.innerHTML = '<div class="err">Échec réseau : ' + esc(e) + '</div>'; });
   }
 
-  function render(items) {
-    if (!items.length) { listEl.innerHTML = '<div class="empty">Aucun upload en attente. 🎉</div>'; return; }
+  function sectionTitle(txt) {
+    var h = document.createElement("div"); h.className = "meta";
+    h.style.fontWeight = "700"; h.style.fontSize = "15px"; h.style.margin = "18px 0 6px";
+    h.textContent = txt; return h;
+  }
+  function emptyLine(txt) {
+    var d = document.createElement("div"); d.className = "empty"; d.textContent = txt; return d;
+  }
+
+  // Renders BOTH the upload queue and the category proposals (#156).
+  function renderAll(uploads, cats) {
     listEl.innerHTML = "";
-    items.forEach(function (e) {
-      var rev = e.target === "revival";
-      var card = document.createElement("div"); card.className = "card";
-      card.innerHTML =
-        '<span class="tag ' + (rev ? "tag-rev" : "tag-mods") + '">' + (rev ? "Fonctionne aujourd\'hui" : "Apps modifiées") + '</span>' +
-        '<div class="name">' + esc(e.name) + (e.version ? ' <span class="meta">v' + esc(e.version) + '</span>' : '') + '</div>' +
-        (e.mod ? '<div class="meta"><b>Modif :</b> ' + esc(e.mod) + '</div>' : '') +
-        '<div class="meta">bid : ' + esc(e.bid || "—") + ' · iOS min : ' + esc(e.min_ios || "—") +
-          ' · ' + Math.round((e.size || 0) / 1048576 * 10) / 10 + ' Mo · crédit : ' + esc(e.credit || "—") + '</div>' +
-        '<div class="desc">' + esc(e.description || "(pas de description)") + '</div>' +
-        '<div class="meta">de : ' + esc(e.device || "?") + ' · ' + esc(e.lang || "?") + '</div>' +
-        '<div class="meta">⬇ <a class="ipa" href="' + esc(e.ipa_url) + '" target="_blank" rel="noopener">' + esc(e.ipa_url) + '</a></div>' +
-        '<div class="actions"></div>';
-      var actions = card.querySelector(".actions");
-      var ok = document.createElement("button"); ok.className = "btn-ok"; ok.textContent = "✓ Approuver";
-      ok.onclick = function () { act("/approve", e.id, ok, "Publication…"); };
-      var no = document.createElement("button"); no.className = "btn-no"; no.textContent = "✕ Rejeter";
-      no.onclick = function () { if (confirm("Rejeter et supprimer « " + e.name + " » ?")) act("/reject", e.id, no, "Suppression…"); };
-      actions.appendChild(ok); actions.appendChild(no);
-      listEl.appendChild(card);
-    });
+    listEl.appendChild(sectionTitle("Uploads d'apps (" + uploads.length + ")"));
+    if (!uploads.length) listEl.appendChild(emptyLine("Aucun upload en attente. 🎉"));
+    else uploads.forEach(function (e) { listEl.appendChild(uploadCard(e)); });
+
+    listEl.appendChild(sectionTitle("Catégories proposées (" + cats.length + ")"));
+    if (!cats.length) listEl.appendChild(emptyLine("Aucune proposition de catégorie."));
+    else cats.forEach(function (e) { listEl.appendChild(categoryCard(e)); });
+  }
+
+  function uploadCard(e) {
+    var rev = e.target === "revival";
+    var card = document.createElement("div"); card.className = "card";
+    card.innerHTML =
+      '<span class="tag ' + (rev ? "tag-rev" : "tag-mods") + '">' + (rev ? "Fonctionne aujourd\'hui" : "Apps modifiées") + '</span>' +
+      '<div class="name">' + esc(e.name) + (e.version ? ' <span class="meta">v' + esc(e.version) + '</span>' : '') + '</div>' +
+      (e.mod ? '<div class="meta"><b>Modif :</b> ' + esc(e.mod) + '</div>' : '') +
+      '<div class="meta">bid : ' + esc(e.bid || "—") + ' · iOS min : ' + esc(e.min_ios || "—") +
+        ' · ' + Math.round((e.size || 0) / 1048576 * 10) / 10 + ' Mo · crédit : ' + esc(e.credit || "—") + '</div>' +
+      '<div class="desc">' + esc(e.description || "(pas de description)") + '</div>' +
+      '<div class="meta">de : ' + esc(e.device || "?") + ' · ' + esc(e.lang || "?") + '</div>' +
+      '<div class="meta">⬇ <a class="ipa" href="' + esc(e.ipa_url) + '" target="_blank" rel="noopener">' + esc(e.ipa_url) + '</a></div>' +
+      '<div class="actions"></div>';
+    var actions = card.querySelector(".actions");
+    var ok = document.createElement("button"); ok.className = "btn-ok"; ok.textContent = "✓ Approuver";
+    ok.onclick = function () { act("/approve", e.id, ok, "Publication…"); };
+    var no = document.createElement("button"); no.className = "btn-no"; no.textContent = "✕ Rejeter";
+    no.onclick = function () { if (confirm("Rejeter et supprimer « " + e.name + " » ?")) act("/reject", e.id, no, "Suppression…"); };
+    actions.appendChild(ok); actions.appendChild(no);
+    return card;
+  }
+
+  // #156: a proposed category/subgenre correction → /category-approve or /category-reject.
+  function categoryCard(e) {
+    var cur = (e.current_category || "—") + (e.current_subgenre ? " › " + e.current_subgenre : "");
+    var prop = (e.category || "—") + (e.subgenre ? " › " + e.subgenre : "");
+    var card = document.createElement("div"); card.className = "card";
+    card.innerHTML =
+      '<span class="tag tag-rev">Catégorie</span>' +
+      '<div class="name">' + esc(e.name || e.bid || "?") + '</div>' +
+      '<div class="meta">bid : ' + esc(e.bid || "—") + '</div>' +
+      '<div class="meta">Actuelle : ' + esc(cur) + '</div>' +
+      '<div class="meta"><b>Proposée : ' + esc(prop) + '</b></div>' +
+      '<div class="meta">de : ' + esc(e.device || "?") + ' · ' + esc(e.lang || "?") + '</div>' +
+      '<div class="actions"></div>';
+    var actions = card.querySelector(".actions");
+    var ok = document.createElement("button"); ok.className = "btn-ok"; ok.textContent = "✓ Approuver";
+    ok.onclick = function () { act("/category-approve", e.id, ok, "Application…"); };
+    var no = document.createElement("button"); no.className = "btn-no"; no.textContent = "✕ Rejeter";
+    no.onclick = function () { if (confirm("Rejeter cette proposition de catégorie ?")) act("/category-reject", e.id, no, "Suppression…"); };
+    actions.appendChild(ok); actions.appendChild(no);
+    return card;
   }
 
   function act(pathname, id, btn, busy) {
