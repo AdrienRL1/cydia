@@ -1,5 +1,5 @@
 {
-  "version": 10,
+  "version": 11,
   "_comment": "Apps qui fonctionnent aujourd'hui sur vieux iOS. RÈGLES (voir mémoire) : (a) créditer le créateur dans 'notes' ; (b) 'link' DOIT s'ouvrir sur le vieux Safari (iOS 5/6) — donc un site simple (ex. bag-xml.com) qui contient le lien vers le bon repo Cydia, JAMAIS github.com (illisible sur old iOS). Types : (1) ipa non vide = install DIRECT in-app (tap) ; le .ipa peut être un fichier GitHub direct (téléchargé par l'app, pas par Safari). (2) ipa vide + link = entrée EXTERNE : bouton « Ouvrir la page du projet ». bid = bundle id d'origine (icône depuis le catalogue). size = octets. NON GARANTI : projets communautaires. Curé à la main + suggestions via Feedback.",
   "apps": [
     {
@@ -137,6 +137,20 @@
       "link": "",
       "notes": "TubeReplacer allows you to sign-in, doesnt have to be put a url, and is more reliable",
       "icon": "https://adrienrl1.github.io/cydia/icons/youtube-tubereplacer-1780663762965.png"
+    },
+    {
+      "name": "Twitter (BlueBlips)",
+      "bid": "com.atebits.Tweetie2",
+      "min_ios": "5.0",
+      "version": "5.7",
+      "status": "active",
+      "login_works": "",
+      "needs_server": false,
+      "size": 17480922,
+      "ipa": "https://archive.org/download/appdrop-twitter-blueblips-1780663495677/twitter-blueblips.ipa",
+      "link": "",
+      "notes": "Par memeguyonyt. Twitter v1 and v1.1 private server (up to twitter 6.13.7 and down to tweetie v1.3.2 with mitmproxy)",
+      "icon": "https://adrienrl1.github.io/cydia/icons/twitter-blueblips-1780663495677.png"
     }
   ]
 }
