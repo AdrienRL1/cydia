@@ -81,5 +81,27 @@
     "lang": "en",
     "device": "iPhone 4S (iPhone4,1), Apple A5, 512 MB RAM, iOS 9.3.6",
     "ts": 1780663766918
+  },
+  {
+    "id": "snapchat-valoriasnap-1780663867469",
+    "target": "mods",
+    "name": "Snapchat (ValoriaSnap)",
+    "description": "Snapchat private server",
+    "bid": "com.toyopagroup.picaboo",
+    "min_ios": "5.0",
+    "version": "6.1.0",
+    "mod": "",
+    "credit": "",
+    "category": "",
+    "subgenre": "",
+    "plat": 0,
+    "icon": "https://adrienrl1.github.io/cydia/icons/snapchat-valoriasnap-1780663867469.png",
+    "decrypted": true,
+    "size": 10028382,
+    "ipa_url": "https://adrienrl1.github.io/cydia/uploads/snapchat-valoriasnap-1780663867469.ipa",
+    "ipa_path": "uploads/snapchat-valoriasnap-1780663867469.ipa",
+    "lang": "en",
+    "device": "iPhone 4S (iPhone4,1), Apple A5, 512 MB RAM, iOS 9.3.6",
+    "ts": 1780663872431
   }
 ]
