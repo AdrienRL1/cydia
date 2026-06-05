@@ -34,5 +34,17 @@
     "device": "iPhone 4S (iPhone4,1), Apple A5, 512 MB RAM, iOS 9.3.6",
     "lang": "en",
     "ts": 1780671145977
+  },
+  {
+    "id": "com-spicysoft-bikerider-1780674518515",
+    "bid": "com.spicysoft.bikerider",
+    "name": "Bike Rider",
+    "current_category": "Games",
+    "current_subgenre": "Racing",
+    "category": "Games",
+    "subgenre": "Racing",
+    "device": "iPad 2 (CDMA) (iPad2,3), Apple A5, 512 MB RAM, iOS 9.3.6",
+    "lang": "en",
+    "ts": 1780674518515
   }
 ]
