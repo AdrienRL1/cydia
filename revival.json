@@ -1,5 +1,5 @@
 {
-  "version": 7,
+  "version": 8,
   "_comment": "Apps qui fonctionnent aujourd'hui sur vieux iOS. RÈGLES (voir mémoire) : (a) créditer le créateur dans 'notes' ; (b) 'link' DOIT s'ouvrir sur le vieux Safari (iOS 5/6) — donc un site simple (ex. bag-xml.com) qui contient le lien vers le bon repo Cydia, JAMAIS github.com (illisible sur old iOS). Types : (1) ipa non vide = install DIRECT in-app (tap) ; le .ipa peut être un fichier GitHub direct (téléchargé par l'app, pas par Safari). (2) ipa vide + link = entrée EXTERNE : bouton « Ouvrir la page du projet ». bid = bundle id d'origine (icône depuis le catalogue). size = octets. NON GARANTI : projets communautaires. Curé à la main + suggestions via Feedback.",
   "apps": [
     {
@@ -95,6 +95,20 @@
       "link": "",
       "notes": "A better version of discord classic 0.9.1, with email login and push notifications",
       "icon": "https://adrienrl1.github.io/cydia/icons/discord-classic-1780641098309.png"
+    },
+    {
+      "name": "Retrogram",
+      "bid": "com.burbn.instagram",
+      "min_ios": "6.0",
+      "version": "6.5.1",
+      "status": "active",
+      "login_works": "",
+      "needs_server": false,
+      "size": 10612515,
+      "ipa": "https://archive.org/download/appdrop-retrogram-1780641259900/retrogram.ipa",
+      "link": "",
+      "notes": "Private server for instagram",
+      "icon": "https://adrienrl1.github.io/cydia/icons/retrogram-1780641259900.png"
     }
   ]
 }
