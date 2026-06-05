@@ -1,4 +1,9 @@
 {
-  "version": 0,
-  "overrides": {}
+  "version": 1,
+  "overrides": {
+    "video.like": {
+      "category": "Social Networking",
+      "subgenre": ""
+    }
+  }
 }
