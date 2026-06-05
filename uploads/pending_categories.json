@@ -10,5 +10,17 @@
     "device": "iPhone 4S (iPhone4,1), Apple A5, 512 MB RAM, iOS 9.3.6",
     "lang": "en",
     "ts": 1780638683569
+  },
+  {
+    "id": "com-apple-youtube-1780647691383",
+    "bid": "com.apple.youtube",
+    "name": "YouTube.ipa",
+    "current_category": "Photo & Video",
+    "current_subgenre": "",
+    "category": "Photo & Video",
+    "subgenre": "",
+    "device": "iPod touch (4th gen) (iPod4,1), Apple A4, 256 MB RAM, iOS 6.1.6",
+    "lang": "en",
+    "ts": 1780647691383
   }
 ]
