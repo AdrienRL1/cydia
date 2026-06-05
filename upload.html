@@ -1,57 +1,121 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AppDrop — Envoyer des apps</title>
+<title>AppDrop</title>
 <style>
-  :root { color-scheme: light dark; }
-  body { font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif; margin: 0; background: #f2f2f7; color: #111; }
-  @media (prefers-color-scheme: dark) { body { background: #14161a; color: #e8e8ea; }
-    .card, .drop { background: #20242b !important; border-color: #333 !important; }
-    input, select { background: #2a2f37 !important; color: #e8e8ea !important; border-color: #3a4049 !important; } }
-  header { background: #2b6cb0; color: #fff; padding: 14px 16px; position: sticky; top: 0; z-index: 5; }
-  header h1 { margin: 0; font-size: 18px; }
-  .wrap { max-width: 920px; margin: 0 auto; padding: 16px; }
-  .bar { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-bottom: 10px; }
-  input, select { padding: 8px 10px; border: 1px solid #ccd; border-radius: 8px; font-size: 14px; }
-  button { padding: 9px 14px; border: 0; border-radius: 8px; font-size: 15px; cursor: pointer; }
-  .btn-go { background: #1f9d55; color: #fff; } .btn-go:disabled { background: #9ab; cursor: default; }
-  .hint { font-size: 12px; color: #889; margin: 6px 0; }
-  .drop { border: 2px dashed #9ab; border-radius: 12px; padding: 26px; text-align: center; color: #678; background: #fff; margin: 10px 0; }
-  .drop.over { border-color: #2b6cb0; color: #2b6cb0; }
-  table { width: 100%; border-collapse: collapse; font-size: 13px; }
-  th, td { text-align: left; padding: 6px 6px; border-bottom: 1px solid #e2e2ea; vertical-align: middle; }
-  td input, td select { width: 100%; box-sizing: border-box; padding: 5px 6px; }
-  .enc-ok { color: #1f9d55; } .enc-bad { color: #c53030; font-weight: 700; } .enc-unk { color: #889; }
-  .st { font-size: 12px; }
-  .small { width: 90px; } .mid { width: 120px; }
+  :root{
+    --accent:#2563eb; --accent2:#1e40af;
+    --bg:#f4f6f9; --card:#ffffff; --text:#14181d; --muted:#6b7280; --border:#e5e7eb;
+    --ok:#15803d; --okbg:#dcfce7; --bad:#b91c1c; --badbg:#fee2e2; --chip:#eef2ff;
+    --shadow:0 1px 2px rgba(16,24,40,.06),0 10px 28px rgba(16,24,40,.06);
+  }
+  @media (prefers-color-scheme:dark){ :root{
+    --bg:#0e1116; --card:#161b22; --text:#e7eaee; --muted:#9aa3ad; --border:#252b34;
+    --ok:#4ade80; --okbg:#0f2e1c; --bad:#f87171; --badbg:#3a1414; --chip:#1b2433;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 28px rgba(0,0,0,.35); } }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
+  .hero{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;padding:22px 16px}
+  .hero-inner{max-width:960px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+  .brand{display:flex;align-items:center;gap:13px}
+  .brand svg{width:40px;height:40px;flex:0 0 auto}
+  .brand-title{font-size:21px;font-weight:800;letter-spacing:.2px;line-height:1.1}
+  .brand-sub{font-size:13px;opacity:.85;margin-top:2px}
+  .lang{appearance:none;-webkit-appearance:none;background:rgba(255,255,255,.16);color:#fff;border:1px solid rgba(255,255,255,.32);border-radius:10px;padding:8px 12px;font-size:14px;cursor:pointer}
+  .lang option{color:#111}
+  .wrap{max-width:960px;margin:0 auto;padding:18px 16px 90px}
+  .intro{color:var(--muted);font-size:14px;line-height:1.55;margin:6px 2px 16px}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:16px;box-shadow:var(--shadow)}
+  .controls{padding:14px;margin-bottom:14px}
+  .row{display:flex;gap:10px;flex-wrap:wrap}
+  .field{flex:1;min-width:200px;display:flex;flex-direction:column;gap:6px;font-size:12px;color:var(--muted);font-weight:600}
+  input,select{font:inherit;padding:9px 11px;border:1px solid var(--border);border-radius:10px;background:var(--card);color:var(--text);font-size:14px;width:100%}
+  input:focus,select:focus{outline:2px solid var(--accent);outline-offset:-1px;border-color:transparent}
+  .adv{margin-top:12px;border-top:1px solid var(--border);padding-top:10px}
+  .adv summary{cursor:pointer;font-size:13px;color:var(--accent);font-weight:600;list-style:none}
+  .adv summary::-webkit-details-marker{display:none}
+  .adv summary::before{content:"⚙ "}
+  .adv .row{margin-top:10px}
+  .check{display:flex;align-items:center;gap:9px;margin-top:12px;font-size:14px;color:var(--text);cursor:pointer}
+  .check input{width:auto}
+  .hint{font-size:12px;color:var(--muted);margin:6px 0 0;line-height:1.5}
+  .drop{background:var(--card);border:2px dashed var(--border);border-radius:18px;padding:34px 18px;text-align:center;color:var(--muted);transition:border-color .15s,background .15s}
+  .drop.over{border-color:var(--accent);background:var(--chip)}
+  .drop svg{width:44px;height:44px;color:var(--accent)}
+  .drop-main{font-size:16px;color:var(--text);margin-top:10px}
+  .drop-sub{font-size:12px;margin-top:5px}
+  .link{color:var(--accent);font-weight:600;cursor:pointer;text-decoration:underline}
+  .actionbar{display:flex;align-items:center;gap:14px;margin:16px 2px 8px;flex-wrap:wrap}
+  .btn-primary{background:var(--accent);color:#fff;border:0;border-radius:12px;padding:11px 22px;font-size:15px;font-weight:600;cursor:pointer;box-shadow:0 2px 10px rgba(37,99,235,.32);transition:transform .12s,opacity .12s}
+  .btn-primary:hover:not(:disabled){transform:translateY(-1px)}
+  .btn-primary:disabled{opacity:.45;cursor:default;box-shadow:none}
+  .summary{font-size:13px;color:var(--muted)}
+  .progress{height:6px;background:var(--border);border-radius:999px;overflow:hidden;margin:2px 2px 14px;display:none}
+  .progress.on{display:block}
+  .bar{height:100%;width:0;background:linear-gradient(90deg,var(--accent),var(--accent2));transition:width .3s}
+  .list{overflow-x:auto}
+  .tcard{background:var(--card);border:1px solid var(--border);border-radius:16px;box-shadow:var(--shadow);overflow:hidden}
+  table{width:100%;border-collapse:separate;border-spacing:0}
+  thead th{text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.4px;color:var(--muted);padding:11px 9px;border-bottom:1px solid var(--border)}
+  tbody td{padding:9px;border-bottom:1px solid var(--border);vertical-align:middle}
+  tbody tr:last-child td{border-bottom:0}
+  .ico{width:34px;height:34px;border-radius:9px;background:rgba(127,127,127,.12);object-fit:cover;display:block}
+  .cell-app input{font-weight:600}
+  .sub-in{margin-top:4px}
+  .sub-in input{padding:5px 7px;font-size:12px;color:var(--muted)}
+  td input,td select{padding:7px 8px;font-size:13px}
+  .w-s{width:80px}.w-m{width:124px}
+  .pill{display:inline-block;font-size:11px;font-weight:700;padding:3px 10px;border-radius:999px;white-space:nowrap}
+  .pill-ok{background:var(--okbg);color:var(--ok)} .pill-bad{background:var(--badbg);color:var(--bad)} .pill-unk{background:var(--chip);color:var(--muted)}
+  .st{font-size:12px;color:var(--muted);white-space:nowrap}
+  .st-pub{color:var(--ok);font-weight:600}.st-err{color:var(--bad);font-weight:600}
+  @media (max-width:680px){ table{min-width:780px} }
 </style>
 </head>
 <body>
-<header><h1>📦 AppDrop — Envoyer des apps</h1></header>
-<div class="wrap">
-  <div class="bar">
-    <input id="url" placeholder="URL du Worker" style="flex:1;min-width:240px" />
-    <input id="token" type="password" placeholder="Clé d'admin (optionnelle)" style="flex:1;min-width:200px" />
-    <label class="hint"><input type="checkbox" id="auto" checked> publier directement (admin)</label>
+<header class="hero"><div class="hero-inner">
+  <div class="brand">
+    <svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><rect x="4" y="4" width="40" height="40" rx="11" fill="rgba(255,255,255,.18)" stroke="rgba(255,255,255,.65)" stroke-width="2"/><path d="M24 13v17m0 0l-7-7m7 7l7-7" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <div><div class="brand-title">AppDrop</div><div class="brand-sub" data-i18n="brand_sub"></div></div>
   </div>
-  <div class="bar">
-    <label class="hint">Type par défaut :
-      <select id="dtype"><option value="catalog">Catalogue (app normale)</option><option value="revival">Fonctionne aujourd'hui</option><option value="mods">App modifiée</option></select>
-    </label>
-    <label class="hint">Catégorie par défaut : <input id="dcat" list="cats" placeholder="ex. Games" class="mid"></label>
-  </div>
-  <div class="hint">Sans clé d'admin → file de modération (limité). Avec ta clé d'admin → envoi direct sur archive.org (pas de limite). Les apps <b>chiffrées (FairPlay)</b> sont détectées et ignorées. Les métadonnées + l'icône sont lues automatiquement depuis chaque .ipa.</div>
+  <select id="lang" class="lang" aria-label="Language"></select>
+</div></header>
 
-  <div id="drop" class="drop">Glisse des fichiers .ipa ici, ou <label style="color:#2b6cb0;cursor:pointer">choisis-les<input id="file" type="file" accept=".ipa" multiple hidden></label> — 1 à plusieurs centaines.</div>
+<main class="wrap">
+  <p class="intro" data-i18n="intro"></p>
 
-  <div class="bar">
-    <button class="btn-go" id="go" onclick="run()" disabled>Tout envoyer</button>
-    <span class="hint" id="summary"></span>
+  <div class="controls card">
+    <div class="row">
+      <label class="field"><span data-i18n="deftype_label"></span><select id="dtype"></select></label>
+      <label class="field"><span data-i18n="defcat_label"></span><input id="dcat" list="cats" data-i18n-ph="defcat_ph"></label>
+    </div>
+    <details class="adv">
+      <summary data-i18n="adv_toggle"></summary>
+      <div class="row">
+        <input id="url" data-i18n-ph="worker_ph">
+        <input id="token" type="password" data-i18n-ph="token_ph">
+      </div>
+      <label class="check"><input type="checkbox" id="auto" checked> <span data-i18n="autopub"></span></label>
+      <p class="hint" data-i18n="autopub_hint"></p>
+    </details>
   </div>
-  <div id="list"></div>
-</div>
+
+  <div id="drop" class="drop">
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 16V4m0 0L7.5 8.5M12 4l4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 15v3a2 2 0 002 2h12a2 2 0 002-2v-3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    <div class="drop-main"><span data-i18n="drop_main"></span> <label class="link"><span data-i18n="drop_choose"></span><input id="file" type="file" accept=".ipa" multiple hidden></label></div>
+    <div class="drop-sub" data-i18n="drop_count"></div>
+  </div>
+
+  <div class="actionbar">
+    <button id="go" class="btn-primary" disabled data-i18n="btn_send"></button>
+    <span id="summary" class="summary"></span>
+  </div>
+  <div class="progress" id="progress"><div class="bar" id="bar"></div></div>
+  <div id="list" class="list"></div>
+  <p class="hint" data-i18n="foot" style="margin-top:16px"></p>
+</main>
 
 <datalist id="cats">
   <option>Games</option><option>Entertainment</option><option>Utilities</option><option>Productivity</option>
@@ -64,205 +128,242 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
 <script>
+// ───────── i18n (the app's 8 languages) ─────────
+var LANGS = [["en","English"],["fr","Français"],["es","Español"],["de","Deutsch"],["pt-BR","Português"],["ja","日本語"],["zh-Hans","简体中文"],["tr","Türkçe"]];
+var I18N = {
+  en:{brand_sub:"Submit apps",intro:"Share apps you have the right to share. Metadata and the icon are read automatically from each .ipa, and FairPlay-encrypted apps are detected and skipped.",adv_toggle:"Advanced / Admin",worker_ph:"Worker URL",token_ph:"Admin key (optional)",autopub:"Publish directly (admin)",autopub_hint:"With your admin key, apps are published straight to archive.org. Without it, they go to the moderation queue for review.",deftype_label:"Default type",defcat_label:"Default category",defcat_ph:"e.g. Games",type_catalog:"Catalog app",type_revival:"Works today",type_mods:"Modded",drop_main:"Drag your .ipa files here,",drop_choose:"choose files",drop_count:"1 to several hundred at once.",th_app:"App",th_ver:"Version",th_ios:"iOS",th_state:"Check",th_type:"Type",th_cat:"Category",th_status:"Status",bid_ph:"bundle id",cat_ph:"category",enc_ok:"clean",enc_bad:"encrypted",enc_unknown:"?",enc_analyzing:"…",st_ready:"ready",st_analyzing:"analyzing…",st_sending:"sending…",st_published:"published",st_queued:"in moderation",st_skipped_enc:"skipped (encrypted)",st_need_name:"name required",st_need_cat:"category required",btn_send:"Send all",btn_sending:"Sending…",sum_apps:"{n} app(s)",sum_enc:"{n} encrypted skipped",foot:"Encrypted (FairPlay) apps are never uploaded. Submissions are reviewed before they go live, unless you publish directly with your admin key."},
+  fr:{brand_sub:"Envoyer des apps",intro:"Partage des apps que tu as le droit de partager. Les métadonnées et l'icône sont lues automatiquement dans chaque .ipa, et les apps chiffrées (FairPlay) sont détectées et ignorées.",adv_toggle:"Avancé / Admin",worker_ph:"URL du Worker",token_ph:"Clé d'admin (optionnelle)",autopub:"Publier directement (admin)",autopub_hint:"Avec ta clé d'admin, les apps sont publiées directement sur archive.org. Sans elle, elles vont dans la file de modération.",deftype_label:"Type par défaut",defcat_label:"Catégorie par défaut",defcat_ph:"ex. Games",type_catalog:"App du catalogue",type_revival:"Fonctionne aujourd'hui",type_mods:"App modifiée",drop_main:"Glisse tes fichiers .ipa ici,",drop_choose:"choisis-les",drop_count:"1 à plusieurs centaines à la fois.",th_app:"App",th_ver:"Version",th_ios:"iOS",th_state:"Vérif",th_type:"Type",th_cat:"Catégorie",th_status:"Statut",bid_ph:"bundle id",cat_ph:"catégorie",enc_ok:"OK",enc_bad:"chiffrée",enc_unknown:"?",enc_analyzing:"…",st_ready:"prête",st_analyzing:"analyse…",st_sending:"envoi…",st_published:"publiée",st_queued:"en modération",st_skipped_enc:"ignorée (chiffrée)",st_need_name:"nom requis",st_need_cat:"catégorie requise",btn_send:"Tout envoyer",btn_sending:"Envoi…",sum_apps:"{n} app(s)",sum_enc:"{n} chiffrée(s) ignorée(s)",foot:"Les apps chiffrées (FairPlay) ne sont jamais envoyées. Les soumissions sont vérifiées avant publication, sauf si tu publies directement avec ta clé d'admin."},
+  es:{brand_sub:"Enviar apps",intro:"Comparte apps que tienes derecho a compartir. Los metadatos y el icono se leen automáticamente de cada .ipa, y las apps cifradas (FairPlay) se detectan y se omiten.",adv_toggle:"Avanzado / Admin",worker_ph:"URL del Worker",token_ph:"Clave de admin (opcional)",autopub:"Publicar directamente (admin)",autopub_hint:"Con tu clave de admin, las apps se publican directamente en archive.org. Sin ella, van a la cola de moderación.",deftype_label:"Tipo por defecto",defcat_label:"Categoría por defecto",defcat_ph:"ej. Games",type_catalog:"App del catálogo",type_revival:"Funciona hoy",type_mods:"App modificada",drop_main:"Arrastra tus archivos .ipa aquí,",drop_choose:"elígelos",drop_count:"de 1 a varios cientos a la vez.",th_app:"App",th_ver:"Versión",th_ios:"iOS",th_state:"Comprob.",th_type:"Tipo",th_cat:"Categoría",th_status:"Estado",bid_ph:"bundle id",cat_ph:"categoría",enc_ok:"OK",enc_bad:"cifrada",enc_unknown:"?",enc_analyzing:"…",st_ready:"lista",st_analyzing:"analizando…",st_sending:"enviando…",st_published:"publicada",st_queued:"en moderación",st_skipped_enc:"omitida (cifrada)",st_need_name:"falta nombre",st_need_cat:"falta categoría",btn_send:"Enviar todo",btn_sending:"Enviando…",sum_apps:"{n} app(s)",sum_enc:"{n} cifrada(s) omitida(s)",foot:"Las apps cifradas (FairPlay) nunca se suben. Las propuestas se revisan antes de publicarse, salvo que publiques directamente con tu clave de admin."},
+  de:{brand_sub:"Apps einreichen",intro:"Teile Apps, zu deren Weitergabe du berechtigt bist. Metadaten und Symbol werden automatisch aus jeder .ipa gelesen, und verschlüsselte Apps (FairPlay) werden erkannt und übersprungen.",adv_toggle:"Erweitert / Admin",worker_ph:"Worker-URL",token_ph:"Admin-Schlüssel (optional)",autopub:"Direkt veröffentlichen (Admin)",autopub_hint:"Mit deinem Admin-Schlüssel werden Apps direkt auf archive.org veröffentlicht. Ohne ihn landen sie in der Moderationswarteschlange.",deftype_label:"Standardtyp",defcat_label:"Standardkategorie",defcat_ph:"z. B. Games",type_catalog:"Katalog-App",type_revival:"Läuft heute",type_mods:"Modifiziert",drop_main:"Zieh deine .ipa-Dateien hierher,",drop_choose:"auswählen",drop_count:"1 bis mehrere Hundert auf einmal.",th_app:"App",th_ver:"Version",th_ios:"iOS",th_state:"Prüf.",th_type:"Typ",th_cat:"Kategorie",th_status:"Status",bid_ph:"Bundle-ID",cat_ph:"Kategorie",enc_ok:"OK",enc_bad:"verschlüsselt",enc_unknown:"?",enc_analyzing:"…",st_ready:"bereit",st_analyzing:"analysiere…",st_sending:"sende…",st_published:"veröffentlicht",st_queued:"in Moderation",st_skipped_enc:"übersprungen (verschlüsselt)",st_need_name:"Name fehlt",st_need_cat:"Kategorie fehlt",btn_send:"Alle senden",btn_sending:"Sende…",sum_apps:"{n} App(s)",sum_enc:"{n} verschlüsselte übersprungen",foot:"Verschlüsselte Apps (FairPlay) werden nie hochgeladen. Einreichungen werden vor der Veröffentlichung geprüft, außer du veröffentlichst direkt mit deinem Admin-Schlüssel."},
+  "pt-BR":{brand_sub:"Enviar apps",intro:"Compartilhe apps que você tem o direito de compartilhar. Os metadados e o ícone são lidos automaticamente de cada .ipa, e apps criptografados (FairPlay) são detectados e ignorados.",adv_toggle:"Avançado / Admin",worker_ph:"URL do Worker",token_ph:"Chave de admin (opcional)",autopub:"Publicar diretamente (admin)",autopub_hint:"Com sua chave de admin, os apps são publicados direto no archive.org. Sem ela, vão para a fila de moderação.",deftype_label:"Tipo padrão",defcat_label:"Categoria padrão",defcat_ph:"ex. Games",type_catalog:"App do catálogo",type_revival:"Funciona hoje",type_mods:"App modificado",drop_main:"Arraste seus arquivos .ipa aqui,",drop_choose:"escolher",drop_count:"de 1 a várias centenas de uma vez.",th_app:"App",th_ver:"Versão",th_ios:"iOS",th_state:"Verif.",th_type:"Tipo",th_cat:"Categoria",th_status:"Status",bid_ph:"bundle id",cat_ph:"categoria",enc_ok:"OK",enc_bad:"criptografado",enc_unknown:"?",enc_analyzing:"…",st_ready:"pronto",st_analyzing:"analisando…",st_sending:"enviando…",st_published:"publicado",st_queued:"em moderação",st_skipped_enc:"ignorado (criptografado)",st_need_name:"nome obrigatório",st_need_cat:"categoria obrigatória",btn_send:"Enviar tudo",btn_sending:"Enviando…",sum_apps:"{n} app(s)",sum_enc:"{n} criptografado(s) ignorado(s)",foot:"Apps criptografados (FairPlay) nunca são enviados. As submissões são revisadas antes de publicar, a menos que você publique direto com sua chave de admin."},
+  ja:{brand_sub:"アプリを送信",intro:"共有する権利があるアプリを共有してください。メタデータとアイコンは各 .ipa から自動で読み取られ、暗号化された（FairPlay）アプリは検出されてスキップされます。",adv_toggle:"詳細 / 管理者",worker_ph:"Worker の URL",token_ph:"管理者キー（任意）",autopub:"直接公開（管理者）",autopub_hint:"管理者キーがあると、アプリは archive.org に直接公開されます。ない場合はモデレーション待ち行列に入ります。",deftype_label:"既定のタイプ",defcat_label:"既定のカテゴリ",defcat_ph:"例: Games",type_catalog:"カタログアプリ",type_revival:"現在も動作",type_mods:"改造版",drop_main:".ipa ファイルをここにドラッグ、",drop_choose:"ファイルを選択",drop_count:"一度に1〜数百個。",th_app:"アプリ",th_ver:"バージョン",th_ios:"iOS",th_state:"確認",th_type:"タイプ",th_cat:"カテゴリ",th_status:"状態",bid_ph:"bundle id",cat_ph:"カテゴリ",enc_ok:"OK",enc_bad:"暗号化",enc_unknown:"?",enc_analyzing:"…",st_ready:"準備完了",st_analyzing:"解析中…",st_sending:"送信中…",st_published:"公開済み",st_queued:"モデレーション中",st_skipped_enc:"スキップ（暗号化）",st_need_name:"名前が必要",st_need_cat:"カテゴリが必要",btn_send:"すべて送信",btn_sending:"送信中…",sum_apps:"{n} 個のアプリ",sum_enc:"暗号化 {n} 個をスキップ",foot:"暗号化（FairPlay）アプリはアップロードされません。投稿は公開前に審査されます（管理者キーで直接公開する場合を除く）。"},
+  "zh-Hans":{brand_sub:"提交应用",intro:"分享你有权分享的应用。每个 .ipa 的元数据和图标会自动读取，加密（FairPlay）的应用会被检测并跳过。",adv_toggle:"高级 / 管理员",worker_ph:"Worker 网址",token_ph:"管理员密钥（可选）",autopub:"直接发布（管理员）",autopub_hint:"使用管理员密钥时，应用会直接发布到 archive.org。没有时则进入审核队列。",deftype_label:"默认类型",defcat_label:"默认类别",defcat_ph:"例如 Games",type_catalog:"目录应用",type_revival:"现在可用",type_mods:"修改版",drop_main:"把 .ipa 文件拖到这里，",drop_choose:"选择文件",drop_count:"一次 1 到数百个。",th_app:"应用",th_ver:"版本",th_ios:"iOS",th_state:"检查",th_type:"类型",th_cat:"类别",th_status:"状态",bid_ph:"bundle id",cat_ph:"类别",enc_ok:"正常",enc_bad:"已加密",enc_unknown:"?",enc_analyzing:"…",st_ready:"就绪",st_analyzing:"分析中…",st_sending:"发送中…",st_published:"已发布",st_queued:"审核中",st_skipped_enc:"已跳过（加密）",st_need_name:"需要名称",st_need_cat:"需要类别",btn_send:"全部发送",btn_sending:"发送中…",sum_apps:"{n} 个应用",sum_enc:"已跳过 {n} 个加密",foot:"加密（FairPlay）应用永远不会被上传。提交会在发布前经过审核，除非你用管理员密钥直接发布。"},
+  tr:{brand_sub:"Uygulama gönder",intro:"Paylaşma hakkına sahip olduğun uygulamaları paylaş. Üst veriler ve simge her .ipa'dan otomatik okunur, şifreli (FairPlay) uygulamalar algılanıp atlanır.",adv_toggle:"Gelişmiş / Yönetici",worker_ph:"Worker URL'si",token_ph:"Yönetici anahtarı (isteğe bağlı)",autopub:"Doğrudan yayınla (yönetici)",autopub_hint:"Yönetici anahtarınla uygulamalar doğrudan archive.org'a yayınlanır. Olmadan moderasyon kuyruğuna gider.",deftype_label:"Varsayılan tür",defcat_label:"Varsayılan kategori",defcat_ph:"örn. Games",type_catalog:"Katalog uygulaması",type_revival:"Bugün çalışıyor",type_mods:"Modlu",drop_main:".ipa dosyalarını buraya sürükle,",drop_choose:"dosya seç",drop_count:"tek seferde 1 ila birkaç yüz.",th_app:"Uygulama",th_ver:"Sürüm",th_ios:"iOS",th_state:"Kontrol",th_type:"Tür",th_cat:"Kategori",th_status:"Durum",bid_ph:"bundle id",cat_ph:"kategori",enc_ok:"temiz",enc_bad:"şifreli",enc_unknown:"?",enc_analyzing:"…",st_ready:"hazır",st_analyzing:"çözümleniyor…",st_sending:"gönderiliyor…",st_published:"yayınlandı",st_queued:"moderasyonda",st_skipped_enc:"atlandı (şifreli)",st_need_name:"ad gerekli",st_need_cat:"kategori gerekli",btn_send:"Tümünü gönder",btn_sending:"Gönderiliyor…",sum_apps:"{n} uygulama",sum_enc:"{n} şifreli atlandı",foot:"Şifreli (FairPlay) uygulamalar asla yüklenmez. Gönderiler, yönetici anahtarınla doğrudan yayınlamadığın sürece yayından önce incelenir."}
+};
+function detectLang(){
+  var saved = localStorage.getItem("appdrop_lang");
+  if (saved && I18N[saved]) return saved;
+  var list = navigator.languages || [navigator.language || "en"];
+  for (var i=0;i<list.length;i++){ var l=String(list[i]).toLowerCase();
+    if (l.indexOf("fr")===0) return "fr"; if (l.indexOf("es")===0) return "es";
+    if (l.indexOf("de")===0) return "de"; if (l.indexOf("pt")===0) return "pt-BR";
+    if (l.indexOf("ja")===0) return "ja"; if (l.indexOf("zh")===0) return "zh-Hans";
+    if (l.indexOf("tr")===0) return "tr"; if (l.indexOf("en")===0) return "en"; }
+  return "en";
+}
+var LANG = detectLang();
+function t(key,n){ var s=(I18N[LANG]&&I18N[LANG][key])||I18N.en[key]||key; return (n==null)?s:s.replace("{n}",n); }
+
 var DEFAULT_URL = "https://appdrop-feedback.adrienruestlorquet.workers.dev";
-var urlEl = document.getElementById("url"), tokEl = document.getElementById("token");
-var listEl = document.getElementById("list"), goEl = document.getElementById("go"), sumEl = document.getElementById("summary");
-urlEl.value = localStorage.getItem("appdrop_worker") || DEFAULT_URL;
-tokEl.value = localStorage.getItem("appdrop_admin") || "";
+var urlEl, tokEl, listEl, goEl, sumEl, progEl, barEl, dtypeEl;
+var items = [];   // {file,name,bid,version,min_ios,plat,enc,iconB64,type,category,status,statusErr}
+
 function base(){ return (urlEl.value||DEFAULT_URL).replace(/\/+$/,""); }
 function esc(s){ return String(s==null?"":s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];}); }
 
-var items = [];   // {file, name, bid, version, min_ios, plat, enc, iconB64, type, category, subgenre, status, row}
-
-// ---------- plist (binary + xml) ----------
-function readUInt(dv, off, size){ var v=0; for (var i=0;i<size;i++) v = v*256 + dv.getUint8(off+i); return v; }
+// ───────── plist (binary + xml) ─────────
+function readUInt(dv,off,size){ var v=0; for(var i=0;i<size;i++) v=v*256+dv.getUint8(off+i); return v; }
 function parseBplist(buf){
-  var dv = new DataView(buf), n = buf.byteLength, tr = n-32;
-  var offSize = dv.getUint8(tr+6), refSize = dv.getUint8(tr+7);
-  var top = readUInt(dv, tr+16, 8), offTable = readUInt(dv, tr+24, 8);
-  function offsetOf(i){ return readUInt(dv, offTable + i*offSize, offSize); }
-  function lenAt(off){ var mk=dv.getUint8(off), l=1<<(mk&0xf); off++; var v=0; for(var i=0;i<l;i++) v=v*256+dv.getUint8(off+i); return [v, off+l]; }
+  var dv=new DataView(buf), n=buf.byteLength, tr=n-32;
+  var offSize=dv.getUint8(tr+6), refSize=dv.getUint8(tr+7);
+  var top=readUInt(dv,tr+16,8), offTable=readUInt(dv,tr+24,8);
+  function offsetOf(i){ return readUInt(dv,offTable+i*offSize,offSize); }
+  function lenAt(off){ var mk=dv.getUint8(off), l=1<<(mk&0xf); off++; var v=0; for(var i=0;i<l;i++) v=v*256+dv.getUint8(off+i); return [v,off+l]; }
   function obj(idx){
-    var off = offsetOf(idx), mk = dv.getUint8(off), type = mk>>4, info = mk&0xf; off++;
-    if (mk===0x00) return null; if (mk===0x08) return false; if (mk===0x09) return true;
-    if (type===0x1){ var len=1<<info, v=0; for(var i=0;i<len;i++) v=v*256+dv.getUint8(off+i); return v; }
-    if (type===0x2){ var len=1<<info; return len===4?dv.getFloat32(off):(len===8?dv.getFloat64(off):0); }
-    if (type===0x5){ var len=info; if(info===0xf){var r=lenAt(off);len=r[0];off=r[1];} var s=""; for(var i=0;i<len;i++) s+=String.fromCharCode(dv.getUint8(off+i)); return s; }
-    if (type===0x6){ var len=info; if(info===0xf){var r=lenAt(off);len=r[0];off=r[1];} var s=""; for(var i=0;i<len;i++) s+=String.fromCharCode(dv.getUint16(off+i*2,false)); return s; }
-    if (type===0xa||type===0xc){ var len=info; if(info===0xf){var r=lenAt(off);len=r[0];off=r[1];} var a=[]; for(var i=0;i<len;i++) a.push(obj(readUInt(dv,off+i*refSize,refSize))); return a; }
-    if (type===0xd){ var len=info; if(info===0xf){var r=lenAt(off);len=r[0];off=r[1];} var kr=[],vr=[]; for(var i=0;i<len;i++) kr.push(readUInt(dv,off+i*refSize,refSize)); for(var i=0;i<len;i++) vr.push(readUInt(dv,off+(len+i)*refSize,refSize)); var d={}; for(var i=0;i<len;i++) d[obj(kr[i])]=obj(vr[i]); return d; }
+    var off=offsetOf(idx), mk=dv.getUint8(off), type=mk>>4, info=mk&0xf; off++;
+    if(mk===0x00) return null; if(mk===0x08) return false; if(mk===0x09) return true;
+    if(type===0x1){ var len=1<<info,v=0; for(var i=0;i<len;i++) v=v*256+dv.getUint8(off+i); return v; }
+    if(type===0x2){ var len=1<<info; return len===4?dv.getFloat32(off):(len===8?dv.getFloat64(off):0); }
+    if(type===0x5){ var len=info; if(info===0xf){var r=lenAt(off);len=r[0];off=r[1];} var s=""; for(var i=0;i<len;i++) s+=String.fromCharCode(dv.getUint8(off+i)); return s; }
+    if(type===0x6){ var len=info; if(info===0xf){var r=lenAt(off);len=r[0];off=r[1];} var s=""; for(var i=0;i<len;i++) s+=String.fromCharCode(dv.getUint16(off+i*2,false)); return s; }
+    if(type===0xa||type===0xc){ var len=info; if(info===0xf){var r=lenAt(off);len=r[0];off=r[1];} var a=[]; for(var i=0;i<len;i++) a.push(obj(readUInt(dv,off+i*refSize,refSize))); return a; }
+    if(type===0xd){ var len=info; if(info===0xf){var r=lenAt(off);len=r[0];off=r[1];} var kr=[],vr=[]; for(var i=0;i<len;i++) kr.push(readUInt(dv,off+i*refSize,refSize)); for(var i=0;i<len;i++) vr.push(readUInt(dv,off+(len+i)*refSize,refSize)); var d={}; for(var i=0;i<len;i++) d[obj(kr[i])]=obj(vr[i]); return d; }
     return null;
   }
   return obj(top);
 }
 function parseXmlPlist(text){
-  var doc = new DOMParser().parseFromString(text, "application/xml");
-  var top = doc.querySelector("plist > *");
+  var doc=new DOMParser().parseFromString(text,"application/xml");
+  var top=doc.querySelector("plist > *");
   function walk(node){
-    var t = node.tagName;
-    if (t==="dict"){ var d={},k=null; for (var i=0;i<node.children.length;i++){ var c=node.children[i]; if(c.tagName==="key") k=c.textContent; else { d[k]=walk(c); k=null; } } return d; }
-    if (t==="array") return Array.prototype.map.call(node.children, walk);
-    if (t==="string") return node.textContent;
-    if (t==="integer") return parseInt(node.textContent,10);
-    if (t==="real") return parseFloat(node.textContent);
-    if (t==="true") return true; if (t==="false") return false;
+    var tg=node.tagName;
+    if(tg==="dict"){ var d={},k=null; for(var i=0;i<node.children.length;i++){ var c=node.children[i]; if(c.tagName==="key") k=c.textContent; else { d[k]=walk(c); k=null; } } return d; }
+    if(tg==="array") return Array.prototype.map.call(node.children,walk);
+    if(tg==="string") return node.textContent;
+    if(tg==="integer") return parseInt(node.textContent,10);
+    if(tg==="real") return parseFloat(node.textContent);
+    if(tg==="true") return true; if(tg==="false") return false;
     return node.textContent;
   }
-  return top ? walk(top) : {};
+  return top?walk(top):{};
 }
 function readPlist(u8){
-  if (u8.length>8 && String.fromCharCode(u8[0],u8[1],u8[2],u8[3],u8[4],u8[5])==="bplist") return parseBplist(u8.buffer.slice(u8.byteOffset, u8.byteOffset+u8.byteLength));
-  try { return parseXmlPlist(new TextDecoder("utf-8").decode(u8)); } catch(e){ return {}; }
+  if(u8.length>8 && String.fromCharCode(u8[0],u8[1],u8[2],u8[3],u8[4],u8[5])==="bplist") return parseBplist(u8.buffer.slice(u8.byteOffset,u8.byteOffset+u8.byteLength));
+  try{ return parseXmlPlist(new TextDecoder("utf-8").decode(u8)); }catch(e){ return {}; }
 }
 
-// ---------- Mach-O cryptid ----------
+// ───────── Mach-O cryptid ─────────
 function machoCryptid(buf){
-  var dv = new DataView(buf); if (buf.byteLength<28) return "unknown";
-  var m = dv.getUint32(0,false), sliceOff = 0;
-  if (m===0xcafebabe || m===0xbebafeca){           // fat
-    var nfat = dv.getUint32(4,false); if (nfat>16) return "unknown";
-    var arm=-1, first=-1;
-    for (var i=0;i<nfat;i++){ var ao=8+i*20; var cpu=dv.getUint32(ao,false); var off=dv.getUint32(ao+8,false); if(first<0)first=off; if(cpu===12||cpu===0x0100000c){arm=off;break;} }
-    sliceOff = arm>=0?arm:first; if (sliceOff<0||sliceOff+28>buf.byteLength) return "unknown";
+  var dv=new DataView(buf); if(buf.byteLength<28) return "unknown";
+  var m=dv.getUint32(0,false), sliceOff=0;
+  if(m===0xcafebabe||m===0xbebafeca){
+    var nfat=dv.getUint32(4,false); if(nfat>16) return "unknown";
+    var arm=-1,first=-1;
+    for(var i=0;i<nfat;i++){ var ao=8+i*20; var cpu=dv.getUint32(ao,false); var off=dv.getUint32(ao+8,false); if(first<0)first=off; if(cpu===12||cpu===0x0100000c){arm=off;break;} }
+    sliceOff=arm>=0?arm:first; if(sliceOff<0||sliceOff+28>buf.byteLength) return "unknown";
   }
-  var le; var ml = dv.getUint32(sliceOff,true), mb = dv.getUint32(sliceOff,false);
-  var is64;
-  if (ml===0xfeedface){is64=false;le=true;} else if (ml===0xfeedfacf){is64=true;le=true;}
-  else if (mb===0xfeedface){is64=false;le=false;} else if (mb===0xfeedfacf){is64=true;le=false;}
+  var le, ml=dv.getUint32(sliceOff,true), mb=dv.getUint32(sliceOff,false), is64;
+  if(ml===0xfeedface){is64=false;le=true;} else if(ml===0xfeedfacf){is64=true;le=true;}
+  else if(mb===0xfeedface){is64=false;le=false;} else if(mb===0xfeedfacf){is64=true;le=false;}
   else return "unknown";
-  var ncmds = dv.getUint32(sliceOff+16, le); if (ncmds===0||ncmds>2048) return "unknown";
-  var cmdOff = sliceOff + (is64?32:28);
-  for (var i=0;i<ncmds;i++){
-    if (cmdOff+8>buf.byteLength) return "unknown";
-    var cmd = dv.getUint32(cmdOff, le) & 0x7fffffff;
-    var cmdsize = dv.getUint32(cmdOff+4, le); if (cmdsize<8) return "unknown";
-    if (cmd===0x21 || cmd===0x2c){ if (cmdOff+20>buf.byteLength) return "unknown"; return dv.getUint32(cmdOff+16,le)===0?"decrypted":"encrypted"; }
-    cmdOff += cmdsize;
+  var ncmds=dv.getUint32(sliceOff+16,le); if(ncmds===0||ncmds>2048) return "unknown";
+  var cmdOff=sliceOff+(is64?32:28);
+  for(var i=0;i<ncmds;i++){
+    if(cmdOff+8>buf.byteLength) return "unknown";
+    var cmd=dv.getUint32(cmdOff,le)&0x7fffffff, cmdsize=dv.getUint32(cmdOff+4,le); if(cmdsize<8) return "unknown";
+    if(cmd===0x21||cmd===0x2c){ if(cmdOff+20>buf.byteLength) return "unknown"; return dv.getUint32(cmdOff+16,le)===0?"decrypted":"encrypted"; }
+    cmdOff+=cmdsize;
   }
   return "decrypted";
 }
 
-// ---------- analyse one .ipa ----------
-function appPrefixOf(zip){
-  var best=null;
-  zip.forEach(function(path){ if (/^Payload\/[^/]+\.app\/Info\.plist$/.test(path)) best = path.replace(/Info\.plist$/,""); });
-  return best;
-}
-function iconScore(stem){ if (stem.indexOf("@3x")>=0) return 3; if (stem.indexOf("@2x")>=0) return 2; if (stem.indexOf("~ipad")>=0) return 1; return 0; }
+// ───────── analyse one .ipa ─────────
+function appPrefixOf(zip){ var best=null; zip.forEach(function(p){ if(/^Payload\/[^/]+\.app\/Info\.plist$/.test(p)) best=p.replace(/Info\.plist$/,""); }); return best; }
+function iconScore(stem){ if(stem.indexOf("@3x")>=0) return 3; if(stem.indexOf("@2x")>=0) return 2; if(stem.indexOf("~ipad")>=0) return 1; return 0; }
 async function analyze(file){
-  var ab = await file.arrayBuffer();
-  var out = { name:file.name.replace(/\.ipa$/i,""), bid:"", version:"", min_ios:"", plat:0, enc:"unknown", iconB64:"" };
-  try {
-    var zip = await JSZip.loadAsync(ab);
-    var prefix = appPrefixOf(zip);
-    if (prefix){
-      var info = readPlist(await zip.file(prefix+"Info.plist").async("uint8array"));
-      out.name = info.CFBundleDisplayName || info.CFBundleName || out.name;
-      out.bid = info.CFBundleIdentifier || "";
-      out.version = info.CFBundleShortVersionString || info.CFBundleVersion || "";
-      out.min_ios = info.MinimumOSVersion || "";
-      var fam = info.UIDeviceFamily; if (Array.isArray(fam)){ var p=0; if(fam.indexOf(1)>=0)p|=2; if(fam.indexOf(2)>=0)p|=4; out.plat=p; }
-      // executable → cryptid
-      var exec = info.CFBundleExecutable;
-      if (exec && zip.file(prefix+exec)){
-        var eb = await zip.file(prefix+exec).async("uint8array");
-        out.enc = machoCryptid(eb.buffer.slice(eb.byteOffset, eb.byteOffset+eb.byteLength));
-      }
-      // icon → base names
-      var bases = [];
-      function harvest(ic){ if (ic && ic.CFBundlePrimaryIcon && Array.isArray(ic.CFBundlePrimaryIcon.CFBundleIconFiles)) bases = bases.concat(ic.CFBundlePrimaryIcon.CFBundleIconFiles); }
+  var ab=await file.arrayBuffer();
+  var out={name:file.name.replace(/\.ipa$/i,""),bid:"",version:"",min_ios:"",plat:0,enc:"unknown",iconB64:""};
+  try{
+    var zip=await JSZip.loadAsync(ab);
+    var prefix=appPrefixOf(zip);
+    if(prefix){
+      var info=readPlist(await zip.file(prefix+"Info.plist").async("uint8array"));
+      out.name=info.CFBundleDisplayName||info.CFBundleName||out.name;
+      out.bid=info.CFBundleIdentifier||"";
+      out.version=info.CFBundleShortVersionString||info.CFBundleVersion||"";
+      out.min_ios=info.MinimumOSVersion||"";
+      var fam=info.UIDeviceFamily; if(Array.isArray(fam)){ var p=0; if(fam.indexOf(1)>=0)p|=2; if(fam.indexOf(2)>=0)p|=4; out.plat=p; }
+      var exec=info.CFBundleExecutable;
+      if(exec&&zip.file(prefix+exec)){ var eb=await zip.file(prefix+exec).async("uint8array"); out.enc=machoCryptid(eb.buffer.slice(eb.byteOffset,eb.byteOffset+eb.byteLength)); }
+      var bases=[];
+      function harvest(ic){ if(ic&&ic.CFBundlePrimaryIcon&&Array.isArray(ic.CFBundlePrimaryIcon.CFBundleIconFiles)) bases=bases.concat(ic.CFBundlePrimaryIcon.CFBundleIconFiles); }
       harvest(info.CFBundleIcons); harvest(info["CFBundleIcons~ipad"]);
-      if (Array.isArray(info.CFBundleIconFiles)) bases = bases.concat(info.CFBundleIconFiles);
-      if (typeof info.CFBundleIconFile==="string") bases.push(info.CFBundleIconFile);
-      bases = bases.concat(["AppIcon60x60","AppIcon","Icon","Icon-60","icon"]);
-      var norm = bases.filter(function(b){return typeof b==="string"&&b;}).map(function(b){ b=b.toLowerCase(); return b.slice(-4)===".png"?b.slice(0,-4):b; });
-      var bestEntry=null, bestScore=-1;
-      zip.forEach(function(path, entry){
-        if (entry.dir || path.indexOf(prefix)!==0) return;
-        var rest = path.slice(prefix.length); if (rest.indexOf("/")>=0) return;
-        if (rest.slice(-4).toLowerCase()!==".png") return;
-        var stem = rest.slice(0,-4).toLowerCase();
-        var ok = norm.some(function(b){ return stem===b || stem.indexOf(b+"@")===0 || stem.indexOf(b+"~")===0; });
-        if (!ok) return; var sc = iconScore(stem); if (sc>bestScore){ bestScore=sc; bestEntry=entry; }
+      if(Array.isArray(info.CFBundleIconFiles)) bases=bases.concat(info.CFBundleIconFiles);
+      if(typeof info.CFBundleIconFile==="string") bases.push(info.CFBundleIconFile);
+      bases=bases.concat(["AppIcon60x60","AppIcon","Icon","Icon-60","icon"]);
+      var norm=bases.filter(function(b){return typeof b==="string"&&b;}).map(function(b){ b=b.toLowerCase(); return b.slice(-4)===".png"?b.slice(0,-4):b; });
+      var bestEntry=null,bestScore=-1;
+      zip.forEach(function(path,entry){
+        if(entry.dir||path.indexOf(prefix)!==0) return;
+        var rest=path.slice(prefix.length); if(rest.indexOf("/")>=0) return;
+        if(rest.slice(-4).toLowerCase()!==".png") return;
+        var stem=rest.slice(0,-4).toLowerCase();
+        var ok=norm.some(function(b){ return stem===b||stem.indexOf(b+"@")===0||stem.indexOf(b+"~")===0; });
+        if(!ok) return; var sc=iconScore(stem); if(sc>bestScore){ bestScore=sc; bestEntry=entry; }
       });
-      if (bestEntry){ var pb = await bestEntry.async("base64"); if (pb && pb.length<2000000) out.iconB64 = pb; }
+      if(bestEntry){ var pb=await bestEntry.async("base64"); if(pb&&pb.length<2000000) out.iconB64=pb; }
     }
-  } catch(e){ /* leave defaults */ }
+  }catch(e){}
   return out;
 }
 
-// ---------- queue UI ----------
+// ───────── queue + render ─────────
+function typeOpts(sel){ return [["catalog","type_catalog"],["revival","type_revival"],["mods","type_mods"]].map(function(p){ return '<option value="'+p[0]+'"'+(sel===p[0]?" selected":"")+'>'+esc(t(p[1]))+'</option>'; }).join(''); }
 function addFiles(files){
-  Array.prototype.forEach.call(files, function(f){
-    if (!/\.ipa$/i.test(f.name)) return;
-    var it = { file:f, name:f.name.replace(/\.ipa$/i,""), bid:"", version:"", min_ios:"", plat:0, enc:"…", iconB64:"", type:document.getElementById("dtype").value, category:document.getElementById("dcat").value, subgenre:"", status:"analyse…" };
+  Array.prototype.forEach.call(files,function(f){
+    if(!/\.ipa$/i.test(f.name)) return;
+    var it={file:f,name:f.name.replace(/\.ipa$/i,""),bid:"",version:"",min_ios:"",plat:0,enc:"…",iconB64:"",type:dtypeEl.value,category:document.getElementById("dcat").value,subgenre:"",status:"analyzing",statusErr:""};
     items.push(it); render();
-    analyze(f).then(function(meta){ it.name=meta.name; it.bid=meta.bid; it.version=meta.version; it.min_ios=meta.min_ios; it.plat=meta.plat; it.enc=meta.enc; it.iconB64=meta.iconB64; it.status = meta.enc==="encrypted" ? "🔒 chiffrée — ne sera pas envoyée" : "prête"; render(); });
+    analyze(f).then(function(meta){ it.name=meta.name; it.bid=meta.bid; it.version=meta.version; it.min_ios=meta.min_ios; it.plat=meta.plat; it.enc=meta.enc; it.iconB64=meta.iconB64; it.status=meta.enc==="encrypted"?"skipped_enc":"ready"; render(); });
   });
   goEl.disabled = items.length===0;
 }
+function statusHTML(it){
+  if(it.status==="err") return '<span class="st st-err">⚠ '+esc(it.statusErr||"")+'</span>';
+  if(it.status==="published") return '<span class="st st-pub">✓ '+esc(t("st_published"))+'</span>';
+  return '<span class="st">'+esc(t("st_"+it.status))+'</span>';
+}
 function render(){
-  var rows = items.map(function(it, i){
-    var encCls = it.enc==="encrypted"?"enc-bad":(it.enc==="decrypted"?"enc-ok":"enc-unk");
-    var encTxt = it.enc==="encrypted"?"🔒 chiffrée":(it.enc==="decrypted"?"✅ ok":(it.enc==="…"?"…":"?"));
+  var rows=items.map(function(it,i){
+    var pill = it.enc==="decrypted"?'<span class="pill pill-ok">'+esc(t("enc_ok"))+'</span>'
+      : it.enc==="encrypted"?'<span class="pill pill-bad">'+esc(t("enc_bad"))+'</span>'
+      : it.enc==="…"?'<span class="pill pill-unk">'+esc(t("enc_analyzing"))+'</span>'
+      : '<span class="pill pill-unk">'+esc(t("enc_unknown"))+'</span>';
     return '<tr>'+
-      '<td><img src="'+(it.iconB64?("data:image/png;base64,"+it.iconB64):"")+'" style="width:28px;height:28px;border-radius:6px;background:#0001"></td>'+
-      '<td><input value="'+esc(it.name)+'" oninput="items['+i+'].name=this.value"></td>'+
-      '<td class="mid"><input value="'+esc(it.bid)+'" oninput="items['+i+'].bid=this.value"></td>'+
-      '<td class="small"><input value="'+esc(it.version)+'" oninput="items['+i+'].version=this.value"></td>'+
-      '<td class="small"><input value="'+esc(it.min_ios)+'" oninput="items['+i+'].min_ios=this.value"></td>'+
-      '<td class="'+encCls+'">'+encTxt+'</td>'+
-      '<td class="mid"><select onchange="items['+i+'].type=this.value">'+
-        ['catalog','revival','mods'].map(function(t){return '<option value="'+t+'"'+(it.type===t?' selected':'')+'>'+(t==="catalog"?"Catalogue":(t==="revival"?"Fonctionne":"Modifiée"))+'</option>';}).join('')+
-      '</select></td>'+
-      '<td class="mid"><input list="cats" value="'+esc(it.category)+'" oninput="items['+i+'].category=this.value" placeholder="catégorie"></td>'+
-      '<td class="st">'+esc(it.status)+'</td>'+
-    '</tr>';
+      '<td><img class="ico" src="'+(it.iconB64?("data:image/png;base64,"+it.iconB64):"")+'"></td>'+
+      '<td class="cell-app"><input value="'+esc(it.name)+'" oninput="items['+i+'].name=this.value">'+
+        '<div class="sub-in"><input value="'+esc(it.bid)+'" placeholder="'+esc(t("bid_ph"))+'" oninput="items['+i+'].bid=this.value"></div></td>'+
+      '<td class="w-s"><input value="'+esc(it.version)+'" oninput="items['+i+'].version=this.value"></td>'+
+      '<td class="w-s"><input value="'+esc(it.min_ios)+'" oninput="items['+i+'].min_ios=this.value"></td>'+
+      '<td>'+pill+'</td>'+
+      '<td class="w-m"><select onchange="items['+i+'].type=this.value">'+typeOpts(it.type)+'</select></td>'+
+      '<td class="w-m"><input list="cats" value="'+esc(it.category)+'" placeholder="'+esc(t("cat_ph"))+'" oninput="items['+i+'].category=this.value"></td>'+
+      '<td>'+statusHTML(it)+'</td></tr>';
   }).join('');
-  listEl.innerHTML = items.length ? ('<table><thead><tr><th></th><th>Nom</th><th>Bundle id</th><th>Ver.</th><th>iOS</th><th>État</th><th>Type</th><th>Catégorie</th><th>Statut</th></tr></thead><tbody>'+rows+'</tbody></table>') : '';
-  var enc = items.filter(function(x){return x.enc==="encrypted";}).length;
-  sumEl.textContent = items.length ? (items.length+" app(s)"+(enc?(" · "+enc+" chiffrée(s) ignorée(s)"):"")) : "";
+  listEl.innerHTML = items.length ? ('<div class="tcard"><table><thead><tr><th></th><th>'+esc(t("th_app"))+'</th><th>'+esc(t("th_ver"))+'</th><th>'+esc(t("th_ios"))+'</th><th>'+esc(t("th_state"))+'</th><th>'+esc(t("th_type"))+'</th><th>'+esc(t("th_cat"))+'</th><th>'+esc(t("th_status"))+'</th></tr></thead><tbody>'+rows+'</tbody></table></div>') : '';
+  var enc=items.filter(function(x){return x.enc==="encrypted";}).length;
+  var parts=[]; if(items.length) parts.push(t("sum_apps",items.length)); if(enc) parts.push(t("sum_enc",enc));
+  sumEl.textContent = parts.join(" · ");
 }
 
-// ---------- upload ----------
+// ───────── upload ─────────
 function fileToB64(file){ return new Promise(function(res,rej){ var r=new FileReader(); r.onload=function(){ var s=r.result; res(s.slice(s.indexOf(",")+1)); }; r.onerror=rej; r.readAsDataURL(file); }); }
 async function uploadOne(it){
-  if (it.enc==="encrypted"){ it.status="🔒 ignorée (chiffrée)"; render(); return; }
-  if (!it.name){ it.status="❌ nom manquant"; render(); return; }
-  if (it.type==="catalog" && !it.category){ it.status="❌ catégorie requise"; render(); return; }
-  if ((it.type==="revival"||it.type==="mods")){ /* description optional here; admin can add later */ }
-  it.status="envoi…"; render();
-  try {
-    var b64 = await fileToB64(it.file);
-    var payload = { target:it.type, name:it.name, bid:it.bid, min_ios:it.min_ios, appver:it.version,
-      category:it.category||"", subgenre:it.subgenre||"", plat:it.plat||0, ipa:b64, attest:true, decrypted:true,
-      description:"", lang:"", device:"desktop-bulk" };
-    if (it.iconB64) payload.icon_png = it.iconB64;
-    var headers = { "Content-Type":"application/json" };
-    var tok = tokEl.value.trim();
-    if (tok){ headers["X-Admin-Token"]=tok; if (document.getElementById("auto").checked) payload.auto_approve = true; }
-    var r = await fetch(base()+"/upload", { method:"POST", headers:headers, body:JSON.stringify(payload) });
-    var j = await r.json().catch(function(){return {};});
-    it.status = r.ok ? (payload.auto_approve ? "✅ publiée" : "✅ en modération") : ("❌ "+(j.error||("HTTP "+r.status)));
-  } catch(e){ it.status = "❌ "+e; }
+  if(it.enc==="encrypted"){ it.status="skipped_enc"; render(); return; }
+  if(!it.name){ it.status="need_name"; render(); return; }
+  if(it.type==="catalog"&&!it.category){ it.status="need_cat"; render(); return; }
+  it.status="sending"; render();
+  try{
+    var b64=await fileToB64(it.file);
+    var payload={target:it.type,name:it.name,bid:it.bid,min_ios:it.min_ios,appver:it.version,category:it.category||"",subgenre:it.subgenre||"",plat:it.plat||0,ipa:b64,attest:true,decrypted:true,description:"",lang:"",device:"desktop-bulk"};
+    if(it.iconB64) payload.icon_png=it.iconB64;
+    var headers={"Content-Type":"application/json"}, tok=tokEl.value.trim(), auto=false;
+    if(tok){ headers["X-Admin-Token"]=tok; if(document.getElementById("auto").checked){ payload.auto_approve=true; auto=true; } }
+    var r=await fetch(base()+"/upload",{method:"POST",headers:headers,body:JSON.stringify(payload)});
+    var j=await r.json().catch(function(){return {};});
+    if(r.ok){ it.status=auto?"published":"queued"; } else { it.status="err"; it.statusErr=j.error||("HTTP "+r.status); }
+  }catch(e){ it.status="err"; it.statusErr=String(e); }
   render();
 }
 async function run(){
-  localStorage.setItem("appdrop_worker", urlEl.value); localStorage.setItem("appdrop_admin", tokEl.value);
-  goEl.disabled = true;
-  var queue = items.filter(function(x){ return x.enc!=="encrypted" && x.status.indexOf("✅")<0; });
-  var idx = 0, CONC = 2;
-  async function worker(){ while (idx < queue.length){ var it = queue[idx++]; await uploadOne(it); } }
-  await Promise.all([worker(), worker()].slice(0, CONC));
-  goEl.disabled = false;
+  localStorage.setItem("appdrop_worker",urlEl.value); localStorage.setItem("appdrop_admin",tokEl.value);
+  goEl.disabled=true; goEl.textContent=t("btn_sending");
+  progEl.classList.add("on");
+  var queue=items.filter(function(x){ return x.enc!=="encrypted" && x.status!=="published"; });
+  var idx=0,done=0,total=queue.length,CONC=2;
+  function tick(){ done++; barEl.style.width=(total?(done/total*100):100)+"%"; }
+  async function w(){ while(idx<queue.length){ var it=queue[idx++]; await uploadOne(it); tick(); } }
+  await Promise.all([w(),w()]);
+  goEl.disabled=false; goEl.textContent=t("btn_send");
 }
 
-// ---------- drag & drop ----------
-var drop = document.getElementById("drop");
-drop.addEventListener("dragover", function(e){ e.preventDefault(); drop.classList.add("over"); });
-drop.addEventListener("dragleave", function(){ drop.classList.remove("over"); });
-drop.addEventListener("drop", function(e){ e.preventDefault(); drop.classList.remove("over"); if (e.dataTransfer && e.dataTransfer.files) addFiles(e.dataTransfer.files); });
-document.getElementById("file").addEventListener("change", function(e){ addFiles(e.target.files); });
+// ───────── i18n apply + init ─────────
+function applyI18n(){
+  document.documentElement.lang=LANG;
+  document.title="AppDrop — "+t("brand_sub");
+  var nodes=document.querySelectorAll("[data-i18n]"); for(var i=0;i<nodes.length;i++) nodes[i].textContent=t(nodes[i].getAttribute("data-i18n"));
+  var ph=document.querySelectorAll("[data-i18n-ph]"); for(var j=0;j<ph.length;j++) ph[j].placeholder=t(ph[j].getAttribute("data-i18n-ph"));
+  dtypeEl.innerHTML=typeOpts(dtypeEl.value||"catalog");
+  goEl.textContent=t("btn_send");
+  render();
+}
+window.addEventListener("DOMContentLoaded",function(){
+  urlEl=document.getElementById("url"); tokEl=document.getElementById("token");
+  listEl=document.getElementById("list"); goEl=document.getElementById("go"); sumEl=document.getElementById("summary");
+  progEl=document.getElementById("progress"); barEl=document.getElementById("bar"); dtypeEl=document.getElementById("dtype");
+  urlEl.value=localStorage.getItem("appdrop_worker")||DEFAULT_URL;
+  tokEl.value=localStorage.getItem("appdrop_admin")||"";
+  var sel=document.getElementById("lang");
+  sel.innerHTML=LANGS.map(function(l){ return '<option value="'+l[0]+'"'+(l[0]===LANG?" selected":"")+'>'+l[1]+'</option>'; }).join('');
+  sel.addEventListener("change",function(){ LANG=sel.value; localStorage.setItem("appdrop_lang",LANG); applyI18n(); });
+  applyI18n();
+  var drop=document.getElementById("drop");
+  drop.addEventListener("dragover",function(e){ e.preventDefault(); drop.classList.add("over"); });
+  drop.addEventListener("dragleave",function(){ drop.classList.remove("over"); });
+  drop.addEventListener("drop",function(e){ e.preventDefault(); drop.classList.remove("over"); if(e.dataTransfer&&e.dataTransfer.files) addFiles(e.dataTransfer.files); });
+  document.getElementById("file").addEventListener("change",function(e){ addFiles(e.target.files); });
+  goEl.addEventListener("click",run);
+});
 </script>
 </body>
 </html>
