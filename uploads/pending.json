@@ -15,5 +15,27 @@
     "lang": "en",
     "device": "iPhone 3GS (iPhone2,1), Samsung S5PC100 (Cortex-A8), 256 MB RAM, iOS 6.1.6",
     "ts": 1780598648847
+  },
+  {
+    "id": "discord-classic-1780641098309",
+    "target": "mods",
+    "name": "Discord Classic",
+    "description": "A better version of discord classic 0.9.1, with email login and push notifications",
+    "bid": "",
+    "min_ios": "5.1",
+    "version": "0.9.7b7",
+    "mod": "",
+    "credit": "",
+    "category": "",
+    "subgenre": "",
+    "plat": 0,
+    "icon": "https://adrienrl1.github.io/cydia/icons/discord-classic-1780641098309.png",
+    "decrypted": true,
+    "size": 12314172,
+    "ipa_url": "https://adrienrl1.github.io/cydia/uploads/discord-classic-1780641098309.ipa",
+    "ipa_path": "uploads/discord-classic-1780641098309.ipa",
+    "lang": "en",
+    "device": "iPhone 4S (iPhone4,1), Apple A5, 512 MB RAM, iOS 9.3.6",
+    "ts": 1780641102952
   }
 ]
