@@ -1,5 +1,5 @@
 {
-  "version": 14,
+  "version": 15,
   "_comment": "Apps qui fonctionnent aujourd'hui sur vieux iOS. RÈGLES (voir mémoire) : (a) créditer le créateur dans 'notes' ; (b) 'link' DOIT s'ouvrir sur le vieux Safari (iOS 5/6) — donc un site simple (ex. bag-xml.com) qui contient le lien vers le bon repo Cydia, JAMAIS github.com (illisible sur old iOS). Types : (1) ipa non vide = install DIRECT in-app (tap) ; le .ipa peut être un fichier GitHub direct (téléchargé par l'app, pas par Safari). (2) ipa vide + link = entrée EXTERNE : bouton « Ouvrir la page du projet ». bid = bundle id d'origine (icône depuis le catalogue). size = octets. NON GARANTI : projets communautaires. Curé à la main + suggestions via Feedback.",
   "apps": [
     {
@@ -17,22 +17,6 @@
       "notes_i18n": {
         "en": "By bag-xml. A Discord client for iOS 5+: reading and sending messages both work. Replaces the older 0.8.8 build. May break if Discord changes its API.",
         "fr": "Créé par bag-xml. Client Discord pour iOS 5+ : lecture et envoi de messages fonctionnent. Remplace l'ancienne build 0.8.8. Peut casser si Discord change son API."
-      }
-    },
-    {
-      "name": "YouTube — TubeRepair",
-      "bid": "com.google.ios.youtube",
-      "min_ios": "5.0",
-      "version": "",
-      "status": "active",
-      "needs_server": false,
-      "size": 0,
-      "ipa": "",
-      "link": "https://tuberepair.bag-xml.com/",
-      "notes": "Créé par bag-xml. Permet de regarder YouTube sur vieux iOS (tweak Cydia). Ouvre la page (compatible vieux iOS) qui contient le repo Cydia et les instructions.",
-      "notes_i18n": {
-        "en": "By bag-xml. Lets you watch YouTube on old iOS (a Cydia tweak). Opens the (old-iOS-friendly) page with the Cydia repo and instructions.",
-        "fr": "Créé par bag-xml. Permet de regarder YouTube sur vieux iOS (tweak Cydia). Ouvre la page (compatible vieux iOS) qui contient le repo Cydia et les instructions."
       }
     },
     {
@@ -139,20 +123,6 @@
       "icon": "https://adrienrl1.github.io/cydia/icons/youtube-tubereplacer-1780663762965.png"
     },
     {
-      "name": "Twitter (BlueBlips)",
-      "bid": "com.atebits.Tweetie2",
-      "min_ios": "5.0",
-      "version": "5.7",
-      "status": "active",
-      "login_works": "",
-      "needs_server": false,
-      "size": 17480922,
-      "ipa": "https://archive.org/download/appdrop-twitter-blueblips-1780663495677/twitter-blueblips.ipa",
-      "link": "",
-      "notes": "Par memeguyonyt. Twitter v1 and v1.1 private server (up to twitter 6.13.7 and down to tweetie v1.3.2 with mitmproxy)",
-      "icon": "https://adrienrl1.github.io/cydia/icons/twitter-blueblips-1780663495677.png"
-    },
-    {
       "name": "Snapchat (ValoriaSnap)",
       "bid": "com.toyopagroup.picaboo",
       "min_ios": "5.0",
@@ -181,18 +151,28 @@
       "icon": "https://adrienrl1.github.io/cydia/icons/musical-ly-1780668049837.png"
     },
     {
-      "name": "Musical.ly",
+      "name": "Retrogram",
+      "bid": "com.burbn.instagram",
+      "min_ios": "6.0",
+      "version": "5.0.1",
+      "size": 12080811,
+      "mod": "",
+      "notes": "Private server for instagram",
+      "ipa": "https://archive.org/download/appdrop-retrogram-1780641369842/retrogram.ipa",
+      "link": "",
+      "icon": "https://adrienrl1.github.io/cydia/icons/retrogram-1780641369842.png"
+    },
+    {
+      "name": "valoria.ly",
       "bid": "com.zhiliaoapp.musically",
       "min_ios": "7.0",
-      "version": "3.0.1",
-      "status": "active",
-      "login_works": "",
-      "needs_server": false,
-      "size": 12168351,
-      "ipa": "https://adrienrl1.github.io/cydia/uploads/musical-ly-1780668049837.ipa",
+      "version": "4.7.5",
+      "size": 40342899,
+      "mod": "",
+      "notes": "Musically private server\n\nMake an account at https://valoria-social.com",
+      "ipa": "https://archive.org/download/appdrop-valoria-ly-1780663374042/valoria-ly.ipa",
       "link": "",
-      "notes": "Par Khouzam Not Creator. Valeria Is. Musical.ly record videos have fun valoria-social.com to make your account and enjoy",
-      "icon": "https://adrienrl1.github.io/cydia/icons/musical-ly-1780668049837.png"
+      "icon": "https://adrienrl1.github.io/cydia/icons/valoria-ly-1780663374042.png"
     }
   ]
 }
