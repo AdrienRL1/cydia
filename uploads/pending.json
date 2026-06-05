@@ -39,28 +39,6 @@
     "ts": 1780663502311
   },
   {
-    "id": "youtube-tubereplacer-1780663762965",
-    "target": "revival",
-    "name": "YouTube (TubeReplacer)",
-    "description": "TubeReplacer allows you to sign-in, doesnt have to be put a url, and is more reliable",
-    "bid": "",
-    "min_ios": "5.0",
-    "version": "1.3.0",
-    "mod": "",
-    "credit": "",
-    "category": "",
-    "subgenre": "",
-    "plat": 0,
-    "icon": "https://adrienrl1.github.io/cydia/icons/youtube-tubereplacer-1780663762965.png",
-    "decrypted": true,
-    "size": 7814523,
-    "ipa_url": "https://adrienrl1.github.io/cydia/uploads/youtube-tubereplacer-1780663762965.ipa",
-    "ipa_path": "uploads/youtube-tubereplacer-1780663762965.ipa",
-    "lang": "en",
-    "device": "iPhone 4S (iPhone4,1), Apple A5, 512 MB RAM, iOS 9.3.6",
-    "ts": 1780663766918
-  },
-  {
     "id": "snapchat-valoriasnap-1780663867469",
     "target": "mods",
     "name": "Snapchat (ValoriaSnap)",
