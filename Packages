@@ -1,5 +1,25 @@
 Package: ca.adrien.appdrop
 Name: AppDrop
+Description: Browse 43,000+ iOS apps by category and install them on iOS 5-10. Fully iPad-optimized. v3.1.1: fixes a background crash on iOS 5-10, groups Works Today/Modded versions (+ a Versions list), those lists now match the catalogue, the grid adapts when you rotate, plus iOS-6 wheel pickers and smarter mirror switching for downloads. (17 themes + dark mode, Favorites & folders, app sharing, 8 languages.)
+Homepage: https://github.com/AdrienRL1/AppDrop
+Depiction: https://adrienrl1.github.io/cydia/depiction.html
+Icon: https://adrienrl1.github.io/cydia/PackageIcon.png
+Maintainer: Adrien Ruest-Lorquet
+Author: Adrien Ruest-Lorquet
+Section: Utilities
+Depends: firmware (>= 5.0), ai.akemi.appsyncunified | net.angelxwind.appsyncunified | com.linusyang.appsync, com.autopear.installipa | ai.akemi.appinst
+Tag: compatible_min::ios5.0
+Architecture: iphoneos-arm
+Version: 3.1.1
+Installed-Size: 2170
+Filename: ./debs/ca.adrien.appdrop_3.1.1_iphoneos-arm.deb
+Size: 821310
+MD5sum: 940eee52c5bf8e41c99c4b3eabd221b7
+SHA1: f3dbf6916cd4fa3f10089a3e859f9096207550c1
+SHA256: 2d18ab641c5c7f4ffc732fbdeb17f755aaa6f983c63844ad633b2a4136876a5d
+
+Package: ca.adrien.appdrop
+Name: AppDrop
 Description: Browse 43,000+ iOS apps by category and install them on iOS 5-10. Fully iPad-optimized. v3.1: suggest-a-category, automatic crash reports, encrypted-IPA & low-storage install guards, plus fixes for iOS 9 installs, the iPad 1 catalog hang, download resume & dark-mode readability. (17 themes + dark mode, Favorites & folders, app sharing, 8 languages.)
 Homepage: https://github.com/AdrienRL1/AppDrop
 Depiction: https://adrienrl1.github.io/cydia/depiction.html
