@@ -1,5 +1,5 @@
 {
-  "version": 11,
+  "version": 12,
   "_comment": "Apps qui fonctionnent aujourd'hui sur vieux iOS. RÈGLES (voir mémoire) : (a) créditer le créateur dans 'notes' ; (b) 'link' DOIT s'ouvrir sur le vieux Safari (iOS 5/6) — donc un site simple (ex. bag-xml.com) qui contient le lien vers le bon repo Cydia, JAMAIS github.com (illisible sur old iOS). Types : (1) ipa non vide = install DIRECT in-app (tap) ; le .ipa peut être un fichier GitHub direct (téléchargé par l'app, pas par Safari). (2) ipa vide + link = entrée EXTERNE : bouton « Ouvrir la page du projet ». bid = bundle id d'origine (icône depuis le catalogue). size = octets. NON GARANTI : projets communautaires. Curé à la main + suggestions via Feedback.",
   "apps": [
     {
@@ -151,6 +151,20 @@
       "link": "",
       "notes": "Par memeguyonyt. Twitter v1 and v1.1 private server (up to twitter 6.13.7 and down to tweetie v1.3.2 with mitmproxy)",
       "icon": "https://adrienrl1.github.io/cydia/icons/twitter-blueblips-1780663495677.png"
+    },
+    {
+      "name": "Snapchat (ValoriaSnap)",
+      "bid": "com.toyopagroup.picaboo",
+      "min_ios": "5.0",
+      "version": "6.1.0",
+      "status": "active",
+      "login_works": "",
+      "needs_server": false,
+      "size": 10028382,
+      "ipa": "https://archive.org/download/appdrop-snapchat-valoriasnap-1780663867469/snapchat-valoriasnap.ipa",
+      "link": "",
+      "notes": "Snapchat private server",
+      "icon": "https://adrienrl1.github.io/cydia/icons/snapchat-valoriasnap-1780663867469.png"
     }
   ]
 }
