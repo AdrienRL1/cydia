@@ -15,27 +15,5 @@
     "lang": "en",
     "device": "iPhone 3GS (iPhone2,1), Samsung S5PC100 (Cortex-A8), 256 MB RAM, iOS 6.1.6",
     "ts": 1780598648847
-  },
-  {
-    "id": "retrogram-1780641369842",
-    "target": "mods",
-    "name": "Retrogram",
-    "description": "Private server for instagram",
-    "bid": "com.burbn.instagram",
-    "min_ios": "6.0",
-    "version": "5.0.1",
-    "mod": "",
-    "credit": "",
-    "category": "",
-    "subgenre": "",
-    "plat": 0,
-    "icon": "https://adrienrl1.github.io/cydia/icons/retrogram-1780641369842.png",
-    "decrypted": true,
-    "size": 12080811,
-    "ipa_url": "https://adrienrl1.github.io/cydia/uploads/retrogram-1780641369842.ipa",
-    "ipa_path": "uploads/retrogram-1780641369842.ipa",
-    "lang": "en",
-    "device": "iPhone 4S (iPhone4,1), Apple A5, 512 MB RAM, iOS 9.3.6",
-    "ts": 1780641374431
   }
 ]
