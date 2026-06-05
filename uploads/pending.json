@@ -15,5 +15,27 @@
     "lang": "en",
     "device": "iPhone 3GS (iPhone2,1), Samsung S5PC100 (Cortex-A8), 256 MB RAM, iOS 6.1.6",
     "ts": 1780598648847
+  },
+  {
+    "id": "goat-simulator-1780623852891-0",
+    "target": "catalog",
+    "name": "Goat Simulator",
+    "description": "",
+    "bid": "com.coffeestainstudios.goatsimulator",
+    "min_ios": "6.0",
+    "version": "1.9.2",
+    "mod": "",
+    "credit": "",
+    "category": "",
+    "subgenre": "",
+    "plat": 6,
+    "icon": "https://archive.org/download/appdrop-com-coffeestainstudios-goatsimulator-1-9-2/icon.png",
+    "decrypted": true,
+    "size": 200489041,
+    "ipa_url": "https://archive.org/download/appdrop-com-coffeestainstudios-goatsimulator-1-9-2/com-coffeestainstudios-goatsimulator.ipa",
+    "ipa_path": "",
+    "lang": "",
+    "device": "",
+    "ts": 1780623852891
   }
 ]
