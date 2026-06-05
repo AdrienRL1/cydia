@@ -43,6 +43,11 @@
   .hint{font-size:12px;color:var(--muted);margin:6px 0 0;line-height:1.5}
   .mode{font-size:12px;font-weight:700;padding:3px 10px;border-radius:999px;display:inline-block}
   .mode-admin{background:var(--okbg);color:var(--ok)} .mode-public{background:var(--chip);color:var(--muted)}
+  .admin-row{text-align:right;margin-top:24px}
+  .admin-link{font-size:15px;color:var(--muted);opacity:.4;cursor:pointer;user-select:none;padding:4px 8px;border-radius:8px}
+  .admin-link:hover{opacity:1;color:var(--accent)}
+  .adminpanel{display:none;padding:14px;margin-top:8px}
+  .adminpanel .row+.row{margin-top:8px}
   .drop{background:var(--card);border:2px dashed var(--border);border-radius:18px;padding:32px 18px;text-align:center;color:var(--muted);transition:border-color .15s,background .15s}
   .drop.over{border-color:var(--accent);background:var(--chip)}
   .drop svg{width:44px;height:44px;color:var(--accent)}
@@ -94,19 +99,6 @@
       <label class="field"><span data-i18n="defcat_label"></span><input id="dcat" list="cats" data-i18n-ph="defcat_ph"></label>
     </div>
     <label class="check"><input type="checkbox" id="skipdups" checked> <span data-i18n="skip_dups"></span></label>
-    <details class="adv">
-      <summary data-i18n="adv_toggle"></summary>
-      <div class="row">
-        <input id="url" data-i18n-ph="worker_ph">
-        <input id="token" type="password" data-i18n-ph="token_ph">
-      </div>
-      <div class="row" style="margin-top:8px">
-        <input id="s3acc" data-i18n-ph="s3_access_ph">
-        <input id="s3sec" type="password" data-i18n-ph="s3_secret_ph">
-      </div>
-      <p class="hint" data-i18n="s3_hint"></p>
-      <p style="margin:10px 0 0"><span id="mode" class="mode mode-public"></span></p>
-    </details>
   </div>
 
   <div id="drop" class="drop">
@@ -121,6 +113,14 @@
   <div class="progress" id="progress"><div class="bar" id="bar"></div></div>
   <div id="list" class="list"></div>
   <p class="hint" data-i18n="foot" style="margin-top:16px"></p>
+
+  <div class="admin-row"><span id="adminToggle" class="admin-link" title="Admin">⚙</span></div>
+  <div id="adminPanel" class="card adminpanel">
+    <div class="row"><input id="token" type="password" data-i18n-ph="token_ph"></div>
+    <div class="row"><input id="s3acc" data-i18n-ph="s3_access_ph"><input id="s3sec" type="password" data-i18n-ph="s3_secret_ph"></div>
+    <p class="hint" data-i18n="s3_hint"></p>
+    <p style="margin:10px 0 0"><span id="mode" class="mode mode-public"></span></p>
+  </div>
 </main>
 
 <datalist id="cats">
@@ -165,11 +165,11 @@ function t(key,n){ var s=(I18N[LANG]&&I18N[LANG][key])||I18N.en[key]||key; retur
 
 var DEFAULT_URL="https://appdrop-feedback.adrienruestlorquet.workers.dev";
 var PAGES="https://adrienrl1.github.io/cydia";
-var urlEl,tokEl,s3accEl,s3secEl,listEl,goEl,sumEl,progEl,barEl,dtypeEl,modeEl;
+var tokEl,s3accEl,s3secEl,listEl,goEl,sumEl,progEl,barEl,dtypeEl,modeEl;
 var items=[];
 var bidSet=null, bidVerSet=null;   // built from catalog-index.txt
 
-function base(){ return (urlEl.value||DEFAULT_URL).replace(/\/+$/,""); }
+function base(){ return DEFAULT_URL.replace(/\/+$/,""); }   // Worker URL is fixed (hidden from the UI)
 function esc(s){ return String(s==null?"":s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];}); }
 function slugify(s){ return String(s||"").toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-+|-+$/g,"").slice(0,60)||"app"; }
 function isAdmin(){ return !!(tokEl.value.trim() && s3accEl.value.trim() && s3secEl.value.trim()); }
@@ -406,7 +406,7 @@ async function uploadPublic(it){
 
 // ───────── run ─────────
 async function run(){
-  localStorage.setItem("appdrop_worker",urlEl.value); localStorage.setItem("appdrop_admin",tokEl.value);
+  localStorage.setItem("appdrop_admin",tokEl.value);
   localStorage.setItem("appdrop_ia_access",s3accEl.value); localStorage.setItem("appdrop_ia_secret",s3secEl.value);
   goEl.disabled=true; goEl.textContent=t("btn_sending"); progEl.classList.add("on");
   var admin=isAdmin();
@@ -441,11 +441,10 @@ function applyI18n(){
   dtypeEl.innerHTML=typeOpts(dtypeEl.value||"catalog"); goEl.textContent=t("btn_send"); render();
 }
 window.addEventListener("DOMContentLoaded",function(){
-  urlEl=document.getElementById("url"); tokEl=document.getElementById("token");
+  tokEl=document.getElementById("token");
   s3accEl=document.getElementById("s3acc"); s3secEl=document.getElementById("s3sec");
   listEl=document.getElementById("list"); goEl=document.getElementById("go"); sumEl=document.getElementById("summary");
   progEl=document.getElementById("progress"); barEl=document.getElementById("bar"); dtypeEl=document.getElementById("dtype"); modeEl=document.getElementById("mode");
-  urlEl.value=localStorage.getItem("appdrop_worker")||DEFAULT_URL;
   tokEl.value=localStorage.getItem("appdrop_admin")||"";
   s3accEl.value=localStorage.getItem("appdrop_ia_access")||"";
   s3secEl.value=localStorage.getItem("appdrop_ia_secret")||"";
@@ -454,6 +453,7 @@ window.addEventListener("DOMContentLoaded",function(){
   sel.addEventListener("change",function(){ LANG=sel.value; localStorage.setItem("appdrop_lang",LANG); applyI18n(); });
   [tokEl,s3accEl,s3secEl].forEach(function(el){ el.addEventListener("input",updateMode); });
   document.getElementById("skipdups").addEventListener("change",refreshStatuses);
+  document.getElementById("adminToggle").addEventListener("click",function(){ var p=document.getElementById("adminPanel"); p.style.display=(p.style.display==="block")?"none":"block"; });
   applyI18n();
   var drop=document.getElementById("drop");
   drop.addEventListener("dragover",function(e){ e.preventDefault(); drop.classList.add("over"); });
