@@ -37,5 +37,27 @@
     "lang": "en",
     "device": "iPhone 4S (iPhone4,1), Apple A5, 512 MB RAM, iOS 9.3.6",
     "ts": 1780641102952
+  },
+  {
+    "id": "retrogram-1780641259900",
+    "target": "revival",
+    "name": "Retrogram",
+    "description": "Private server for instagram",
+    "bid": "com.burbn.instagram",
+    "min_ios": "6.0",
+    "version": "6.5.1",
+    "mod": "",
+    "credit": "",
+    "category": "",
+    "subgenre": "",
+    "plat": 0,
+    "icon": "https://adrienrl1.github.io/cydia/icons/retrogram-1780641259900.png",
+    "decrypted": true,
+    "size": 10612515,
+    "ipa_url": "https://adrienrl1.github.io/cydia/uploads/retrogram-1780641259900.ipa",
+    "ipa_path": "uploads/retrogram-1780641259900.ipa",
+    "lang": "en",
+    "device": "iPhone 4S (iPhone4,1), Apple A5, 512 MB RAM, iOS 9.3.6",
+    "ts": 1780641264301
   }
 ]
