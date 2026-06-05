@@ -15,27 +15,5 @@
     "lang": "en",
     "device": "iPhone 3GS (iPhone2,1), Samsung S5PC100 (Cortex-A8), 256 MB RAM, iOS 6.1.6",
     "ts": 1780598648847
-  },
-  {
-    "id": "musical-ly-1780668049837",
-    "target": "revival",
-    "name": "Musical.ly",
-    "description": "Musical.ly record videos have fun valoria-social.com to make your account and enjoy",
-    "bid": "com.zhiliaoapp.musically",
-    "min_ios": "7.0",
-    "version": "3.0.1",
-    "mod": "You can login with your account on Valoria",
-    "credit": "Khouzam Not Creator. Valeria Is",
-    "category": "",
-    "subgenre": "",
-    "plat": 0,
-    "icon": "https://adrienrl1.github.io/cydia/icons/musical-ly-1780668049837.png",
-    "decrypted": true,
-    "size": 12168351,
-    "ipa_url": "https://adrienrl1.github.io/cydia/uploads/musical-ly-1780668049837.ipa",
-    "ipa_path": "uploads/musical-ly-1780668049837.ipa",
-    "lang": "en",
-    "device": "iPhone 5s (GSM) (iPhone6,1), Apple A7, 1 GB RAM, iOS 10.3.3",
-    "ts": 1780668053390
   }
 ]
