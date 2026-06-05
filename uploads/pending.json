@@ -17,28 +17,6 @@
     "ts": 1780598648847
   },
   {
-    "id": "twitter-blueblips-1780663495677",
-    "target": "revival",
-    "name": "Twitter (BlueBlips)",
-    "description": "Twitter v1 and v1.1 private server (up to twitter 6.13.7 and down to tweetie v1.3.2 with mitmproxy)",
-    "bid": "com.atebits.Tweetie2",
-    "min_ios": "5.0",
-    "version": "5.7",
-    "mod": "",
-    "credit": "memeguyonyt",
-    "category": "",
-    "subgenre": "",
-    "plat": 0,
-    "icon": "https://adrienrl1.github.io/cydia/icons/twitter-blueblips-1780663495677.png",
-    "decrypted": true,
-    "size": 17480922,
-    "ipa_url": "https://adrienrl1.github.io/cydia/uploads/twitter-blueblips-1780663495677.ipa",
-    "ipa_path": "uploads/twitter-blueblips-1780663495677.ipa",
-    "lang": "en",
-    "device": "iPhone 4S (iPhone4,1), Apple A5, 512 MB RAM, iOS 9.3.6",
-    "ts": 1780663502311
-  },
-  {
     "id": "snapchat-valoriasnap-1780663867469",
     "target": "mods",
     "name": "Snapchat (ValoriaSnap)",
