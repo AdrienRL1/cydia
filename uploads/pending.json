@@ -15,5 +15,27 @@
     "lang": "en",
     "device": "iPhone 3GS (iPhone2,1), Samsung S5PC100 (Cortex-A8), 256 MB RAM, iOS 6.1.6",
     "ts": 1780598648847
+  },
+  {
+    "id": "valoria-ly-1780663374042",
+    "target": "mods",
+    "name": "valoria.ly",
+    "description": "Musically private server\n\nMake an account at https://valoria-social.com",
+    "bid": "com.zhiliaoapp.musically",
+    "min_ios": "7.0",
+    "version": "4.7.5",
+    "mod": "",
+    "credit": "",
+    "category": "",
+    "subgenre": "",
+    "plat": 0,
+    "icon": "https://adrienrl1.github.io/cydia/icons/valoria-ly-1780663374042.png",
+    "decrypted": true,
+    "size": 40342899,
+    "ipa_url": "https://adrienrl1.github.io/cydia/uploads/valoria-ly-1780663374042.ipa",
+    "ipa_path": "uploads/valoria-ly-1780663374042.ipa",
+    "lang": "en",
+    "device": "iPhone 4S (iPhone4,1), Apple A5, 512 MB RAM, iOS 9.3.6",
+    "ts": 1780663385284
   }
 ]
