@@ -46,17 +46,5 @@
     "device": "iPad 2 (CDMA) (iPad2,3), Apple A5, 512 MB RAM, iOS 9.3.6",
     "lang": "en",
     "ts": 1780674518515
-  },
-  {
-    "id": "video-like-1780676074469",
-    "bid": "video.like",
-    "name": "LIKE",
-    "current_category": "Photo & Video",
-    "current_subgenre": "",
-    "category": "Social Networking",
-    "subgenre": "",
-    "device": "iPhone 4S (iPhone4,1), Apple A5, 512 MB RAM, iOS 9.3.6",
-    "lang": "en",
-    "ts": 1780676074469
   }
 ]
