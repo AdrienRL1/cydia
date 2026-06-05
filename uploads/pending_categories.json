@@ -22,5 +22,17 @@
     "device": "iPod touch (4th gen) (iPod4,1), Apple A4, 256 MB RAM, iOS 6.1.6",
     "lang": "en",
     "ts": 1780647691383
+  },
+  {
+    "id": "com-robtop-geometrydashsubzero-1780671145977",
+    "bid": "com.robtop.geometrydashsubzero",
+    "name": "SubZero",
+    "current_category": "Games",
+    "current_subgenre": "Arcade",
+    "category": "Games",
+    "subgenre": "Arcade",
+    "device": "iPhone 4S (iPhone4,1), Apple A5, 512 MB RAM, iOS 9.3.6",
+    "lang": "en",
+    "ts": 1780671145977
   }
 ]
