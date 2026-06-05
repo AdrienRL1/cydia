@@ -58,5 +58,17 @@
     "device": "iPhone 4 (GSM) (iPhone3,1), Apple A4, 512 MB RAM, iOS 7.1.2",
     "lang": "en",
     "ts": 1780681035550
+  },
+  {
+    "id": "com-apple-keynote-1780690379118",
+    "bid": "com.apple.Keynote",
+    "name": "Keynote",
+    "current_category": "Productivity",
+    "current_subgenre": "",
+    "category": "Productivity",
+    "subgenre": "",
+    "device": "iPad 2 (Wi-Fi) (iPad2,1), Apple A5, 512 MB RAM, iOS 6.0",
+    "lang": "en",
+    "ts": 1780690379118
   }
 ]
