@@ -1,6 +1,6 @@
 Package: ca.adrien.appdrop
 Name: AppDrop
-Description: Browse 43,000+ vintage iOS apps by category and install them on iOS 5-10. Fully iPad-optimized. v3.1: suggest-a-category, automatic crash reports, encrypted-IPA & low-storage install guards, plus fixes for iOS 9 installs, the iPad 1 catalog hang, download resume & dark-mode readability. (17 themes + dark mode, Favorites & folders, app sharing, 8 languages.)
+Description: Browse 43,000+ iOS apps by category and install them on iOS 5-10. Fully iPad-optimized. v3.1: suggest-a-category, automatic crash reports, encrypted-IPA & low-storage install guards, plus fixes for iOS 9 installs, the iPad 1 catalog hang, download resume & dark-mode readability. (17 themes + dark mode, Favorites & folders, app sharing, 8 languages.)
 Homepage: https://github.com/AdrienRL1/AppDrop
 Depiction: https://adrienrl1.github.io/cydia/depiction.html
 Icon: https://adrienrl1.github.io/cydia/PackageIcon.png
@@ -20,7 +20,7 @@ SHA256: 31dff89e3e0a4e32f963ad65d8e7f63954265ade75ad77f5559029dee7be6137
 
 Package: ca.adrien.appdrop
 Name: AppDrop
-Description: Browse 43,000+ vintage iOS apps by category and install them on iOS 5-10. Fully iPad-optimized. v3.0: 17 themes + dark mode, list/grid layout, Favorites & folders, download-later, a Modded section, app sharing, FairPlay-aware installs, 8 languages.
+Description: Browse 43,000+ iOS apps by category and install them on iOS 5-10. Fully iPad-optimized. v3.0: 17 themes + dark mode, list/grid layout, Favorites & folders, download-later, a Modded section, app sharing, FairPlay-aware installs, 8 languages.
 Homepage: https://github.com/AdrienRL1/AppDrop
 Depiction: https://adrienrl1.github.io/cydia/depiction.html
 Icon: https://adrienrl1.github.io/cydia/PackageIcon.png
@@ -40,7 +40,7 @@ SHA256: 96914a83d3dc360f085dbd209198eaf8b528873e3d636229f1cec790a7372127
 
 Package: ca.adrien.appdrop
 Name: AppDrop
-Description: Browse 157k vintage iOS apps by category and install them on iOS 5-10. v2.0: "Works today" revival list, in-app feedback, device-aware compatibility, self-updating catalog, AI search, 8 languages.
+Description: Browse 157k iOS apps by category and install them on iOS 5-10. v2.0: "Works today" revival list, in-app feedback, device-aware compatibility, self-updating catalog, AI search, 8 languages.
 Homepage: https://github.com/AdrienRL1/AppDrop
 Depiction: https://adrienrl1.github.io/cydia/depiction.html
 Icon: https://adrienrl1.github.io/cydia/PackageIcon.png
@@ -60,7 +60,7 @@ SHA256: 2913f8dd4b5dbc0702adbf23dadd357d9c1371557f533691c347d95a733395e8
 
 Package: ca.adrien.appdrop
 Name: AppDrop
-Description: Browse, search and install vintage iOS apps (iOS 6-10 era) from the IPA Archive (157k apps). Grounded AI assistant, device-aware suggestions, multilingual.
+Description: Browse, search and install iOS apps (iOS 6-10 era) from the IPA Archive (157k apps). Grounded AI assistant, device-aware suggestions, multilingual.
 Homepage: https://github.com/AdrienRL1/AppDrop
 Depiction: https://github.com/AdrienRL1/AppDrop/releases/tag/v1.4
 Maintainer: Adrien
@@ -79,7 +79,7 @@ SHA256: 550fbf9995cbd7e345cc8db8d4de1de1d0126bf96e5414a3b8f6460a569d500c
 
 Package: ca.adrien.appdrop
 Name: AppDrop
-Description: Browse, search and install vintage iOS apps (iOS 6-10 era) from the IPA Archive (157k apps). Grounded AI assistant, device-aware suggestions, multilingual.
+Description: Browse, search and install iOS apps (iOS 6-10 era) from the IPA Archive (157k apps). Grounded AI assistant, device-aware suggestions, multilingual.
 Homepage: https://github.com/AdrienRL1/AppDrop
 Depiction: https://github.com/AdrienRL1/AppDrop/releases/tag/v1.4
 Maintainer: Adrien
@@ -98,7 +98,7 @@ SHA256: c6ee4b95993324ffa03178462a436185b852179302a61437ad0c215c61965186
 
 Package: ca.adrien.appdrop
 Name: AppDrop
-Description: Browse, search and install vintage iOS apps (iOS 5-10 era) from the IPA Archive (157k apps). Grounded AI assistant, device-aware suggestions, multilingual.
+Description: Browse, search and install iOS apps (iOS 5-10 era) from the IPA Archive (157k apps). Grounded AI assistant, device-aware suggestions, multilingual.
 Homepage: https://github.com/AdrienRL1/AppDrop
 Depiction: https://adrienrl1.github.io/cydia/depiction.html
 Icon: https://adrienrl1.github.io/cydia/PackageIcon.png
@@ -118,7 +118,7 @@ SHA256: f2e3048c04b56dde969583edd0739acca7b0e16610e678ea84b33599543f2280
 
 Package: ca.adrien.appdrop
 Name: AppDrop
-Description: Browse, search and install vintage iOS apps (iOS 5-10 era) from the IPA Archive (157k apps). Grounded AI assistant, device-aware suggestions, multilingual.
+Description: Browse, search and install iOS apps (iOS 5-10 era) from the IPA Archive (157k apps). Grounded AI assistant, device-aware suggestions, multilingual.
 Homepage: https://github.com/AdrienRL1/AppDrop
 Depiction: https://github.com/AdrienRL1/AppDrop/releases/tag/v1.5
 Maintainer: Adrien
