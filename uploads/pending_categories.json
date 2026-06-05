@@ -70,5 +70,17 @@
     "device": "iPad 2 (Wi-Fi) (iPad2,1), Apple A5, 512 MB RAM, iOS 6.0",
     "lang": "en",
     "ts": 1780690379118
+  },
+  {
+    "id": "com-google-ios-youtube-1780697543534",
+    "bid": "com.google.ios.youtube",
+    "name": "YouTube",
+    "current_category": "Photo & Video",
+    "current_subgenre": "",
+    "category": "Photo & Video",
+    "subgenre": "",
+    "device": "iPhone 4S (iPhone4,1), Apple A5, 512 MB RAM, iOS 9.3.6",
+    "lang": "en",
+    "ts": 1780697543534
   }
 ]
