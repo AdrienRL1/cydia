@@ -142,5 +142,17 @@
     "device": "iPad (4th gen, Wi-Fi) (iPad3,4), Apple A6X, 1 GB RAM, iOS 6.1.3",
     "lang": "en",
     "ts": 1780765368491
+  },
+  {
+    "id": "com-onewave-fallowers-1780777154714",
+    "bid": "com.onewave.fallowers",
+    "name": "Followers",
+    "current_category": "Social Networking",
+    "current_subgenre": "",
+    "category": "Social Networking",
+    "subgenre": "",
+    "device": "iPad (4th gen, Wi-Fi) (iPad3,4), Apple A6X, 1 GB RAM, iOS 6.1.3",
+    "lang": "en",
+    "ts": 1780777154714
   }
 ]
