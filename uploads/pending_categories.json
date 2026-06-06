@@ -82,5 +82,17 @@
     "device": "iPhone 4S (iPhone4,1), Apple A5, 512 MB RAM, iOS 9.3.6",
     "lang": "en",
     "ts": 1780697543534
+  },
+  {
+    "id": "eu-bandainamcoent-verylittlenightmares-1780708585160",
+    "bid": "eu.bandainamcoent.verylittlenightmares",
+    "name": "VLN",
+    "current_category": "Games",
+    "current_subgenre": "Adventure",
+    "category": "Games",
+    "subgenre": "Adventure",
+    "device": "iPad mini (1st gen, Wi-Fi) (iPad2,5), Apple A5, 512 MB RAM, iOS 9.3.5",
+    "lang": "en",
+    "ts": 1780708585160
   }
 ]
