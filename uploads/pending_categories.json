@@ -130,5 +130,17 @@
     "device": "iPod touch (5th gen) (iPod5,1), Apple A5, 512 MB RAM, iOS 9.3.5",
     "lang": "en",
     "ts": 1780748043420
+  },
+  {
+    "id": "com-new-flourish-fastwebbrowserad-1780749689143",
+    "bid": "com.new-flourish.FastWebBrowserAD",
+    "name": "FastBrowser",
+    "current_category": "Utilities",
+    "current_subgenre": "",
+    "category": "Games",
+    "subgenre": "Arcade",
+    "device": "iPhone 4S (iPhone4,1), Apple A5, 512 MB RAM, iOS 6.1.3",
+    "lang": "en",
+    "ts": 1780749689143
   }
 ]
