@@ -118,5 +118,17 @@
     "device": "iPhone 4S (iPhone4,1), Apple A5, 512 MB RAM, iOS 6.1.3",
     "lang": "en",
     "ts": 1780733824193
+  },
+  {
+    "id": "com-toyopagroup-picaboo-1780748043420",
+    "bid": "com.toyopagroup.picaboo",
+    "name": "Snapchat",
+    "current_category": "Social Networking",
+    "current_subgenre": "",
+    "category": "Social Networking",
+    "subgenre": "",
+    "device": "iPod touch (5th gen) (iPod5,1), Apple A5, 512 MB RAM, iOS 9.3.5",
+    "lang": "en",
+    "ts": 1780748043420
   }
 ]
