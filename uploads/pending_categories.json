@@ -94,5 +94,17 @@
     "device": "iPad mini (1st gen, Wi-Fi) (iPad2,5), Apple A5, 512 MB RAM, iOS 9.3.5",
     "lang": "en",
     "ts": 1780708585160
+  },
+  {
+    "id": "com-tutotoons-app-whysmellsnoads-1780724937319",
+    "bid": "com.tutotoons.app.whysmellsnoads",
+    "name": "Why Does the Earth Smell So Bad",
+    "current_category": "Games",
+    "current_subgenre": "Kids",
+    "category": "Games",
+    "subgenre": "Kids",
+    "device": "iPad 2 (Wi-Fi, 2012) (iPad2,4), Apple A5, 512 MB RAM, iOS 9.3.5",
+    "lang": "en",
+    "ts": 1780724937319
   }
 ]
