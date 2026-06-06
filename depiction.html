@@ -155,7 +155,14 @@
 </div>
 
 <div class="changelog">
-  <h3>What's new <span class="ver">v3.1.1</span></h3>
+  <h3>What's new <span class="ver">v3.1.2</span></h3>
+  <ul>
+    <li><b>False "Install failed" fixed</b> — on some jailbreaks the installer reports an error even when the app actually installed and is on your home screen. AppDrop now confirms the result on the device itself instead of trusting the installer's exit code</li>
+    <li><b>64-bit (arm64) warning</b> — it warns you <i>before</i> installing an app that's 64-bit only and can't run on a 32-bit device, instead of a silent install that never shows an icon</li>
+    <li><b>Automatic installer retry</b> — if an install fails, AppDrop retries once with the alternate on-device installer (some apps install with one tool but not the other)</li>
+    <li>Clearer install-error messages (plain language instead of technical output)</li>
+  </ul>
+  <h3 style="margin-top:16px">v3.1.1</h3>
   <ul>
     <li><b>Background crash fixed (iOS 5–10)</b> — the app could be killed by the system the moment you switched away from it. This was the most common crash; it's gone</li>
     <li><b>"Works Today" &amp; "Modded" tidied up</b> — an app's different versions group into one row (tap <b>Versions</b>), duplicates removed, and both lists now look exactly like the catalogue</li>
