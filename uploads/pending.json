@@ -17,28 +17,6 @@
     "ts": 1780598648847
   },
   {
-    "id": "block-blast-1780775863794",
-    "target": "mods",
-    "name": "Block Blast!",
-    "description": "Help",
-    "bid": "com.blockpuzzle.us.ios",
-    "min_ios": "13.0",
-    "version": "7.0.1",
-    "mod": "",
-    "credit": "",
-    "category": "",
-    "subgenre": "",
-    "plat": 0,
-    "icon": "https://adrienrl1.github.io/cydia/icons/block-blast-1780775863794.png",
-    "decrypted": true,
-    "size": 30790599,
-    "ipa_url": "https://adrienrl1.github.io/cydia/uploads/block-blast-1780775863794.ipa",
-    "ipa_path": "uploads/block-blast-1780775863794.ipa",
-    "lang": "en",
-    "device": "iPhone 4 (GSM) (iPhone3,1), Apple A4, 512 MB RAM, iOS 6.1.3",
-    "ts": 1780775870289
-  },
-  {
     "id": "geometry-1780778105573",
     "target": "mods",
     "name": "Geometry",
