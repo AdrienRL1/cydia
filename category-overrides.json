@@ -1,9 +1,13 @@
 {
-  "version": 1,
+  "version": 2,
   "overrides": {
     "video.like": {
       "category": "Social Networking",
       "subgenre": ""
+    },
+    "ms.games.kinghunt": {
+      "category": "Games",
+      "subgenre": "Arcade"
     }
   }
 }
