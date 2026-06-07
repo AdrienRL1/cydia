@@ -1,17 +1,5 @@
 [
   {
-    "id": "com-midasplayer-apps-farmheroessaga-1780765368491",
-    "bid": "com.midasplayer.apps.farmheroessaga",
-    "name": "Farm Heroes Saga",
-    "current_category": "Games",
-    "current_subgenre": "Puzzle",
-    "category": "Games",
-    "subgenre": "Puzzle",
-    "device": "iPad (4th gen, Wi-Fi) (iPad3,4), Apple A6X, 1 GB RAM, iOS 6.1.3",
-    "lang": "en",
-    "ts": 1780765368491
-  },
-  {
     "id": "com-onewave-fallowers-1780777154714",
     "bid": "com.onewave.fallowers",
     "name": "Followers",
