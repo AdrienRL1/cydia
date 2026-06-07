@@ -1,17 +1,5 @@
 [
   {
-    "id": "com-robtop-geometrydashsubzero-1780671145977",
-    "bid": "com.robtop.geometrydashsubzero",
-    "name": "SubZero",
-    "current_category": "Games",
-    "current_subgenre": "Arcade",
-    "category": "Games",
-    "subgenre": "Arcade",
-    "device": "iPhone 4S (iPhone4,1), Apple A5, 512 MB RAM, iOS 9.3.6",
-    "lang": "en",
-    "ts": 1780671145977
-  },
-  {
     "id": "com-spicysoft-bikerider-1780674518515",
     "bid": "com.spicysoft.bikerider",
     "name": "Bike Rider",
