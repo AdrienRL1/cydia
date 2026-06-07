@@ -154,5 +154,17 @@
     "device": "iPad (4th gen, Wi-Fi) (iPad3,4), Apple A6X, 1 GB RAM, iOS 6.1.3",
     "lang": "en",
     "ts": 1780777154714
+  },
+  {
+    "id": "askhomework-zaccaria-pinball-1780807191089",
+    "bid": "ASKHOMEWORK.Zaccaria-Pinball",
+    "name": "Zaccaria",
+    "current_category": "Games",
+    "current_subgenre": "Arcade",
+    "category": "Games",
+    "subgenre": "Action",
+    "device": "iPad 2 (Wi-Fi) (iPad2,1), Apple A5, 512 MB RAM, iOS 9.3.5",
+    "lang": "en",
+    "ts": 1780807191089
   }
 ]
