@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 3,
   "overrides": {
     "video.like": {
       "category": "Social Networking",
@@ -8,6 +8,10 @@
     "ms.games.kinghunt": {
       "category": "Games",
       "subgenre": "Arcade"
+    },
+    "au.com.webling.tictac.final": {
+      "category": "Entertainment",
+      "subgenre": ""
     }
   }
 }
