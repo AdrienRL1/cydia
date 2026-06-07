@@ -1,17 +1,5 @@
 [
   {
-    "id": "com-spotify-client-legacy-1780681035550",
-    "bid": "com.spotify.client.legacy",
-    "name": "Spotify iOS 4",
-    "current_category": "Music",
-    "current_subgenre": "",
-    "category": "Music",
-    "subgenre": "",
-    "device": "iPhone 4 (GSM) (iPhone3,1), Apple A4, 512 MB RAM, iOS 7.1.2",
-    "lang": "en",
-    "ts": 1780681035550
-  },
-  {
     "id": "com-apple-keynote-1780690379118",
     "bid": "com.apple.Keynote",
     "name": "Keynote",
