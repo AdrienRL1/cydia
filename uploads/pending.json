@@ -39,28 +39,6 @@
     "ts": 1780775870289
   },
   {
-    "id": "geometry-1780775976649",
-    "target": "mods",
-    "name": "Geometry",
-    "description": "Heli",
-    "bid": "",
-    "min_ios": "",
-    "version": "",
-    "mod": "",
-    "credit": "",
-    "category": "",
-    "subgenre": "",
-    "plat": 0,
-    "icon": "https://adrienrl1.github.io/cydia/icons/geometry-1780775976649.png",
-    "decrypted": true,
-    "size": 30790599,
-    "ipa_url": "https://adrienrl1.github.io/cydia/uploads/geometry-1780775976649.ipa",
-    "ipa_path": "uploads/geometry-1780775976649.ipa",
-    "lang": "en",
-    "device": "iPhone 4 (GSM) (iPhone3,1), Apple A4, 512 MB RAM, iOS 6.1.3",
-    "ts": 1780775982510
-  },
-  {
     "id": "geometry-1780778105573",
     "target": "mods",
     "name": "Geometry",
