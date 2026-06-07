@@ -1,17 +1,5 @@
 [
   {
-    "id": "com-facebook-facebook-1780638683569",
-    "bid": "com.facebook.Facebook",
-    "name": "Facebook",
-    "current_category": "Social Networking",
-    "current_subgenre": "",
-    "category": "Social Networking",
-    "subgenre": "",
-    "device": "iPhone 4S (iPhone4,1), Apple A5, 512 MB RAM, iOS 9.3.6",
-    "lang": "en",
-    "ts": 1780638683569
-  },
-  {
     "id": "com-apple-youtube-1780647691383",
     "bid": "com.apple.youtube",
     "name": "YouTube.ipa",
