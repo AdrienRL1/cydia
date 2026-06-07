@@ -22,5 +22,17 @@
     "device": "iPad 2 (Wi-Fi) (iPad2,1), Apple A5, 512 MB RAM, iOS 9.3.5",
     "lang": "es",
     "ts": 1780847089259
+  },
+  {
+    "id": "ru-women-facts-1780848887229",
+    "bid": "ru.women.facts",
+    "name": "100 Women Facts",
+    "current_category": "Entertainment",
+    "current_subgenre": "",
+    "category": "Education",
+    "subgenre": "",
+    "device": "iPhone 4S (iPhone4,1), Apple A5, 512 MB RAM, iOS 6.1.3",
+    "lang": "en",
+    "ts": 1780848887229
   }
 ]
