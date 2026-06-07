@@ -1,17 +1,5 @@
 [
   {
-    "id": "com-google-ios-youtube-1780697543534",
-    "bid": "com.google.ios.youtube",
-    "name": "YouTube",
-    "current_category": "Photo & Video",
-    "current_subgenre": "",
-    "category": "Photo & Video",
-    "subgenre": "",
-    "device": "iPhone 4S (iPhone4,1), Apple A5, 512 MB RAM, iOS 9.3.6",
-    "lang": "en",
-    "ts": 1780697543534
-  },
-  {
     "id": "eu-bandainamcoent-verylittlenightmares-1780708585160",
     "bid": "eu.bandainamcoent.verylittlenightmares",
     "name": "VLN",
