@@ -94,5 +94,17 @@
     "device": "iPad (3rd gen, Wi-Fi) (iPad3,1), Apple A5X, 1 GB RAM, iOS 9.3.5",
     "lang": "en",
     "ts": 1780945464055
+  },
+  {
+    "id": "com-infinitypocket-ac-1780953210854",
+    "bid": "com.infinitypocket.AC",
+    "name": "ArmsCraft",
+    "current_category": "Utilities",
+    "current_subgenre": "",
+    "category": "Games",
+    "subgenre": "Action",
+    "device": "iPad 2 (Wi-Fi, 2012) (iPad2,4), Apple A5, 512 MB RAM, iOS 9.3.5",
+    "lang": "en",
+    "ts": 1780953210854
   }
 ]
