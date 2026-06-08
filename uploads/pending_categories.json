@@ -70,5 +70,17 @@
     "device": "iPad (1st gen) (iPad1,1), Apple A4, 256 MB RAM, iOS 5.1.1",
     "lang": "en",
     "ts": 1780908231590
+  },
+  {
+    "id": "com-rarevision-vhs-camcorder-1780931309605",
+    "bid": "com.rarevision.vhs-camcorder",
+    "name": "VHS Cam",
+    "current_category": "Photo & Video",
+    "current_subgenre": "",
+    "category": "Photo & Video",
+    "subgenre": "",
+    "device": "iPhone 4S (iPhone4,1), Apple A5, 512 MB RAM, iOS 9.3.5",
+    "lang": "de",
+    "ts": 1780931309605
   }
 ]
