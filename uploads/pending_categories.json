@@ -58,5 +58,17 @@
     "device": "iPhone 4S (iPhone4,1), Apple A5, 512 MB RAM, iOS 9.3.6",
     "lang": "en",
     "ts": 1780902760074
+  },
+  {
+    "id": "fr-scm-consulting-blocnotes-1780908231590",
+    "bid": "fr.scm-consulting.BlocNotes",
+    "name": "BlocNotes",
+    "current_category": "Productivity",
+    "current_subgenre": "",
+    "category": "Utilities",
+    "subgenre": "",
+    "device": "iPad (1st gen) (iPad1,1), Apple A4, 256 MB RAM, iOS 5.1.1",
+    "lang": "en",
+    "ts": 1780908231590
   }
 ]
