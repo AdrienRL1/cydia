@@ -46,5 +46,17 @@
     "device": "iPhone 4S (iPhone4,1), Apple A5, 512 MB RAM, iOS 6.1.3",
     "lang": "en",
     "ts": 1780893934999
+  },
+  {
+    "id": "com-zhiliaoapp-musically-1780902760074",
+    "bid": "com.zhiliaoapp.musically",
+    "name": "TikTok",
+    "current_category": "Photo & Video",
+    "current_subgenre": "",
+    "category": "Social Networking",
+    "subgenre": "",
+    "device": "iPhone 4S (iPhone4,1), Apple A5, 512 MB RAM, iOS 9.3.6",
+    "lang": "en",
+    "ts": 1780902760074
   }
 ]
