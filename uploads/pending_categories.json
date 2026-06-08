@@ -82,5 +82,17 @@
     "device": "iPhone 4S (iPhone4,1), Apple A5, 512 MB RAM, iOS 9.3.5",
     "lang": "de",
     "ts": 1780931309605
+  },
+  {
+    "id": "com-silver-weather0304-1780945464055",
+    "bid": "com.silver.weather0304",
+    "name": "Lyreeks",
+    "current_category": "Weather",
+    "current_subgenre": "",
+    "category": "Music",
+    "subgenre": "",
+    "device": "iPad (3rd gen, Wi-Fi) (iPad3,1), Apple A5X, 1 GB RAM, iOS 9.3.5",
+    "lang": "en",
+    "ts": 1780945464055
   }
 ]
