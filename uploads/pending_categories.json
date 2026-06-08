@@ -34,5 +34,17 @@
     "device": "iPad mini (1st gen, Wi-Fi) (iPad2,5), Apple A5, 512 MB RAM, iOS 6.1.3",
     "lang": "en",
     "ts": 1780883455258
+  },
+  {
+    "id": "com-lenovo-anyshare-1780893934999",
+    "bid": "com.lenovo.anyshare",
+    "name": "uShareit",
+    "current_category": "Utilities",
+    "current_subgenre": "",
+    "category": "Productivity",
+    "subgenre": "",
+    "device": "iPhone 4S (iPhone4,1), Apple A5, 512 MB RAM, iOS 6.1.3",
+    "lang": "en",
+    "ts": 1780893934999
   }
 ]
