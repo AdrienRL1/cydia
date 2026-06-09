@@ -238,5 +238,17 @@
     "device": "iPad mini (1st gen, Wi-Fi) (iPad2,5), Apple A5, 512 MB RAM, iOS 9.3.5",
     "lang": "en",
     "ts": 1781002793447
+  },
+  {
+    "id": "com-htfgames-dumbways2die-1781002820806",
+    "bid": "com.HTFGames.DumbWays2Die",
+    "name": "DumbWays-HTF",
+    "current_category": "Games",
+    "current_subgenre": "Arcade",
+    "category": "Medical",
+    "subgenre": "",
+    "device": "iPad mini (1st gen, Wi-Fi) (iPad2,5), Apple A5, 512 MB RAM, iOS 9.3.5",
+    "lang": "en",
+    "ts": 1781002820806
   }
 ]
