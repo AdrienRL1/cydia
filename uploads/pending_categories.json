@@ -142,5 +142,17 @@
     "device": "iPhone 4S (iPhone4,1), Apple A5, 512 MB RAM, iOS 6.1.3",
     "lang": "en",
     "ts": 1780981784946
+  },
+  {
+    "id": "com-bottlerocketapps-aokitchenhd-1780982027346",
+    "bid": "com.bottlerocketapps.aokitchenhd",
+    "name": "AOKC HD",
+    "current_category": "Food & Drink",
+    "current_subgenre": "",
+    "category": "Games",
+    "subgenre": "Arcade",
+    "device": "iPhone 4S (iPhone4,1), Apple A5, 512 MB RAM, iOS 6.1.3",
+    "lang": "en",
+    "ts": 1780982027346
   }
 ]
