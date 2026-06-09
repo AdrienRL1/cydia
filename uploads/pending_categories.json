@@ -178,5 +178,17 @@
     "device": "iPad mini (1st gen, Wi-Fi) (iPad2,5), Apple A5, 512 MB RAM, iOS 9.3.5",
     "lang": "en",
     "ts": 1781002573185
+  },
+  {
+    "id": "jp-pinbit-flygorilla-1781002605939",
+    "bid": "jp.pinbit.flygorilla",
+    "name": "jp.pinbit.flygorilla_4.0.20.ipa",
+    "current_category": "Games",
+    "current_subgenre": "Action",
+    "category": "Lifestyle",
+    "subgenre": "",
+    "device": "iPad mini (1st gen, Wi-Fi) (iPad2,5), Apple A5, 512 MB RAM, iOS 9.3.5",
+    "lang": "en",
+    "ts": 1781002605939
   }
 ]
