@@ -250,5 +250,17 @@
     "device": "iPad mini (1st gen, Wi-Fi) (iPad2,5), Apple A5, 512 MB RAM, iOS 9.3.5",
     "lang": "en",
     "ts": 1781002820806
+  },
+  {
+    "id": "com-budgestudios-strawberryshortcakeswee-1781002885339",
+    "bid": "com.budgestudios.StrawberryShortcakeSweetShop",
+    "name": "Sweet Shop",
+    "current_category": "Games",
+    "current_subgenre": "Family",
+    "category": "Business",
+    "subgenre": "",
+    "device": "iPad mini (1st gen, Wi-Fi) (iPad2,5), Apple A5, 512 MB RAM, iOS 9.3.5",
+    "lang": "en",
+    "ts": 1781002885339
   }
 ]
