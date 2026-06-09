@@ -202,5 +202,17 @@
     "device": "iPad mini (1st gen, Wi-Fi) (iPad2,5), Apple A5, 512 MB RAM, iOS 9.3.5",
     "lang": "en",
     "ts": 1781002618923
+  },
+  {
+    "id": "com-smule-strum-1781002630709",
+    "bid": "com.smule.strum",
+    "name": "Strum",
+    "current_category": "Music",
+    "current_subgenre": "",
+    "category": "Utilities",
+    "subgenre": "",
+    "device": "iPad mini (1st gen, Wi-Fi) (iPad2,5), Apple A5, 512 MB RAM, iOS 9.3.5",
+    "lang": "en",
+    "ts": 1781002630709
   }
 ]
