@@ -286,5 +286,17 @@
     "device": "iPhone 4 (GSM) (iPhone3,1), Apple A4, 512 MB RAM, iOS 7.1.2",
     "lang": "tr",
     "ts": 1781005957359
+  },
+  {
+    "id": "com-yeshan-duola-1781036997663",
+    "bid": "com.yeshan.duola",
+    "name": "gpSPhone",
+    "current_category": "Utilities",
+    "current_subgenre": "",
+    "category": "Games",
+    "subgenre": "Simulation",
+    "device": "iPhone 4S (iPhone4,1), Apple A5, 512 MB RAM, iOS 6.1.3",
+    "lang": "en",
+    "ts": 1781036997663
   }
 ]
