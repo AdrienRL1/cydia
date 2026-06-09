@@ -154,5 +154,17 @@
     "device": "iPhone 4S (iPhone4,1), Apple A5, 512 MB RAM, iOS 6.1.3",
     "lang": "en",
     "ts": 1780982027346
+  },
+  {
+    "id": "com-grindrguy-grindrx-1781002512604",
+    "bid": "com.grindrguy.grindrx",
+    "name": "Grindr",
+    "current_category": "Social Networking",
+    "current_subgenre": "",
+    "category": "Entertainment",
+    "subgenre": "",
+    "device": "iPad mini (1st gen, Wi-Fi) (iPad2,5), Apple A5, 512 MB RAM, iOS 9.3.5",
+    "lang": "en",
+    "ts": 1781002512604
   }
 ]
