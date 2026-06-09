@@ -226,5 +226,17 @@
     "device": "iPad mini (1st gen, Wi-Fi) (iPad2,5), Apple A5, 512 MB RAM, iOS 9.3.5",
     "lang": "en",
     "ts": 1781002740510
+  },
+  {
+    "id": "com-sd-itunes-hkcafeseasonseu-1781002793447",
+    "bid": "com.sd.itunes.hkcafeseasonseu",
+    "name": "HelloKittyCafe Seasons",
+    "current_category": "Games",
+    "current_subgenre": "Simulation",
+    "category": "Medical",
+    "subgenre": "",
+    "device": "iPad mini (1st gen, Wi-Fi) (iPad2,5), Apple A5, 512 MB RAM, iOS 9.3.5",
+    "lang": "en",
+    "ts": 1781002793447
   }
 ]
