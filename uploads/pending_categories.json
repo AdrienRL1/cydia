@@ -118,5 +118,17 @@
     "device": "iPhone 4 (CDMA) (iPhone3,3), Apple A4, 512 MB RAM, iOS 5.1.1",
     "lang": "en",
     "ts": 1780959278618
+  },
+  {
+    "id": "com-gameloft-asphaltstorm-1780978269664",
+    "bid": "com.gameloft.asphaltstorm",
+    "name": "Asphalt: Storm",
+    "current_category": "Games",
+    "current_subgenre": "Action",
+    "category": "Games",
+    "subgenre": "Racing",
+    "device": "iPad mini (1st gen, Wi-Fi) (iPad2,5), Apple A5, 512 MB RAM, iOS 9.3.5",
+    "lang": "es",
+    "ts": 1780978269664
   }
 ]
