@@ -166,5 +166,17 @@
     "device": "iPad mini (1st gen, Wi-Fi) (iPad2,5), Apple A5, 512 MB RAM, iOS 9.3.5",
     "lang": "en",
     "ts": 1781002512604
+  },
+  {
+    "id": "com-vovasoft-fingstar-1781002573185",
+    "bid": "com.vovasoft.fingstar",
+    "name": "Magic Touch",
+    "current_category": "Games",
+    "current_subgenre": "Arcade",
+    "category": "Entertainment",
+    "subgenre": "",
+    "device": "iPad mini (1st gen, Wi-Fi) (iPad2,5), Apple A5, 512 MB RAM, iOS 9.3.5",
+    "lang": "en",
+    "ts": 1781002573185
   }
 ]
