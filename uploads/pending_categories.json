@@ -274,5 +274,17 @@
     "device": "iPad mini (1st gen, Wi-Fi) (iPad2,5), Apple A5, 512 MB RAM, iOS 9.3.5",
     "lang": "en",
     "ts": 1781002895778
+  },
+  {
+    "id": "com-oppanagames-mercedessim-1781005957359",
+    "bid": "com.OppanaGames.MercedesSim",
+    "name": "Offroad Car GL",
+    "current_category": "Games",
+    "current_subgenre": "Racing",
+    "category": "Games",
+    "subgenre": "Simulation",
+    "device": "iPhone 4 (GSM) (iPhone3,1), Apple A4, 512 MB RAM, iOS 7.1.2",
+    "lang": "tr",
+    "ts": 1781005957359
   }
 ]
