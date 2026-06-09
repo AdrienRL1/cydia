@@ -130,5 +130,17 @@
     "device": "iPad mini (1st gen, Wi-Fi) (iPad2,5), Apple A5, 512 MB RAM, iOS 9.3.5",
     "lang": "es",
     "ts": 1780978269664
+  },
+  {
+    "id": "com-bigfishgames-amazon-1780981784946",
+    "bid": "com.bigfishgames.amazon",
+    "name": "Amazon",
+    "current_category": "Shopping",
+    "current_subgenre": "",
+    "category": "Games",
+    "subgenre": "Casual",
+    "device": "iPhone 4S (iPhone4,1), Apple A5, 512 MB RAM, iOS 6.1.3",
+    "lang": "en",
+    "ts": 1780981784946
   }
 ]
