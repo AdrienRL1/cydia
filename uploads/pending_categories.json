@@ -310,5 +310,17 @@
     "device": "iPhone 4S (iPhone4,1), Apple A5, 512 MB RAM, iOS 9.3.6",
     "lang": "en",
     "ts": 1781053043022
+  },
+  {
+    "id": "com-roblox-robloxmobile2018-1781060477259",
+    "bid": "com.roblox.robloxmobile2018",
+    "name": "Pekora (2018)",
+    "current_category": "Games",
+    "current_subgenre": "Adventure",
+    "category": "Games",
+    "subgenre": "Simulation",
+    "device": "iPad 2 (GSM) (iPad2,2), Apple A5, 512 MB RAM, iOS 9.3.5",
+    "lang": "pt-BR",
+    "ts": 1781060477259
   }
 ]
