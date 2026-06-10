@@ -322,5 +322,17 @@
     "device": "iPad 2 (GSM) (iPad2,2), Apple A5, 512 MB RAM, iOS 9.3.5",
     "lang": "pt-BR",
     "ts": 1781060477259
+  },
+  {
+    "id": "com-marker-soft-yieldapp-1781098750700",
+    "bid": "com.marker-soft.yieldapp",
+    "name": "Yield",
+    "current_category": "Productivity",
+    "current_subgenre": "",
+    "category": "Games",
+    "subgenre": "Strategy",
+    "device": "iPhone 4 (GSM) (iPhone3,1), Apple A4, 512 MB RAM, iOS 5.1.1",
+    "lang": "en",
+    "ts": 1781098750700
   }
 ]
