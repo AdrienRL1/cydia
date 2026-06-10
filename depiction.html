@@ -155,7 +155,16 @@
 </div>
 
 <div class="changelog">
-  <h3>What's new <span class="ver">v3.1.3</span></h3>
+  <h3>What's new <span class="ver">v3.1.4</span></h3>
+  <ul>
+    <li><b>The #1 crash is fixed</b> — AppDrop could be killed by the system whenever it was sent to the background (it was holding the catalogue database open while suspended). It now closes the database on background and reopens it instantly when you return — by far the most common crash on iPhone 4 / iPod touch 4 / 4S</li>
+    <li><b>"No apps" fixed</b> — if the downloaded catalogue was ever incomplete, the app could be stuck showing an empty library; it now detects that and re-downloads automatically</li>
+    <li><b>False "Install failed" reduced</b> — it now also checks the device's filesystem directly, so a real install is no longer shown as failed</li>
+    <li><b>Cancel during "Installing…"</b> now stops before the app is installed, and a download stuck at 0% no longer hangs forever (it times out and retries on a fresh mirror)</li>
+    <li><b>Respring</b> (Settings) now actually works</li>
+    <li><b>Removed</b> — "Works Today", "Modded apps", "Share an app" and "Suggest a category"</li>
+  </ul>
+  <h3 style="margin-top:16px">v3.1.3</h3>
   <ul>
     <li><b>Polish — 9th language</b> — the full interface <i>and</i> all 4,740 app descriptions are now in Polish, auto-detected from your device language. Polish translation contributed by <b>Gerg_</b> on Reddit — thank you!</li>
     <li><b>Big performance pass</b> — faster, and lighter on CPU, GPU, RAM and slow storage, tuned per device from the iPad 1 up — with no change in behaviour</li>
@@ -205,7 +214,7 @@
 
 <h2>What it does</h2>
 <div class="card">
-AppDrop opens onto the <b>IPA Archive</b> catalog (43,000+ iOS apps, with every version archived), browsable <b>by category</b>. The catalog is downloaded on first launch and keeps itself up to date. Search by title, browse categories, pick from the <b>"Works today"</b> revival list or the new <b>Modded apps</b> section, and save favourites into your own folders. Tap install — the app delegates to <b>IPA Installer Console</b> (already required by this package) and your jailbreak does the rest.
+AppDrop opens onto the <b>IPA Archive</b> catalog (43,000+ iOS apps, with every version archived), browsable <b>by category</b>. The catalog is downloaded on first launch and keeps itself up to date. Search by title, browse categories, and save favourites into your own folders. Tap install — the app delegates to <b>IPA Installer Console</b> (already required by this package) and your jailbreak does the rest.
 </div>
 
 <h2>Highlights</h2>
@@ -215,8 +224,6 @@ AppDrop opens onto the <b>IPA Archive</b> catalog (43,000+ iOS apps, with every 
   <li><b>17 themes + full dark mode</b> — retint the whole app live, no restart</li>
   <li><b>List or grid, your way</b> — on iPhone and iPad via a native iOS-6 wheel; widget-style reorder/resize on the home</li>
   <li><b>Favorites, folders &amp; download-later</b> — organise apps your way</li>
-  <li><b>"Works today" + Modded apps</b> — apps that still run today, plus a new section for patched builds</li>
-  <li><b>Share an app</b> — moderated upload of apps you have the right to share</li>
   <li><b>Device-aware + FairPlay-aware</b> — a compatibility verdict per app, and DRM-encrypted builds caught before download</li>
   <li><b>9 languages</b> — EN · FR · ES · DE · PT‑BR · JA · ZH‑Hans · TR · PL, auto-detected, with localized app descriptions</li>
   <li><b>Pause/resume installs</b> — multi-select batch installs, a downloads counter, DNS-over-HTTPS + HTTP-proxy</li>
@@ -234,9 +241,6 @@ AppDrop opens onto the <b>IPA Archive</b> catalog (43,000+ iOS apps, with every 
 
   <img src="screenshots/v3-detail.png" alt="App detail screen">
   <div class="caption">App detail — compatibility verdict, every archived version, install</div>
-
-  <img src="screenshots/v3-works-today.png" alt="Works Today list">
-  <div class="caption">"Works today" — apps that still run on old iOS</div>
 
   <img src="screenshots/v3-filters.png" alt="Filters screen">
   <div class="caption">Filters — narrow by iOS version, device class, sort</div>
