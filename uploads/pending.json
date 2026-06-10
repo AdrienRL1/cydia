@@ -1,1 +1,24 @@
-[]
+[
+  {
+    "id": "ant-smasher-1781097987319",
+    "target": "mods",
+    "name": "Ant Smasher",
+    "description": "🐜🐜🐜🐜🐜🐜🐜🐜🐜🐜🐜🐜347.3K Downloads 🐜🐜🐜🐜🐜🐜🐜🐜🐜🐜🐜🐜\nAnt Smasher by Schvarts Apps Solution And Best Cool And Fun Games is a cool game for kids And Squish Ants Fast as you can before they eat or take your Picnic, and be careful, Do Not Touch The Bees!, or it's a Game Over, Always collect points, bonus, and lives, Good Luck!",
+    "bid": "com.SchvartsApps.Ant-Smasher",
+    "min_ios": "3.0",
+    "version": "1.0",
+    "mod": "",
+    "credit": "Set Up Corp",
+    "category": "",
+    "subgenre": "",
+    "plat": 0,
+    "icon": "https://adrienrl1.github.io/cydia/icons/ant-smasher-1781097987319.png",
+    "decrypted": true,
+    "size": 9978465,
+    "ipa_url": "https://adrienrl1.github.io/cydia/uploads/ant-smasher-1781097987319.ipa",
+    "ipa_path": "uploads/ant-smasher-1781097987319.ipa",
+    "lang": "en",
+    "device": "iPhone 5 (Global) (iPhone5,2), Apple A6, 1 GB RAM, iOS 6.1.4",
+    "ts": 1781097992911
+  }
+]
