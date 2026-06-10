@@ -334,5 +334,17 @@
     "device": "iPhone 4 (GSM) (iPhone3,1), Apple A4, 512 MB RAM, iOS 5.1.1",
     "lang": "en",
     "ts": 1781098750700
+  },
+  {
+    "id": "com-roblox-robloxmobile-1781116316618",
+    "bid": "com.roblox.robloxmobile",
+    "name": "ROBLOX",
+    "current_category": "Games",
+    "current_subgenre": "Adventure",
+    "category": "Games",
+    "subgenre": "Action",
+    "device": "iPad (1st gen) (iPad1,1), Apple A4, 256 MB RAM, iOS 5.1.1",
+    "lang": "fr",
+    "ts": 1781116316618
   }
 ]
