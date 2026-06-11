@@ -20,5 +20,27 @@
     "lang": "en",
     "device": "iPhone 5 (Global) (iPhone5,2), Apple A6, 1 GB RAM, iOS 6.1.4",
     "ts": 1781097992911
+  },
+  {
+    "id": "alphabet-1781191362857",
+    "target": "revival",
+    "name": "Alphabet",
+    "description": "Gokids",
+    "bid": "com.oovoo.iphone.free",
+    "min_ios": "iOS 6",
+    "version": "1.3.3-",
+    "mod": "",
+    "credit": "Jogo Educativo Para Crianças Em Inglês",
+    "category": "",
+    "subgenre": "",
+    "plat": 0,
+    "icon": "https://adrienrl1.github.io/cydia/icons/alphabet-1781191362857.png",
+    "decrypted": true,
+    "size": 19515054,
+    "ipa_url": "https://adrienrl1.github.io/cydia/uploads/alphabet-1781191362857.ipa",
+    "ipa_path": "uploads/alphabet-1781191362857.ipa",
+    "lang": "pt-BR",
+    "device": "iPhone 5c (Global) (iPhone5,4), Apple A6, 1 GB RAM, iOS 10.3.3",
+    "ts": 1781191369745
   }
 ]
