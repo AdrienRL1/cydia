@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "apps": [
     {
       "bid": "com.crazylion.buddyman.comix.hd",
@@ -48,6 +48,78 @@
       "icon": "https://archive.org/download/appdrop-apps/icon_com.tapone.tinyeditor.png",
       "plat": 6,
       "size": 598917
+    },
+    {
+      "bid": "com.lokoapps.gravityevolved",
+      "name": "Evolved",
+      "version": "1.2.4",
+      "min_ios": "6.0",
+      "category": "Games",
+      "subgenre": "",
+      "ipa": "https://archive.org/download/appdrop-apps/com.lokoapps.gravityevolved-1.2.4.ipa",
+      "icon": "https://archive.org/download/appdrop-apps/icon_com.lokoapps.gravityevolved.png",
+      "plat": 6,
+      "size": 20169930
+    },
+    {
+      "bid": "com.prettygreat.landsliders",
+      "name": "Land Sliders",
+      "version": "1.7.1",
+      "min_ios": "7.0",
+      "category": "Games",
+      "subgenre": "",
+      "ipa": "https://archive.org/download/appdrop-apps/com.prettygreat.landsliders-1.7.1.ipa",
+      "icon": "https://archive.org/download/appdrop-apps/icon_com.prettygreat.landsliders.png",
+      "plat": 6,
+      "size": 42194785
+    },
+    {
+      "bid": "com.gaia.moga",
+      "name": "Monster G",
+      "version": "3.05",
+      "min_ios": "4.3",
+      "category": "Games",
+      "subgenre": "",
+      "ipa": "https://archive.org/download/appdrop-apps/com.gaia.moga-3.05.ipa",
+      "icon": "https://archive.org/download/appdrop-apps/icon_com.gaia.moga.png",
+      "plat": 6,
+      "size": 65109719
+    },
+    {
+      "bid": "com.emvsoftware.Warblade",
+      "name": "Warblade",
+      "version": "",
+      "min_ios": "3.1.3",
+      "category": "Games",
+      "subgenre": "Arcade",
+      "ipa": "https://archive.org/download/appdrop-apps/com.emvsoftware.Warblade-1.45.ipa",
+      "icon": "https://archive.org/download/appdrop-apps/icon_com.emvsoftware.Warblade.png",
+      "plat": 6,
+      "size": 41238099
+    },
+    {
+      "bid": "com.fgol.HungrySharkEvolution",
+      "name": "Hungry Shark",
+      "version": "3.1.2",
+      "min_ios": "6.0",
+      "category": "Games",
+      "subgenre": "Action",
+      "ipa": "https://archive.org/download/appdrop-apps/com.fgol.HungrySharkEvolution-3.1.2.ipa",
+      "icon": "https://archive.org/download/appdrop-apps/icon_com.fgol.HungrySharkEvolution.png",
+      "plat": 6,
+      "size": 96811004
+    },
+    {
+      "bid": "au.com.savageinteractive.procreate",
+      "name": "Procreate",
+      "version": "3.0.6",
+      "min_ios": "9.1",
+      "category": "Photo & Video",
+      "subgenre": "",
+      "ipa": "https://archive.org/download/appdrop-apps/au.com.savageinteractive.procreate-3.0.6.ipa",
+      "icon": "https://archive.org/download/appdrop-apps/icon_au.com.savageinteractive.procreate.png",
+      "plat": 6,
+      "size": 118835577
     }
   ]
 }
