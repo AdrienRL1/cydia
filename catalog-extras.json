@@ -1,4 +1,53 @@
 {
-  "version": 0,
-  "apps": []
+  "version": 1,
+  "apps": [
+    {
+      "bid": "com.crazylion.buddyman.comix.hd",
+      "name": "Buddyman",
+      "version": "1.0",
+      "min_ios": "6.0",
+      "category": "Games",
+      "subgenre": "",
+      "ipa": "https://archive.org/download/appdrop-apps/com.crazylion.buddyman.comix.hd-1.0.ipa",
+      "icon": "https://archive.org/download/appdrop-apps/icon_com.crazylion.buddyman.comix.hd.png",
+      "plat": 6,
+      "size": 172901926
+    },
+    {
+      "bid": "com.i4software.flashlight4",
+      "name": "Flashlight",
+      "version": "5.0",
+      "min_ios": "4.3",
+      "category": "Utilities",
+      "subgenre": "",
+      "ipa": "https://archive.org/download/appdrop-apps/com.i4software.flashlight4-5.0.ipa",
+      "icon": "https://archive.org/download/appdrop-apps/icon_com.i4software.flashlight4.png",
+      "plat": 6,
+      "size": 3760223
+    },
+    {
+      "bid": "com.tapulous.metallica",
+      "name": "Metallica",
+      "version": "16403",
+      "min_ios": "4.3",
+      "category": "Games",
+      "subgenre": "Music",
+      "ipa": "https://archive.org/download/appdrop-apps/com.tapulous.metallica-16403.ipa",
+      "icon": "https://archive.org/download/appdrop-apps/icon_com.tapulous.metallica.png",
+      "plat": 6,
+      "size": 8773235
+    },
+    {
+      "bid": "com.tapone.tinyeditor",
+      "name": "TinyEditor",
+      "version": "1.2.2",
+      "min_ios": "5.0",
+      "category": "Utilities",
+      "subgenre": "",
+      "ipa": "https://archive.org/download/appdrop-apps/com.tapone.tinyeditor-1.2.2.ipa",
+      "icon": "https://archive.org/download/appdrop-apps/icon_com.tapone.tinyeditor.png",
+      "plat": 6,
+      "size": 598917
+    }
+  ]
 }
