@@ -155,7 +155,16 @@
 </div>
 
 <div class="changelog">
-  <h3>What's new <span class="ver">v3.1.4</span></h3>
+  <h3>What's new <span class="ver">v3.2.0.2</span></h3>
+  <ul>
+    <li><b>Contribute apps yourself</b> — upload your own IPAs at <a href="https://upload.appdrop.ca">upload.appdrop.ca</a>; verified apps are added to AppDrop and mirrored to the <a href="https://archive.org/details/appdrop-apps">archive.org collection</a></li>
+    <li><b>Compatibility builds</b> — if you lower an app's <code>MinimumOSVersion</code> to run it on an older iOS, the upload site no longer rejects it as a duplicate (the binary is verified identical before it's published)</li>
+    <li><b>"Most Downloaded" home shortcut</b> + per-app download counts + sort by downloads, and a live active-users count on the home screen</li>
+    <li><b>"Uncategorized" category</b> now lists apps that have no category</li>
+    <li><b>iOS 5.x launch crash fixed</b> — AppDrop now launches correctly on iOS 5.x (iPad 1, etc.)</li>
+    <li><b>Smarter version/compatibility pick</b> — always the newest installable, non-encrypted build — plus a category-loading glitch fixed</li>
+  </ul>
+  <h3 style="margin-top:16px">v3.1.4</h3>
   <ul>
     <li><b>The #1 crash is fixed</b> — AppDrop could be killed by the system whenever it was sent to the background (it was holding the catalogue database open while suspended). It now closes the database on background and reopens it instantly when you return — by far the most common crash on iPhone 4 / iPod touch 4 / 4S</li>
     <li><b>"No apps" fixed</b> — if the downloaded catalogue was ever incomplete, the app could be stuck showing an empty library; it now detects that and re-downloads automatically</li>
