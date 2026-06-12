@@ -275,3 +275,23 @@ Depiction: https://adrienrl1.github.io/cydia/depiction.html
 Icon: https://adrienrl1.github.io/cydia/PackageIcon.png
 Name: AppDrop
 
+Package: ca.adrien.appdrop
+Version: 3.2.0.3
+Architecture: iphoneos-arm
+Maintainer: Adrien Ruest-Lorquet
+Installed-Size: 89
+Depends: firmware (>= 5.0), ai.akemi.appsyncunified | net.angelxwind.appsyncunified | com.linusyang.appsync, com.autopear.installipa | ai.akemi.appinst
+Filename: ./debs/ca.adrien.appdrop_3.2.0.3_iphoneos-arm.deb
+Size: 732556
+MD5sum: 5ce916c40f9dac3596fa5b9f5275dc95
+SHA1: fa4b41f432a079f99b2ff8264f6a751761e96d8d
+SHA256: e4ef8afe0eda622c4073db76ef292535e8a73c9c2fb619a3fd0d652e18315425
+Section: Utilities
+Homepage: https://github.com/AdrienRL1/AppDrop
+Description: Browse 43,000+ iOS apps by category and install them on iOS 5-10. Fully iPad-optimized. v3.2: new "Most Downloaded" home shortcut + per-app download counts + sort by downloads, live active-users count, and you can now contribute IPAs yourself at https://upload.appdrop.ca. Also fixes version/compatibility selection (always the newest installable, non-encrypted build) and a category-loading glitch. v3.2.0.1: "Uncategorized" category now lists apps that have no category, download counts & Most Downloaded refresh continuously, and the iOS 5.x launch crash is fixed. v3.2.0.3: community "compatibility builds" (an app re-targeted to a lower iOS) merge cleanly and are fully reversible. (17 themes + dark mode, Favorites & folders, 9 languages.)
+Tag: compatible_min::ios5.0
+Author: Adrien Ruest-Lorquet
+Depiction: https://adrienrl1.github.io/cydia/depiction.html
+Icon: https://adrienrl1.github.io/cydia/PackageIcon.png
+Name: AppDrop
+

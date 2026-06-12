@@ -155,7 +155,11 @@
 </div>
 
 <div class="changelog">
-  <h3>What's new <span class="ver">v3.2.0.2</span></h3>
+  <h3>What's new <span class="ver">v3.2.0.3</span></h3>
+  <ul>
+    <li><b>Compatibility builds, fully reversible</b> — when a contributed build re-targets an app to a lower iOS, it now merges cleanly and can be rolled back without losing anything: the original is kept under its own name and the original minimum-iOS is restored automatically if the variant is ever removed</li>
+  </ul>
+  <h3 style="margin-top:16px">v3.2.0.2</h3>
   <ul>
     <li><b>Contribute apps yourself</b> — upload your own IPAs at <a href="https://upload.appdrop.ca">upload.appdrop.ca</a>; verified apps are added to AppDrop and mirrored to the <a href="https://archive.org/details/appdrop-apps">archive.org collection</a></li>
     <li><b>Compatibility builds</b> — if you lower an app's <code>MinimumOSVersion</code> to run it on an older iOS, the upload site no longer rejects it as a duplicate (the binary is verified identical before it's published)</li>
