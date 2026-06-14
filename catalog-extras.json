@@ -1,5 +1,5 @@
 {
-  "version": 4,
+  "version": 5,
   "apps": [
     {
       "bid": "com.crazylion.buddyman.comix.hd",
@@ -180,18 +180,6 @@
       "icon": "https://archive.org/download/appdrop-apps/icon_com.soundimpressions.fancorps.png",
       "plat": 6,
       "size": 846937
-    },
-    {
-      "bid": "com.a1429-fan.Jellyfin",
-      "name": "Jellyfin",
-      "version": "1.3",
-      "min_ios": "6.0",
-      "category": "Entertainment",
-      "subgenre": "",
-      "ipa": "https://archive.org/download/appdrop-apps/com.a1429-fan.Jellyfin-1.3.ipa",
-      "icon": "https://archive.org/download/appdrop-apps/icon_com.a1429-fan.Jellyfin.png",
-      "plat": 6,
-      "size": 864813
     },
     {
       "bid": "com.post-gazette.SteelerTab",
