@@ -1,302 +1,172 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AppDrop</title>
-<style>
-  html, body { margin: 0; padding: 0; }
-  body {
-    font-family: -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif;
-    color: #222;
-    background: #f4f4f7;
-    line-height: 1.5;
-    font-size: 15px;
-    -webkit-text-size-adjust: 100%;
-  }
-  .wrap { padding: 14px 14px 28px 14px; max-width: 720px; margin: 0 auto; }
+<html><head> 
+  <title>AppDrop</title> 
+  
+  <link rel="stylesheet" type="text/css" href="css/menes.css"> 
+  
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"> 
+  <meta content="minimum-scale=1.0, width=device-width, maximum-scale=0.6667, user-scalable=no" name="viewport"> 
+  <meta name="description" content="A page about iPhone Software."> 
+  <meta name="keywords" content="iPhone, iPod Touch, iPhone appstore, iPhone app, iPhone Battery, iPhone case, iPhone accessories, MAC, osx, iMac, iPod, Games"> 
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0"> 
+    
+  <base target="_blank"> 
 
-  .hero {
-    background: #fff;
-    border-radius: 12px;
-    padding: 16px;
-    display: flex;
-    gap: 14px;
-    align-items: center;
-    box-shadow: 0 1px 2px rgba(0,0,0,.06);
-  }
-  .hero img { width: 84px; height: 84px; flex-shrink: 0; }
-  .hero h1 { margin: 0 0 4px 0; font-size: 22px; font-weight: 700; color: #111; }
-  .hero p { margin: 0; color: #555; font-size: 13.5px; }
-
-  .pill {
-    display: inline-block;
-    background: #137dd6;
-    color: #fff;
-    font-size: 11px;
-    padding: 2px 8px;
-    border-radius: 999px;
-    margin-top: 6px;
-    font-weight: 600;
-  }
-
-  h2 {
-    font-size: 16px;
-    margin: 22px 0 8px 0;
-    color: #111;
-  }
-
-  .card {
-    background: #fff;
-    border-radius: 10px;
-    padding: 14px 16px;
-    box-shadow: 0 1px 2px rgba(0,0,0,.05);
-  }
-
-  ul { margin: 8px 0 0 0; padding-left: 20px; }
-  li { margin: 3px 0; }
-  code {
-    background: #eef0f4;
-    padding: 1px 5px;
-    border-radius: 3px;
-    font-family: Menlo, Courier, monospace;
-    font-size: 12.5px;
-  }
-  b { color: #111; }
-
-  .shots img {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 8px;
-    margin: 10px 0;
-    box-shadow: 0 1px 4px rgba(0,0,0,.12);
-  }
-  .caption {
-    text-align: center;
-    color: #666;
-    font-size: 12px;
-    margin: -4px 0 12px 0;
-  }
-
-  .meta {
-    margin-top: 16px;
-    color: #777;
-    font-size: 12px;
-  }
-  a { color: #137dd6; text-decoration: none; }
-
-  .tip-card {
-    background: linear-gradient(135deg, #fff8e6 0%, #ffefc6 100%);
-    border: 1px solid #f5d68a;
-    border-radius: 10px;
-    padding: 14px 16px;
-    margin-top: 14px;
-    text-align: center;
-  }
-  .tip-card a {
-    display: inline-block;
-    background: #0070ba;
-    color: #fff;
-    font-weight: 700;
-    padding: 8px 18px;
-    border-radius: 999px;
-    margin-top: 6px;
-    text-decoration: none;
-    font-size: 14px;
-  }
-  .tip-card p { margin: 0 0 4px 0; font-size: 14px; }
-
-  .changelog {
-    background: #eef7ff;
-    border-left: 4px solid #137dd6;
-    border-radius: 6px;
-    padding: 12px 14px;
-    margin-top: 16px;
-  }
-  .changelog h3 {
-    margin: 0 0 8px 0;
-    font-size: 15px;
-    color: #0a3266;
-  }
-  .changelog .ver {
-    display: inline-block;
-    background: #137dd6;
-    color: #fff;
-    padding: 1px 8px;
-    border-radius: 4px;
-    font-size: 12px;
-    font-weight: 700;
-    margin-left: 6px;
-    vertical-align: 1px;
-  }
-  .changelog ul { margin: 4px 0 0 0; padding-left: 18px; }
-  .changelog li { margin: 2px 0; font-size: 13.5px; }
-  .changelog .older {
-    font-size: 12px;
-    color: #555;
-    margin-top: 8px;
-    padding-top: 6px;
-    border-top: 1px dashed #b5d1ed;
-  }
-</style>
-</head>
-<body>
-<div class="wrap">
-
-<div class="hero">
-  <img src="screenshots/appdrop-icon.png" alt="AppDrop icon">
+</head> 
+ 
+<body class="pinstripe"> 
+<panel> 
+<label>Changelog</label>
+<fieldset>
+    <div>
+        <label>What's new (v3.2.0.3)</label>
+        <ul>
+            <li><strong>Compatibility builds, fully reversible</strong> — when a contributed build re-targets an app to a lower iOS, it now merges cleanly and can be rolled back without losing anything: the original is kept under its own name and the original minimum-iOS is restored automatically if the variant is ever removed</li>
+          </ul>
+      </div>
+  
+      <div>
+      <label>v3.2.0.2</label>
+      <ul>
+            <li><strong>Contribute apps yourself</strong> — upload your own IPAs at upload.appdrop.ca; verified apps are added to AppDrop and mirrored to the archive.org collection</li>
+            <li><strong>Compatbility builds</strong> — if you lower an app's MinimumOSVersion to run it on an older iOS, the upload site no longer rejects it as a duplicate (the binary is verified identical before it's published)</li>
+            <li><strong>"Most Downloaded" home shortcut</strong> + per-app download counts + sort by downloads, and a live active-users count on the home screen</li>
+            <li><strong>"Uncategorized" category</strong> now lists apps that have no category</li>
+            <li><strong>iOS 5.x launch crash fixed</strong> — AppDrop now launches correctly on iOS 5.x (iPad 1, etc.)</li>
+            <li><strong>Smarter version/compatibility pick</strong> — always the newest installable, non-encrypted build — plus a category-loading glitch fixed</li>
+        </ul>
+      </div>
+  
   <div>
-    <h1>AppDrop</h1>
-    <p>Browse 43,000+ iOS apps (2008–2014) — every archived version included — and install them on your jailbroken device.</p>
-    <span class="pill">iOS 5 – 10 · armv7</span>
-  </div>
-</div>
+      <label><strong>v3.1.4</strong></label>
+      <ul>
+            <li><strong>The #1 crash is fixed</strong> — AppDrop could be killed by the system whenever it was sent to the background (it was holding the catalogue database open while suspended). It now closes the database on background and reopens it instantly when you return — by far the most common crash on iPhone 4 / iPod touch 4 / 4S</li>
+            <li><strong>"No apps" fixed</strong> — if the downloaded catalogue was ever incomplete, the app could be stuck showing an empty library; it now detects that and re-downloads automatically</li>
+            <li><strong>"Most Downloaded" home shortcut</strong> + per-app download counts + sort by downloads, and a live active-users count on the home screen</li>
+            <li><strong>False "Install failed" reduced</strong> — it now also checks the device's filesystem directly, so a real install is no longer shown as failed</li>
+            <li><strong>Cancel during "Installing…"</strong> now stops before the app is installed, and a download stuck at 0% no longer hangs forever (it times out and retries on a fresh mirror)</li>
+            <li><strong>Respring</strong> (Settings) now actually works</li>
+            <li><strong>Removed :(</strong> — "Works Today", "Modded apps", "Share an app" and "Suggest a category"</li>
+        </ul>
+    </div>
+  
+  <div>
+      <label><strong>v3.1.3</strong></label>
+      <ul>
+            <li><strong>Polish — 9th language</strong> — the full interface and all 4,740 app descriptions are now in Polish, auto-detected from your device language. Polish translation contributed by <strong>Gerg_</strong> on Reddit — thank you!</li>
+            <li><strong>Big performance pass</strong> — faster, and lighter on CPU, GPU, RAM and slow storage, tuned per device from the iPad 1 up — with no change in behaviour</li>
+            <li><strong>Smoother fast-scrolling</strong> + per-app download counts + sort by downloads, and a live active-users count on the home screen</li>
+            <li><strong>Respring</strong> and <strong>Clear catalog cache</strong> added in Settings</li>
+            <li><strong>iPhone multi-select</strong> — the button to download several apps at once is now visible on iPhone</li>
+        </ul>
+    </div>
+  
+    <div>
+      <label><strong>v3.1.2</strong></label>
+      <ul>
+            <li><strong>False "Install failed" fixed</strong> — on some jailbreaks the installer reports an error even when the app actually installed and is on your home screen. AppDrop now confirms the result on the device itself instead of trusting the installer's exit code</li>
+            <li><strong>64-bit (arm64) warning</strong> — it warns you before installing an app that's 64-bit only and can't run on a 32-bit device, instead of a silent install that never shows an icon</li>
+            <li><strong>Automatic installer retry</strong> — if an install fails, AppDrop retries once with the alternate on-device installer (some apps install with one tool but not the other)</li>
+            <li><strong>Clearer install</strong> - error messages (plain language instead of technical output)</li>
+            </ul>
+    </div>
+    
+     <div>
+      <label><strong>v3.1</strong></label>
+      <ul>
+            <li><strong>Suggest a category</strong> — propose a better category/subgenre for any catalog app, through a moderated review</li>
+            <li><strong>Automatic crash reports</strong> — if AppDrop crashed last time, send an anonymous report in one tap to help fix it (no personal data)</li>
+            <li><strong>Safer "Share an app"</strong> — a description is now required, FairPlay-encrypted IPAs are blocked before upload, and the icon & details are auto-filled from the IPA</li>
+            <li><strong>Big fixes</strong> — iOS 9 installs that silently failed at 100%, the iPad 1 "Downloading catalog…" hang, pause/resume restarting from 0, low-storage installs filling the disk to 0 bytes, search-bar theming, and dark-mode text that was unreadable on some menus</li>
+              <li><strong>Browse a whole genre</strong> again with an "All apps" tile, and the AppSync dependency conflict is resolved</li>
+            </ul>
+    </div>
+              
+              <div>
+      <label><strong>v3.0</strong></label>
+      <ul>
+            <li><strong>17 themes + full dark mode</strong> — recolour the whole app instantly (8 light, 9 dark), no restart</li>
+            <li><strong>Your own layout</strong> — list or icon-grid on iPhone and iPad, set with a native iOS-6 wheel; drag & resize the home tiles widget-style</li>
+            <li><strong>Favorites, folders & "download later"</strong> — star apps, sort them into named collections, queue downloads for later</li>
+            <li><strong>Modded apps</strong> — a brand-new section for patched / unlocked builds, growing over time</li>
+              <li><strong>FairPlay-aware</strong> — detects DRM-encrypted builds before downloading and steers you to a clean version</li>
+              <li><strong>Pause & resume downloads</strong>, screen-stays-awake while installing, and HTTP-proxy support</li>
+              <li>Dozens of fixes + fuller 8-language localization. <strong>The previous AI search was removed</strong> (its free, no-key LLM became unreliable)</li>
+              <li><strong>Tested on</strong> iPad 1 (iOS 5.1.1), iPhone 5 (iOS 6.1.4), iPad 4 (iOS 6.1.3)</li>
+            </ul>
+    </div>
+                
+                <hr><br>
+                <p style="text-align: center;">Full changelog: <a href="https://github.com/AdrienRL1/AppDrop/releases" target="_blank">https://github.com/AdrienRL1/AppDrop/releases</a></p><br>
+  
+</fieldset> 
+<label>What it does</label> 
+<fieldset> 
+    <div> 
+      AppDrop opens onto the IPA Archive catalog (43,000+ iOS apps, with every version archived), browsable by category. The catalog is downloaded on first launch and keeps itself up to date. Search by title, browse categories, and save favourites into your own folders. Tap install — the app delegates to IPA Installer Console (already required by this package) and your jailbreak does the rest. 
+    </div> 
+</fieldset>
+                
+<label>Highlights</label>
+<fieldset>
+    <div>
+      <ul><li><strong>43,000+ apps</strong> — browse by category; downloaded once then self-updating (≈157k IPA files counting every version)</li>
+<li><strong>17 themes + full dark mode</strong> — retint the whole app live, no restart</li>
+<li><strong>List or grid, your way</strong> — on iPhone and iPad via a native iOS-6 wheel; widget-style reorder/resize on the home</li>
+<li><strong>Favorites, folders & download-later</strong> — organise apps your way</li>
+<li><strong>Device-aware + FairPlay-aware</strong> — a compatibility verdict per app, and DRM-encrypted builds caught before download</li>
+<li><strong>9 languages</strong> — EN · FR · ES · DE · PT‑BR · JA · ZH‑Hans · TR · PL, auto-detected, with localized app descriptions</li>
+<li><strong>Pause/resume installs</strong> — multi-select batch installs, a downloads counter, DNS-over-HTTPS + HTTP-proxy</li>
+<li><strong>Skeuomorphic iOS 6 look · no backend, no account, no tracking</strong> — talks directly to archive.org</li>
+    </div>
+</fieldset>
 
-<div class="changelog">
-  <h3>What's new <span class="ver">v3.2.0.3</span></h3>
-  <ul>
-    <li><b>Compatibility builds, fully reversible</b> — when a contributed build re-targets an app to a lower iOS, it now merges cleanly and can be rolled back without losing anything: the original is kept under its own name and the original minimum-iOS is restored automatically if the variant is ever removed</li>
-  </ul>
-  <h3 style="margin-top:16px">v3.2.0.2</h3>
-  <ul>
-    <li><b>Contribute apps yourself</b> — upload your own IPAs at <a href="https://upload.appdrop.ca">upload.appdrop.ca</a>; verified apps are added to AppDrop and mirrored to the <a href="https://archive.org/details/appdrop-apps">archive.org collection</a></li>
-    <li><b>Compatibility builds</b> — if you lower an app's <code>MinimumOSVersion</code> to run it on an older iOS, the upload site no longer rejects it as a duplicate (the binary is verified identical before it's published)</li>
-    <li><b>"Most Downloaded" home shortcut</b> + per-app download counts + sort by downloads, and a live active-users count on the home screen</li>
-    <li><b>"Uncategorized" category</b> now lists apps that have no category</li>
-    <li><b>iOS 5.x launch crash fixed</b> — AppDrop now launches correctly on iOS 5.x (iPad 1, etc.)</li>
-    <li><b>Smarter version/compatibility pick</b> — always the newest installable, non-encrypted build — plus a category-loading glitch fixed</li>
-  </ul>
-  <h3 style="margin-top:16px">v3.1.4</h3>
-  <ul>
-    <li><b>The #1 crash is fixed</b> — AppDrop could be killed by the system whenever it was sent to the background (it was holding the catalogue database open while suspended). It now closes the database on background and reopens it instantly when you return — by far the most common crash on iPhone 4 / iPod touch 4 / 4S</li>
-    <li><b>"No apps" fixed</b> — if the downloaded catalogue was ever incomplete, the app could be stuck showing an empty library; it now detects that and re-downloads automatically</li>
-    <li><b>False "Install failed" reduced</b> — it now also checks the device's filesystem directly, so a real install is no longer shown as failed</li>
-    <li><b>Cancel during "Installing…"</b> now stops before the app is installed, and a download stuck at 0% no longer hangs forever (it times out and retries on a fresh mirror)</li>
-    <li><b>Respring</b> (Settings) now actually works</li>
-    <li><b>Removed</b> — "Works Today", "Modded apps", "Share an app" and "Suggest a category"</li>
-  </ul>
-  <h3 style="margin-top:16px">v3.1.3</h3>
-  <ul>
-    <li><b>Polish — 9th language</b> — the full interface <i>and</i> all 4,740 app descriptions are now in Polish, auto-detected from your device language. Polish translation contributed by <b>Gerg_</b> on Reddit — thank you!</li>
-    <li><b>Big performance pass</b> — faster, and lighter on CPU, GPU, RAM and slow storage, tuned per device from the iPad 1 up — with no change in behaviour</li>
-    <li><b>Smoother fast-scrolling</b> — app names render <i>while</i> you scroll, icons load much faster during a fast fling, and the catalogue keeps loading continuously instead of hitting a wall; category / version browsing is near-instant</li>
-    <li><b>Respring</b> and <b>Clear catalog cache</b> added in Settings</li>
-    <li><b>iPhone multi-select</b> — the button to download several apps at once is now visible on iPhone</li>
-  </ul>
-  <h3 style="margin-top:16px">v3.1.2</h3>
-  <ul>
-    <li><b>False "Install failed" fixed</b> — on some jailbreaks the installer reports an error even when the app actually installed and is on your home screen. AppDrop now confirms the result on the device itself instead of trusting the installer's exit code</li>
-    <li><b>64-bit (arm64) warning</b> — it warns you <i>before</i> installing an app that's 64-bit only and can't run on a 32-bit device, instead of a silent install that never shows an icon</li>
-    <li><b>Automatic installer retry</b> — if an install fails, AppDrop retries once with the alternate on-device installer (some apps install with one tool but not the other)</li>
-    <li>Clearer install-error messages (plain language instead of technical output)</li>
-  </ul>
-  <h3 style="margin-top:16px">v3.1.1</h3>
-  <ul>
-    <li><b>Background crash fixed (iOS 5–10)</b> — the app could be killed by the system the moment you switched away from it. This was the most common crash; it's gone</li>
-    <li><b>"Works Today" &amp; "Modded" tidied up</b> — an app's different versions group into one row (tap <b>Versions</b>), duplicates removed, and both lists now look exactly like the catalogue</li>
-    <li><b>The grid adapts when you rotate</b> — tile size stays steady in landscape (more columns) instead of fixed; the home tiles do the same</li>
-    <li><b>Smarter downloads</b> — iOS-6 wheel pickers for simultaneous downloads &amp; parallel streams, and it no longer drops a working-but-slow mirror near the end of a download (new <b>Auto-switch slow mirrors</b> toggle)</li>
-    <li>Cleaner tile text at high apps-per-row, a real app count in search, and the iPad now defaults to <b>5 apps per row</b></li>
-  </ul>
-  <h3 style="margin-top:16px">v3.1</h3>
-  <ul>
-    <li><b>Suggest a category</b> — propose a better category/subgenre for any catalog app, through a moderated review</li>
-    <li><b>Automatic crash reports</b> — if AppDrop crashed last time, send an anonymous report in one tap to help fix it (no personal data)</li>
-    <li><b>Safer "Share an app"</b> — a description is now required, FairPlay-encrypted IPAs are blocked before upload, and the icon &amp; details are auto-filled from the IPA</li>
-    <li><b>Big fixes</b> — iOS 9 installs that silently failed at 100%, the iPad 1 "Downloading catalog…" hang, pause/resume restarting from 0, low-storage installs filling the disk to 0 bytes, search-bar theming, and dark-mode text that was unreadable on some menus</li>
-    <li><b>Browse a whole genre</b> again with an "All apps" tile, and the AppSync dependency conflict is resolved</li>
-  </ul>
-  <h3 style="margin-top:16px">v3.0</h3>
-  <ul>
-    <li><b>17 themes + full dark mode</b> — recolour the whole app instantly (8 light, 9 dark), no restart</li>
-    <li><b>Your own layout</b> — list or icon-grid on iPhone <i>and</i> iPad, set with a native iOS-6 wheel; drag &amp; resize the home tiles widget-style</li>
-    <li><b>Favorites, folders &amp; "download later"</b> — star apps, sort them into named collections, queue downloads for later</li>
-    <li><b>Modded apps</b> — a brand-new section for patched / unlocked builds, growing over time</li>
-    <li><b>Share an app</b> — contribute an app you have the right to share, through a moderated upload</li>
-    <li><b>FairPlay-aware</b> — detects DRM-encrypted builds <i>before</i> downloading and steers you to a clean version</li>
-    <li><b>Pause &amp; resume downloads</b>, screen-stays-awake while installing, and HTTP-proxy support</li>
-    <li>Dozens of fixes + fuller 8-language localization. <b>The previous AI search was removed</b> (its free, no-key LLM became unreliable)</li>
-    <li><b>Tested on</b> iPad 1 (iOS 5.1.1), iPhone 5 (iOS 6.1.4), iPad 4 (iOS 6.1.3)</li>
-  </ul>
-  <div class="older">
-    Full changelog: <a href="https://github.com/AdrienRL1/AppDrop/releases">github.com/AdrienRL1/AppDrop/releases</a>
-  </div>
-</div>
+<label style="padding-bottom: 10px;">Screenshots</label> 
+<div class="horizontal-scroll-wrapper" id="scroller"> 
+  <div class="horizontal-scroll-area" style="width:1390px">
+    <a target="_blank" href="https://adrienrl1.github.io/cydia/screenshots/v3-home.png"><img src="https://adrienrl1.github.io/cydia/screenshots/v3-home.png" /></a>
+    <a target="_blank" href="https://adrienrl1.github.io/cydia/screenshots/v3-themes.png"><img src="https://adrienrl1.github.io/cydia/screenshots/v3-themes.png" /></a>
+    <a target="_blank" href="https://adrienrl1.github.io/cydia/screenshots/v3-detail.png"><img src="https://adrienrl1.github.io/cydia/screenshots/v3-detail.png" /></a>
+    <a target="_blank" href="https://adrienrl1.github.io/cydia/screenshots/v3-filters.png"><img src="https://adrienrl1.github.io/cydia/screenshots/v3-filters.png" /></a>
+    <a target="_blank" href="https://adrienrl1.github.io/cydia/screenshots/v3-fairplay-detail.png"><img src="https://adrienrl1.github.io/cydia/screenshots/v3-fairplay-detail.png" /></a>
+    <a target="_blank" href="https://adrienrl1.github.io/cydia/screenshots/v3-fairplay-versions.png"><img src="https://adrienrl1.github.io/cydia/screenshots/v3-fairplay-versions.png" /></a>
+  </div> 
+  <div class="horizontal-scroll-pips"></div> 
+</div> 
+ 
+<label>Requirements</label>
+<fieldset>
+    <div>
+      <ul><li>A jailbroken device on <strong>iOS 5 > iOS 10</strong> (armv7 / 32-bit)</li>
+<li><strong>AppSync Unified</strong> — needed to install unsigned IPAs (auto-installed as a dependency)</li>
+<li><strong>IPA Installer Console</strong> by autopear (or <code>appinst</code>) — the actual install tool (auto-installed as a dependency)</li>
+    </div>
+</fieldset>
 
-<h2>What it does</h2>
-<div class="card">
-AppDrop opens onto the <b>IPA Archive</b> catalog (43,000+ iOS apps, with every version archived), browsable <b>by category</b>. The catalog is downloaded on first launch and keeps itself up to date. Search by title, browse categories, and save favourites into your own folders. Tap install — the app delegates to <b>IPA Installer Console</b> (already required by this package) and your jailbreak does the rest.
-</div>
+<label>Oldest devices (mainly iOS 5)</label>
+<fieldset>
+    <div>
+      <p>If Cydia refuses this HTTPS source ("could not be verified" / TLS error), your device is missing the modern <strong>http</strong>, not https (the device can't yet verify the very certificate it's about to install).</p>
+<ul><li>On the device, open <code>http://repo.invoxiplaygames.uk/certificates/</code> in Safari — use <strong>AppSync Unified</strong> — needed to install unsigned IPAs (auto-installed as a dependency)</li>
+<li>Tap <strong>ISRG Root X1 CA (Let's Encrypt)</strong> and install it (<strong>Settings > General > Profiles</strong> if it doesn't open on its own).</li>
+<li>Return to Cydia and add <code>https://adrienrl1.github.io/cydia/</code> again — it now validates.</li>
+</ul><br>iOS 6 and newer already trust this root (tested on iOS 6.1.3 / 6.1.4), so this is only needed on the earliest devices. Certificate page courtesy of <a target="_blank" href="https://repo.invoxiplaygames.uk/">InvoxiPlayGames</a>.
+    </div>
+</fieldset>
+        
+<fieldset style="background-color:#fff8e6;">
+    <div>
+      <p style="text-align:center;"><strong>Enjoying AppDrop?</strong> Free + ad-free forever.</p> 
+      <p>If it saved you the trouble of manual sideloading, a small tip helps me keep maintaining the catalog 💙</p>
+      <a style="text-align: center;" href="https://paypal.me/adrienrl1"><img class="paypal" src="paypal.jpg" /></a>
+    </div>
+</fieldset>
+        
+<script src="js/iscroll2.js"></script> 
+<script> 
+new iScroll(document.getElementById('scroller'));
+</script> 
+ 
+</panel> 
+ 
 
-<h2>Highlights</h2>
-<div class="card">
-<ul>
-  <li><b>43,000+ apps</b> — browse by category; downloaded once then self-updating (≈157k IPA files counting every version)</li>
-  <li><b>17 themes + full dark mode</b> — retint the whole app live, no restart</li>
-  <li><b>List or grid, your way</b> — on iPhone and iPad via a native iOS-6 wheel; widget-style reorder/resize on the home</li>
-  <li><b>Favorites, folders &amp; download-later</b> — organise apps your way</li>
-  <li><b>Device-aware + FairPlay-aware</b> — a compatibility verdict per app, and DRM-encrypted builds caught before download</li>
-  <li><b>9 languages</b> — EN · FR · ES · DE · PT‑BR · JA · ZH‑Hans · TR · PL, auto-detected, with localized app descriptions</li>
-  <li><b>Pause/resume installs</b> — multi-select batch installs, a downloads counter, DNS-over-HTTPS + HTTP-proxy</li>
-  <li><b>Skeuomorphic iOS 6 look</b> · <b>no backend, no account, no tracking</b> — talks directly to archive.org</li>
-</ul>
-</div>
-
-<h2>Screenshots</h2>
-<div class="shots">
-  <img src="screenshots/v3-home.png" alt="Categories home on iPad">
-  <div class="caption">Home — browse 43,000+ apps by category, your way</div>
-
-  <img src="screenshots/v3-themes.png" alt="Theme picker">
-  <div class="caption">17 themes + full dark mode, applied live across the app</div>
-
-  <img src="screenshots/v3-detail.png" alt="App detail screen">
-  <div class="caption">App detail — compatibility verdict, every archived version, install</div>
-
-  <img src="screenshots/v3-filters.png" alt="Filters screen">
-  <div class="caption">Filters — narrow by iOS version, device class, sort</div>
-
-  <img src="screenshots/v3-fairplay-detail.png" alt="FairPlay-encrypted version flagged before download">
-  <div class="caption">FairPlay-aware — encrypted builds are caught before download, with a clean version suggested</div>
-
-  <img src="screenshots/v3-fairplay-versions.png" alt="Versions list marking encrypted mirrors">
-  <div class="caption">Every mirror in Versions shows whether it's encrypted (won't install)</div>
-</div>
-
-<h2>Requirements</h2>
-<div class="card">
-<ul>
-  <li>A jailbroken device on <b>iOS 5 → iOS 10</b> (armv7 / 32-bit)</li>
-  <li><b>AppSync Unified</b> — needed to install unsigned IPAs (auto-installed as a dependency)</li>
-  <li><b>IPA Installer Console</b> by autopear (or <code>appinst</code>) — the actual install tool (auto-installed as a dependency)</li>
-  <li>A working internet connection for downloads</li>
-</ul>
-</div>
-
-<h2>Oldest devices (mainly iOS 5)</h2>
-<div class="card">
-If Cydia refuses this HTTPS source (<i>"could not be verified"</i> / TLS error), your device is missing the modern <b>Let's Encrypt root certificate (ISRG Root X1)</b> that <code>github.io</code> chains to. Install it once, then the source works:
-<ul>
-  <li>On the device, open <code>http://repo.invoxiplaygames.uk/certificates/</code> in Safari — use <b>http</b>, <i>not</i> https (the device can't yet verify the very certificate it's about to install).</li>
-  <li>Tap <b>ISRG Root X1 CA (Let's Encrypt)</b> and install it (<b>Settings → General → Profiles</b> if it doesn't open on its own).</li>
-  <li>Return to Cydia and add <code>https://adrienrl1.github.io/cydia/</code> again — it now validates.</li>
-</ul>
-<span style="color:#777;font-size:12.5px">iOS 6 and newer already trust this root (tested on iOS 6.1.3 / 6.1.4), so this is only needed on the earliest devices. Certificate page courtesy of <a href="https://repo.invoxiplaygames.uk/">InvoxiPlayGames</a>.</span>
-</div>
-
-<div class="tip-card">
-  <p><b>Enjoying AppDrop?</b> Free + ad-free forever.</p>
-  <p>If it saved you the trouble of manual sideloading, a small tip helps me keep maintaining the catalog 💙</p>
-  <a href="https://paypal.me/adrienrl1">💖 Tip on PayPal</a>
-</div>
-
-<p class="meta">
-  Source: <a href="https://github.com/AdrienRL1/AppDrop">github.com/AdrienRL1/AppDrop</a> ·
-  Source URL: <code>https://adrienrl1.github.io/cydia/</code>
-</p>
-
-</div>
-</body>
-</html>
+</body></html>
