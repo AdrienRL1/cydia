@@ -86,5 +86,27 @@
     "lang": "en",
     "device": "iPhone 4 (GSM) (iPhone3,1), Apple A4, 512 MB RAM, iOS 6.1.3",
     "ts": 1782209836902
+  },
+  {
+    "id": "roblox-revival-1785247681544",
+    "target": "mods",
+    "name": "ROBLOX REVIVAL",
+    "description": "this is a roblox revival for ios 2-10",
+    "bid": "com.roblox.robloxmobile",
+    "min_ios": "5.1",
+    "version": "1.1.1",
+    "mod": "It makes you log in but no games",
+    "credit": "anthony Credit ios 5 Xclusive",
+    "category": "",
+    "subgenre": "",
+    "plat": 0,
+    "icon": "https://adrienrl1.github.io/cydia/icons/roblox-revival-1785247681544.png",
+    "decrypted": true,
+    "size": 2701215,
+    "ipa_url": "https://adrienrl1.github.io/cydia/uploads/roblox-revival-1785247681544.ipa",
+    "ipa_path": "uploads/roblox-revival-1785247681544.ipa",
+    "lang": "en",
+    "device": "iPhone 5 (Global) (iPhone5,2), Apple A6, 1 GB RAM, iOS 6.1.4",
+    "ts": 1785247685823
   }
 ]
